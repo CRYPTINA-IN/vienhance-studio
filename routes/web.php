@@ -2,6 +2,5 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// make hompage controller
+Route::get('/', \App\Http\Controllers\WebsiteController::class . '@index')->name('index');
