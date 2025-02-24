@@ -1,6 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\WebsiteController;
 
-// make hompage controller
-Route::get('/', \App\Http\Controllers\WebsiteController::class . '@index')->name('index');
+Route::controller(WebsiteController::class)->group(function () {
+    Route::get('/', 'index')->name('index');
+    Route::get('/about', 'about')->name('about');
+    Route::get('/services', 'services')->name('services');
+    Route::get('/portfolio', 'portfolio')->name('portfolio');
+    Route::get('/contact', 'contact')->name('contact');
+});

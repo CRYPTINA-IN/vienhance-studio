@@ -16,6 +16,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet">
+
     <!-- Bootstrap Css -->
     <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
     <!-- SlickNav Css -->
@@ -32,6 +33,7 @@
     <link rel="stylesheet" href="css/mousecursor.css">
     <!-- Main Custom Css -->
     <link href="css/custom.css" rel="stylesheet" media="screen">
+
 </head>
 <body>
 
@@ -43,7 +45,7 @@
     </div>
 </div>
 <!-- Preloader End -->
-@yield('header')
+@include('layouts.header')
 
 @yield('content')
 
