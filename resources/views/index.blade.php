@@ -15,15 +15,20 @@
                                     <div class="hero-content">
                                         <!-- Section Title Start -->
                                         <div class="section-title">
-                                            <h1 class="text-anime-style-2" data-cursor="-opaque">Where <span>creativity</span>Meets Purpose </h1>
-                                            <p class="wow fadeInUp" data-wow-delay="0.2s"><strong>Creating Timeless, Impactful, and User-Centric Experiences </strong></p>
-                                        <p class="wow fadeInUp" data-wow-delay="0.2s"> We innovate, aesthetic and optimize to develop seamless digital experiences. Every brand has a story, and we tell it with bold, intuitive, and visually appealing design. </p>
+                                            <h1 class="text-anime-style-2" data-cursor="-opaque">Where
+                                                <span>creativity</span>Meets Purpose
+                                            </h1>
+                                            <p class="wow fadeInUp" data-wow-delay="0.2s"><strong>Creating Timeless,
+                                                    Impactful, and User-Centric Experiences </strong></p>
+                                            <p class="wow fadeInUp" data-wow-delay="0.2s"> We innovate, aesthetic and
+                                                optimize to develop seamless digital experiences. Every brand has a story,
+                                                and we tell it with bold, intuitive, and visually appealing design. </p>
                                         </div>
                                         <!-- Section Title End -->
 
                                         <!-- Hero Button Start -->
                                         <div class="hero-btn wow fadeInUp" data-wow-delay="0.4s">
-                                            <a href="portfolio" class="btn-default">view our portfolio</a>
+                                            <a href="{{ route('portfolio') }}" class="btn-default">view our portfolio</a>
                                         </div>
                                         <!-- Hero Button End -->
                                     </div>
@@ -61,7 +66,7 @@
                                     <!-- Trusted Client Logo Start -->
                                     <div class="swiper-slide">
                                         <div class="trusted-client-logo">
-                                            <img src="images/client-logo-1.svg" alt="">
+                                            <img src="images/clients/client-1.png" alt="">
                                         </div>
                                     </div>
                                     <!-- Trusted Client Logo End -->
@@ -69,7 +74,7 @@
                                     <!-- Trusted Client Logo Start -->
                                     <div class="swiper-slide">
                                         <div class="trusted-client-logo">
-                                            <img src="images/client-logo-2.svg" alt="">
+                                            <img src="images/clients/client-2.png" alt="">
                                         </div>
                                     </div>
                                     <!-- Trusted Client Logo End -->
@@ -77,7 +82,7 @@
                                     <!-- Trusted Client Logo Start -->
                                     <div class="swiper-slide">
                                         <div class="trusted-client-logo">
-                                            <img src="images/client-logo-3.svg" alt="">
+                                            <img src="images/clients/client-3.png" alt="">
                                         </div>
                                     </div>
                                     <!-- Trusted Client Logo End -->
@@ -85,7 +90,7 @@
                                     <!-- Trusted Client Logo Start -->
                                     <div class="swiper-slide">
                                         <div class="trusted-client-logo">
-                                            <img src="images/client-logo-4.svg" alt="">
+                                            <img src="images/clients/client-4.png" alt="">
                                         </div>
                                     </div>
                                     <!-- Trusted Client Logo End -->
@@ -93,7 +98,7 @@
                                     <!-- Trusted Client Logo Start -->
                                     <div class="swiper-slide">
                                         <div class="trusted-client-logo">
-                                            <img src="images/client-logo-5.svg" alt="">
+                                            <img src="images/clients/client-5.png" alt="">
                                         </div>
                                     </div>
                                     <!-- Trusted Client Logo End -->
@@ -101,7 +106,7 @@
                                     <!-- Trusted Client Logo Start -->
                                     <div class="swiper-slide">
                                         <div class="trusted-client-logo">
-                                            <img src="images/client-logo-1.svg" alt="">
+                                            <img src="images/clients/client-6.png" alt="">
                                         </div>
                                     </div>
                                     <!-- Trusted Client Logo End -->
@@ -116,6 +121,9 @@
         </div>
     </div>
     <!-- Trusted Clients Section End -->
+
+
+
 
     <!-- Our Services Section Start -->
     <div class="our-services">
@@ -147,23 +155,34 @@
                         <div class="our-services-nav">
                             <ul class="nav nav-tabs" id="servicestab" role="tablist">
                                 <li class="nav-item" role="presentation">
-                                    <button class="nav-link active" id="01-tab" data-bs-toggle="tab" data-bs-target="#01" type="button" role="tab" aria-selected="true"><span>01</span> UI/UX Design</button>
+                                    <button class="nav-link active" id="01-tab" data-bs-toggle="tab" data-bs-target="#01"
+                                        type="button" role="tab" aria-selected="true"><span>01</span> Digital Experience Design & UI/UX</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="02-tab" data-bs-toggle="tab" data-bs-target="#02" type="button" role="tab" aria-selected="false"><span>02</span> Web Development</button>
+                                    <button class="nav-link" id="02-tab" data-bs-toggle="tab" data-bs-target="#02"
+                                        type="button" role="tab" aria-selected="false"><span>02</span> Identity Design &
+                                        Branding</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="03-tab" data-bs-toggle="tab" data-bs-target="#03" type="button" role="tab" aria-selected="false"><span>03</span> 3D Designs</button>
+                                    <button class="nav-link" id="03-tab" data-bs-toggle="tab" data-bs-target="#03"
+                                        type="button" role="tab" aria-selected="false"><span>03</span> Graphic Design &
+                                        Illustration</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="04-tab" data-bs-toggle="tab" data-bs-target="#04" type="button" role="tab" aria-selected="false"><span>04</span> Digital Marketing Design</button>
+                                    <button class="nav-link" id="04-tab" data-bs-toggle="tab" data-bs-target="#04"
+                                        type="button" role="tab" aria-selected="false"><span>04</span> Marketing and Print
+                                        Materials</button>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <button class="nav-link" id="05-tab" data-bs-toggle="tab" data-bs-target="#05" type="button" role="tab" aria-selected="false"><span>05</span> Motion Graphics</button>
+                                    <button class="nav-link" id="05-tab" data-bs-toggle="tab" data-bs-target="#05"
+                                        type="button" role="tab" aria-selected="false"><span>05</span> Design for Content
+                                        and Social Media</button>
                                 </li>
                             </ul>
                         </div>
                         <!-- Sidebar Our Services Nav End -->
+
+
 
                         <!-- Our Service Box Start -->
                         <div class="our-service-box tab-pane fade show active" id="01" role="tabpanel">
@@ -177,8 +196,10 @@
                                     <img src="images/icon-service-1.svg" alt="">
                                 </div>
                                 <div class="service-box-item-content">
-                                    <h3><a href="services">UI/UX Design</a></h3>
-                                    <p>We're a full-service design agency specializing in branding, web design, and creative strategies that elevate businesses.</p>
+                                    <h3><a href="services">Digital Experience Design & UI/UX</a></h3>
+                                    <p>We design very simple and easy to use, attractive digital experiences. We pay much
+                                        attention to the ease of use, simplicity of the navigation and the appearance of the
+                                        products we develop, so that each of them could enhance the user’s experience.</p>
                                 </div>
                                 <div class="service-box-item-btn">
                                     <a href="services" class="readmore-btn">read more</a>
@@ -199,8 +220,10 @@
                                     <img src="images/icon-service-1.svg" alt="">
                                 </div>
                                 <div class="service-box-item-content">
-                                    <h3><a href="services">Web Development</a></h3>
-                                    <p>We're a full-service design agency specializing in branding, web design, and creative strategies that elevate businesses.</p>
+                                    <h3><a href="services">Identity Design & Branding</a></h3>
+                                    <p>A good brand is not only a logo, it is a promise, a personality and a story. We help
+                                        companies build powerful and recognizable brands with distinctive logos, homogeneous
+                                        visual identities and appropriately developed brand narratives.</p>
                                 </div>
                                 <div class="service-box-item-btn">
                                     <a href="services" class="readmore-btn">read more</a>
@@ -221,8 +244,11 @@
                                     <img src="images/icon-service-1.svg" alt="">
                                 </div>
                                 <div class="service-box-item-content">
-                                    <h3><a href="services">3D Designs</a></h3>
-                                    <p>We're a full-service design agency specializing in branding, web design, and creative strategies that elevate businesses.</p>
+                                    <h3><a href="services">Graphic Design & Illustration</a></h3>
+                                    <p>It is easier to understand things with pictures than with words and we employ
+                                        original icons, appealing visuals and custom illustrations to bring your ideas to
+                                        life. Our designs not only complete your brand but also give it a face, a voice and
+                                        a feel.</p>
                                 </div>
                                 <div class="service-box-item-btn">
                                     <a href="services" class="readmore-btn">read more</a>
@@ -243,8 +269,11 @@
                                     <img src="images/icon-service-1.svg" alt="">
                                 </div>
                                 <div class="service-box-item-content">
-                                    <h3><a href="services">Digital Marketing Design</a></h3>
-                                    <p>We're a full-service design agency specializing in branding, web design, and creative strategies that elevate businesses.</p>
+                                    <h3><a href="services">Marketing and Print Materials</a></h3>
+                                    <p>We produce designs that will capture people’s attention, from impressive brochures
+                                        and beautiful packaging to sharp flyers and publications. Each of the elements has
+                                        been developed specifically to meet your communication objectives and to capture the
+                                        attention of your audience.</p>
                                 </div>
                                 <div class="service-box-item-btn">
                                     <a href="services" class="readmore-btn">read more</a>
@@ -265,8 +294,11 @@
                                     <img src="images/icon-service-1.svg" alt="">
                                 </div>
                                 <div class="service-box-item-content">
-                                    <h3><a href="services">Motion Graphics</a></h3>
-                                    <p>We're a full-service design agency specializing in branding, web design, and creative strategies that elevate businesses.</p>
+                                    <h3><a href="services">Design for Content and Social Media</a></h3>
+                                    <p>Designs are kings in a world where online presence is key. To help you keep your
+                                        audience engaged, stand out from the crowd and grow your following, we develop
+                                        exciting content templates, attention-grabbing social media creatives and visually
+                                        consistent brand content.</p>
                                 </div>
                                 <div class="service-box-item-btn">
                                     <a href="services" class="readmore-btn">read more</a>
@@ -274,6 +306,9 @@
                             </div>
                         </div>
                         <!-- Our Service Box End -->
+
+
+
                     </div>
                     <!-- Our Services Boxes End -->
                 </div>
@@ -556,13 +591,16 @@
                         <!-- Work FAQ Item Start -->
                         <div class="work-accordion-item wow fadeInUp">
                             <h2 class="accordion-header" id="heading1">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
                                     01. Discovery & Strategy
                                 </button>
                             </h2>
-                            <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="heading1" data-bs-parent="#workaccordion">
+                            <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="heading1"
+                                data-bs-parent="#workaccordion">
                                 <div class="accordion-body">
-                                    <p>We begin by getting to know you and your brand. Through in-depth conversations, research, and analysis.</p>
+                                    <p>We begin by getting to know you and your brand. Through in-depth conversations,
+                                        research, and analysis.</p>
                                 </div>
                             </div>
                         </div>
@@ -571,13 +609,16 @@
                         <!-- Work FAQ Item Start -->
                         <div class="work-accordion-item wow fadeInUp" data-wow-delay="0.2s">
                             <h2 class="accordion-header" id="heading2">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
                                     02. Concept Development
                                 </button>
                             </h2>
-                            <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2" data-bs-parent="#workaccordion">
+                            <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2"
+                                data-bs-parent="#workaccordion">
                                 <div class="accordion-body">
-                                    <p>We begin by getting to know you and your brand. Through in-depth conversations, research, and analysis.</p>
+                                    <p>We begin by getting to know you and your brand. Through in-depth conversations,
+                                        research, and analysis.</p>
                                 </div>
                             </div>
                         </div>
@@ -586,13 +627,16 @@
                         <!-- Work FAQ Item Start -->
                         <div class="work-accordion-item wow fadeInUp" data-wow-delay="0.4s">
                             <h2 class="accordion-header" id="heading3">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
                                     03. Design & Iteration
                                 </button>
                             </h2>
-                            <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3" data-bs-parent="#workaccordion">
+                            <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3"
+                                data-bs-parent="#workaccordion">
                                 <div class="accordion-body">
-                                    <p>We begin by getting to know you and your brand. Through in-depth conversations, research, and analysis.</p>
+                                    <p>We begin by getting to know you and your brand. Through in-depth conversations,
+                                        research, and analysis.</p>
                                 </div>
                             </div>
                         </div>
@@ -601,13 +645,16 @@
                         <!-- Work FAQ Item Start -->
                         <div class="work-accordion-item wow fadeInUp" data-wow-delay="0.6s">
                             <h2 class="accordion-header" id="heading4">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
                                     04. Development & Execution
                                 </button>
                             </h2>
-                            <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4" data-bs-parent="#workaccordion">
+                            <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4"
+                                data-bs-parent="#workaccordion">
                                 <div class="accordion-body">
-                                    <p>We begin by getting to know you and your brand. Through in-depth conversations, research, and analysis.</p>
+                                    <p>We begin by getting to know you and your brand. Through in-depth conversations,
+                                        research, and analysis.</p>
                                 </div>
                             </div>
                         </div>
@@ -630,8 +677,10 @@
                         <!-- Section Title Start -->
                         <div class="section-title">
                             <h3 class="wow fadeInUp">our achievements</h3>
-                            <h2 class="text-anime-style-2" data-cursor="-opaque">Proud moments & <span>milestones</span></h2>
-                            <p class="wow fadeInUp" data-wow-delay="0.2s">We're a full-service design agency specializing in branding, web design, and creative strategies that elevate businesses.</p>
+                            <h2 class="text-anime-style-2" data-cursor="-opaque">Proud moments & <span>milestones</span>
+                            </h2>
+                            <p class="wow fadeInUp" data-wow-delay="0.2s">We're a full-service design agency specializing in
+                                branding, web design, and creative strategies that elevate businesses.</p>
                         </div>
                         <!-- Section Title End -->
 
@@ -712,7 +761,11 @@
                         <div class="cta-counter-content-box">
                             <!-- CTA Box Content Start -->
                             <div class="cta-box-content wow fadeInUp">
-                                <p>We specialize in delivering innovative and impactful design solutions that elevate brands and drive results. From digital experiences to print media, our team of creative professionals is dedicated to transforming ideas into compelling visual stories that resonate with audiences. With a focus on creativity, strategy, and client collaboration.</p>
+                                <p>We specialize in delivering innovative and impactful design solutions that elevate brands
+                                    and drive results. From digital experiences to print media, our team of creative
+                                    professionals is dedicated to transforming ideas into compelling visual stories that
+                                    resonate with audiences. With a focus on creativity, strategy, and client collaboration.
+                                </p>
                             </div>
                             <!-- CTA Box Content End -->
 
@@ -966,7 +1019,8 @@
                                             </div>
                                         </div>
                                         <div class="testimonial-content">
-                                            <p>The creativity professionalism shown by Rovex exceeded our expectations Their design transformed brand and the results speak for themselves.</p>
+                                            <p>The creativity professionalism shown by Rovex exceeded our expectations Their
+                                                design transformed brand and the results speak for themselves.</p>
                                         </div>
                                         <div class="testimonial-author">
                                             <div class="author-image">
@@ -999,7 +1053,8 @@
                                             </div>
                                         </div>
                                         <div class="testimonial-content">
-                                            <p>Working with Rovex has been an absolute pleasure. Their creativity and attention to detail truly brought our vision to life.</p>
+                                            <p>Working with Rovex has been an absolute pleasure. Their creativity and
+                                                attention to detail truly brought our vision to life.</p>
                                         </div>
                                         <div class="testimonial-author">
                                             <div class="author-image">
@@ -1032,7 +1087,8 @@
                                             </div>
                                         </div>
                                         <div class="testimonial-content">
-                                            <p>We couldn't be happier with the final result and have received glowing feedback from both our team and users. Rovex is a true professional.</p>
+                                            <p>We couldn't be happier with the final result and have received glowing
+                                                feedback from both our team and users. Rovex is a true professional.</p>
                                         </div>
                                         <div class="testimonial-author">
                                             <div class="author-image">
@@ -1065,7 +1121,8 @@
                                             </div>
                                         </div>
                                         <div class="testimonial-content">
-                                            <p>Working with Rovex has been an absolute pleasure. Their creativity and attention to detail truly brought our vision to life.</p>
+                                            <p>Working with Rovex has been an absolute pleasure. Their creativity and
+                                                attention to detail truly brought our vision to life.</p>
                                         </div>
                                         <div class="testimonial-author">
                                             <div class="author-image">
@@ -1254,4 +1311,3 @@
 
 
 @endsection
-
