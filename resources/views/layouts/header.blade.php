@@ -5,7 +5,7 @@
             <div class="container">
                 <!-- Logo Start -->
                 <a class="navbar-brand" href="{{url('/')}}">
-                    <img src="images/logo.svg" alt="Logo">
+                    <img src="{{ asset('images/logo.svg') }}" alt="Logo">
                 </a>
                 <!-- Logo End -->
 
@@ -20,8 +20,8 @@
 {{--                                    <li class="nav-item"><a class="nav-link" href="index-slider.html">Home - Slider</a></li>--}}
 {{--                                </ul>--}}
 {{--                            </li>--}}
-                            <li class="nav-item"><a class="nav-link" href="{{url('/')}}">Home</a>
-                            <li class="nav-item"><a class="nav-link" href="{{url('/about')}}">About Us</a>
+                            <li class="nav-item"><a class="nav-link" href="{{url('/')}}">Home</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{url('/about')}}">About Us</a></li>
                             <li class="nav-item"><a class="nav-link" href="{{url('/services')}}">Services</a></li>
                             <li class="nav-item"><a class="nav-link" href="{{url('/portfolio')}}">Portfolio</a></li>
 {{--                            <li class="nav-item"><a class="nav-link" href="{{url('/blog')}}">Blog</a></li>--}}

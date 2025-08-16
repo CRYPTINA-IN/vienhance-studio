@@ -1,4 +1,5 @@
 @extends('layouts.web')
+
 @section('content')
 <!-- Page Header Start -->
 <div class="page-header bg-section">
@@ -10,7 +11,7 @@
                     <h1 class="text-anime-style-2" data-cursor="-opaque">About our <span>journey</span></h1>
                     <nav class="wow fadeInUp" data-wow-delay="0.25s">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html">home</a></li>
+                            <li class="breadcrumb-item"><a href="{{ route('home') }}">home</a></li>
                             <li class="breadcrumb-item active" aria-current="page">about us</li>
                         </ol>
                     </nav>
@@ -30,7 +31,7 @@
                 <!-- About Image Start -->
                 <div class="about-us-img">
                     <figure class="image-anime reveal">
-                        <img src="images/about-img.jpg" alt="">
+                        <img src="{{ asset('images/about-logo-img.png') }}" alt="">
                     </figure>
                 </div>
                 <!-- About Image End -->
@@ -42,8 +43,13 @@
                     <!-- Section Title Start -->
                     <div class="section-title">
                         <h3 class="wow fadeInUp">about us</h3>
-                        <h2 class="text-anime-style-2" data-cursor="-opaque">A team of <span>creative thinkers</span></h2>
-                        <p class="wow fadeInUp" data-wow-delay="0.2s">We're a full-service design agency specializing in branding, web design, and creative strategies that elevate businesses.</p>
+                        <h2 class="text-anime-style-2" data-cursor="-opaque">A team of <span>creative thinkers</span>
+                        </h2>
+                        <p class="wow fadeInUp" data-wow-delay="0.2s">
+                            Vienhance Studio is a full-service design agency fueled by creativity, innovation, and a
+                            commitment to delivering exceptional designs. We focus on branding, web design, and digital
+                            experiences that empower businesses to create a strong visual identity.
+                        </p>
                     </div>
                     <!-- Section Title End -->
 
@@ -52,10 +58,12 @@
                             <!-- About Us Info List Start -->
                             <div class="about-us-info-list wow fadeInUp" data-wow-delay="0.4s">
                                 <ul>
-                                    <li>Creativity and Innovation</li>
+                                    <li>Creativity & Innovation</li>
                                     <li>Client-Centricity</li>
-                                    <li>Integrity and Transparency</li>
-                                    <li>Excellence and Quality</li>
+                                    <li>Integrity & Transparency</li>
+                                    <li>Strategic Design</li>
+                                    <li>Collaborative Process</li>
+                                    <li>Quality & Excellence</li>
                                 </ul>
                             </div>
                             <!-- About Us Info List End -->
@@ -63,7 +71,7 @@
                         <div class="col-md-6">
                             <!-- About Contact Button Start -->
                             <div class="about-contact-now">
-                                <a href="contact.html"><img src="images/contact-circle.png" alt=""></a>
+                                <a href="{{ route('contact') }}"><img src="{{ asset('images/contact-circle.png') }}" alt=""></a>
                             </div>
                             <!-- About Contact Button End -->
                         </div>
@@ -73,6 +81,7 @@
             </div>
         </div>
 
+        <!-- Use Trusted Clients Component -->
         <div class="row">
             <div class="col-lg-12">
                 <!-- Trusted Client Box Start -->
@@ -83,61 +92,7 @@
                     </div>
                     <!-- Trusted Client Title End -->
 
-                    <!-- Trusted Clients Slider Start -->
-                    <div class="trusted-clients-slider">
-                        <div class="swiper">
-                            <div class="swiper-wrapper">
-                                <!-- Trusted Client Logo Start -->
-                                <div class="swiper-slide">
-                                    <div class="trusted-client-logo">
-                                        <img src="images/client-logo-1.svg" alt="">
-                                    </div>
-                                </div>
-                                <!-- Trusted Client Logo End -->
-
-                                <!-- Trusted Client Logo Start -->
-                                <div class="swiper-slide">
-                                    <div class="trusted-client-logo">
-                                        <img src="images/client-logo-2.svg" alt="">
-                                    </div>
-                                </div>
-                                <!-- Trusted Client Logo End -->
-
-                                <!-- Trusted Client Logo Start -->
-                                <div class="swiper-slide">
-                                    <div class="trusted-client-logo">
-                                        <img src="images/client-logo-3.svg" alt="">
-                                    </div>
-                                </div>
-                                <!-- Trusted Client Logo End -->
-
-                                <!-- Trusted Client Logo Start -->
-                                <div class="swiper-slide">
-                                    <div class="trusted-client-logo">
-                                        <img src="images/client-logo-4.svg" alt="">
-                                    </div>
-                                </div>
-                                <!-- Trusted Client Logo End -->
-
-                                <!-- Trusted Client Logo Start -->
-                                <div class="swiper-slide">
-                                    <div class="trusted-client-logo">
-                                        <img src="images/client-logo-5.svg" alt="">
-                                    </div>
-                                </div>
-                                <!-- Trusted Client Logo End -->
-
-                                <!-- Trusted Client Logo Start -->
-                                <div class="swiper-slide">
-                                    <div class="trusted-client-logo">
-                                        <img src="images/client-logo-1.svg" alt="">
-                                    </div>
-                                </div>
-                                <!-- Trusted Client Logo End -->
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Trusted Clients Slider End -->
+                    @include('components.trusted-clients-slider-section')
                 </div>
                 <!-- Trusted Client Box End -->
             </div>
@@ -146,140 +101,11 @@
 </div>
 <!-- Page About Us Section End -->
 
-<!-- CTA Section Start -->
-<div class="cta-section bg-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <!-- CTA Box Start -->
-                <div class="cta-box">
-                    <div class="cta-counter-content-box">
-                        <!-- CTA Box Content Start -->
-                        <div class="cta-box-content wow fadeInUp">
-                            <p>We specialize in delivering innovative and impactful design solutions that elevate brands and drive results. From digital experiences to print media, our team of creative professionals is dedicated to transforming ideas into compelling visual stories that resonate with audiences. With a focus on creativity, strategy, and client collaboration.</p>
-                        </div>
-                        <!-- CTA Box Content End -->
+<!-- Use CTA Section Component -->
+@include('components.cta-section')
 
-                        <!-- CTA Counter Box Start -->
-                        <div class="cta-counter-box">
-                            <!-- CTA Counter Item Start -->
-                            <div class="cta-counter-item">
-                                <h3><span class="counter">45</span>+</h3>
-                                <p>project completed</p>
-                            </div>
-                            <!-- CTA Counter Item End -->
-
-                            <!-- CTA Counter Item Start -->
-                            <div class="cta-counter-item">
-                                <h3><span class="counter">15</span>+</h3>
-                                <p>years of experience</p>
-                            </div>
-                            <!-- CTA Counter Item End -->
-
-                            <!-- CTA Counter Item Start -->
-                            <div class="cta-counter-item">
-                                <h3><span class="counter">100</span>%</h3>
-                                <p>client satisfaction</p>
-                            </div>
-                            <!-- CTA Counter Item End -->
-                        </div>
-                        <!-- CTA Counter Box End -->
-                    </div>
-
-                    <!-- CTA Contact Circle Start -->
-                    <div class="cta-contact-circle">
-                        <a href="contact.html"><img src="images/cta-contact-circle.png" alt=""></a>
-                    </div>
-                    <!-- CTA Contact Circle End -->
-                </div>
-                <!-- CTA Box End -->
-            </div>
-        </div>
-    </div>
-</div>
-<!-- CTA Section End -->
-
-<!-- Our Achievements Section Start -->
-<div class="our-achievements">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-5">
-                <!-- Our Achievements Content Start -->
-                <div class="our-achievements-content">
-                    <!-- Section Title Start -->
-                    <div class="section-title">
-                        <h3 class="wow fadeInUp">our achievements</h3>
-                        <h2 class="text-anime-style-2" data-cursor="-opaque">proud moments & <span>milestones</span></h2>
-                        <p class="wow fadeInUp" data-wow-delay="0.2s">We're a full-service design agency specializing in branding, web design, and creative strategies that elevate businesses.</p>
-                    </div>
-                    <!-- Section Title End -->
-
-                    <!-- Our Achievements Button Start -->
-                    <div class="achievements-content-btn wow fadeInUp" data-wow-delay="0.4s">
-                        <a href="contact.html" class="btn-default">let's get started !</a>
-                    </div>
-                    <!-- Our Achievements Button End -->
-                </div>
-                <!-- Our Achievements Content End -->
-            </div>
-
-            <div class="col-lg-7">
-                <!-- Our Achievements Box Start -->
-                <div class="our-achievements-box wow fadeInUp">
-                    <!-- Achievements Item Start -->
-                    <div class="achievements-item">
-                        <h3>2015 - 2016</h3>
-                        <h2>Best Design Award</h2>
-                        <p>We begin by getting to know you and your brand. Through in-depth.</p>
-                    </div>
-                    <!-- Achievements Item End -->
-
-                    <!-- Achievements Item Start -->
-                    <div class="achievements-item">
-                        <h3>2016 - 2017</h3>
-                        <h2>Dribble Winner</h2>
-                        <p>We begin by getting to know you and your brand. Through in-depth.</p>
-                    </div>
-                    <!-- Achievements Item End -->
-
-                    <!-- Achievements Item Start -->
-                    <div class="achievements-item">
-                        <h3>2017 - 2018</h3>
-                        <h2>Design Of The Year</h2>
-                        <p>We begin by getting to know you and your brand. Through in-depth.</p>
-                    </div>
-                    <!-- Achievements Item End -->
-
-                    <!-- Achievements Item Start -->
-                    <div class="achievements-item">
-                        <h3>2017 - 2018</h3>
-                        <h2>Graphic Design Winner</h2>
-                        <p>We begin by getting to know you and your brand. Through in-depth.</p>
-                    </div>
-                    <!-- Achievements Item End -->
-
-                    <!-- Achievements Item Start -->
-                    <div class="achievements-item">
-                        <h3>2018 - 2019</h3>
-                        <h2>Awward Winner</h2>
-                        <p>We begin by getting to know you and your brand. Through in-depth.</p>
-                    </div>
-                    <!-- Achievements Item End -->
-
-                    <!-- Achievements Item Start -->
-                    <div class="achievements-item">
-                        <h3>2019 - 2020</h3>
-                        <h2>Best Jury Award</h2>
-                        <p>We begin by getting to know you and your brand. Through in-depth.</p>
-                    </div>
-                    <!-- Achievements Item End -->
-                </div>
-                <!-- Our Achievements Box End -->
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Our Achievements Section End -->
+<!-- Use Our Achievements Section Component -->
+@include('components.our-achievements-section')
 
 <!-- Our Vision Mission Section Start -->
 <div class="our-vision-mission bg-section">
@@ -293,28 +119,34 @@
                         <!-- Vision Mission image Start -->
                         <div class="vision-mission-image">
                             <figure class="image-anime reveal">
-                                <img src="images/our-vision-img.jpg" alt="">
+                                <img src="{{ asset('images/our-vision-img.jpg') }}" alt="Our Vision">
                             </figure>
                         </div>
                         <!-- Vision Mission image End -->
 
                         <!-- Vision Mission Content Start -->
                         <div class="vision-mission-content">
-                            <!-- Section Tite Start -->
+                            <!-- Section Title Start -->
                             <div class="section-title">
                                 <h3 class="wow fadeInUp">our vision</h3>
-                                <h2 class="text-anime-style-2" data-cursor="-opaque">Driving the Future of <span>Creativity</span></h2>
-                                <p class="wow fadeInUp" data-wow-delay="0.2s">We're a full-service design agency specializing in branding, web design, and creative strategies that elevate businesses.</p>
+                                <h2 class="text-anime-style-2" data-cursor="-opaque">Setting New Standards in
+                                    <span>Digital Excellence</span></h2>
+                                <p class="wow fadeInUp" data-wow-delay="0.2s">
+                                    At Vienhance Studio, we give clients a distinct market edge by integrating
+                                    innovation and design with business objectives. We craft strategic solutions that
+                                    capture attention, drive engagement, and establish a strong presence.
+                                </p>
                             </div>
-                            <!-- Section Tite End -->
+                            <!-- Section Title End -->
 
                             <!-- Vision Mission List Start -->
                             <div class="vision-mission-list wow fadeInUp" data-wow-delay="0.4s">
                                 <ul>
-                                    <li>Creativity and Innovation</li>
-                                    <li>Client-Centricity</li>
-                                    <li> Integrity and Transparency</li>
-                                    <li> Excellence and Quality</li>
+                                    <li>Market Edge for Clients</li>
+                                    <li>Innovation & Business Integration</li>
+                                    <li>Strategic Solutions</li>
+                                    <li>Audience Engagement</li>
+                                    <li>Digital Excellence</li>
                                 </ul>
                             </div>
                             <!-- Vision Mission List End -->
@@ -328,28 +160,34 @@
                         <!-- Vision Mission image Start -->
                         <div class="vision-mission-image">
                             <figure class="image-anime reveal">
-                                <img src="images/our-mission-img.jpg" alt="">
+                                <img src="{{ asset('images/our-mission-img.jpg') }}" alt="Our Mission">
                             </figure>
                         </div>
                         <!-- Vision Mission image End -->
 
                         <!-- Vision Mission Content Start -->
                         <div class="vision-mission-content">
-                            <!-- Section Tite Start -->
+                            <!-- Section Title Start -->
                             <div class="section-title">
                                 <h3 class="wow fadeInUp">our mission</h3>
-                                <h2 class="text-anime-style-2" data-cursor="-opaque">Bringing ideas to life through <span>creativity</span></h2>
-                                <p class="wow fadeInUp" data-wow-delay="0.2s">We're a full-service design agency specializing in branding, web design, and creative strategies that elevate businesses.</p>
+                                <h2 class="text-anime-style-2" data-cursor="-opaque">Crafting Impactful <span>Design
+                                        Solutions</span></h2>
+                                <p class="wow fadeInUp" data-wow-delay="0.2s">
+                                    At Vienhance Studio, our mission is to deliver exceptional creative design solutions
+                                    that trigger brand engagement and turn our clients' visions into captivating,
+                                    accessible realities.
+                                </p>
                             </div>
-                            <!-- Section Tite End -->
+                            <!-- Section Title End -->
 
                             <!-- Vision Mission List Start -->
                             <div class="vision-mission-list wow fadeInUp" data-wow-delay="0.4s">
                                 <ul>
-                                    <li>Creativity and Innovation</li>
-                                    <li>Client-Centricity</li>
-                                    <li>Integrity and Transparency</li>
-                                    <li>Excellence and Quality</li>
+                                    <li>Exceptional Creativity</li>
+                                    <li>Brand Engagement</li>
+                                    <li>Accessibility</li>
+                                    <li>Quality & Integrity</li>
+                                    <li>Exceeding Expectations</li>
                                 </ul>
                             </div>
                             <!-- Vision Mission List End -->
@@ -381,7 +219,7 @@
             <div class="col-lg-4">
                 <!-- Section Button Start -->
                 <div class="section-btn wow fadeInUp" data-wow-delay="0.2s">
-                    <a href="team.html" class="btn-default">all team members</a>
+                    <a href="#" class="btn-default">all team members</a>
                 </div>
                 <!-- Section Button End -->
             </div>
@@ -393,9 +231,9 @@
                 <div class="team-item wow fadeInUp">
                     <!-- team Image Start -->
                     <div class="team-image">
-                        <a href="team-single.html" data-cursor-text="View">
+                        <a href="#" data-cursor-text="View">
                             <figure class="image-anime">
-                                <img src="images/team-1.jpg" alt="">
+                                <img src="{{ asset('images/team-1.jpg') }}" alt="">
                             </figure>
                         </a>
                     </div>
@@ -405,7 +243,7 @@
                     <div class="team-body">
                         <!-- Team Content Start -->
                         <div class="team-content">
-                            <h3><a href="team-single.html">Joseph g. brown</a></h3>
+                            <h3><a href="#">Joseph g. brown</a></h3>
                         </div>
                         <!-- Team Content End -->
 
@@ -430,9 +268,9 @@
                 <div class="team-item wow fadeInUp" data-wow-delay="0.2s">
                     <!-- team Image Start -->
                     <div class="team-image">
-                        <a href="team-single.html" data-cursor-text="View">
+                        <a href="#" data-cursor-text="View">
                             <figure class="image-anime">
-                                <img src="images/team-2.jpg" alt="">
+                                <img src="{{ asset('images/team-2.jpg') }}" alt="">
                             </figure>
                         </a>
                     </div>
@@ -442,7 +280,7 @@
                     <div class="team-body">
                         <!-- Team Content Start -->
                         <div class="team-content">
-                            <h3><a href="team-single.html">Liam brooks</a></h3>
+                            <h3><a href="#">Liam brooks</a></h3>
                         </div>
                         <!-- Team Content End -->
 
@@ -467,9 +305,9 @@
                 <div class="team-item wow fadeInUp" data-wow-delay="0.4s">
                     <!-- team Image Start -->
                     <div class="team-image">
-                        <a href="team-single.html" data-cursor-text="View">
+                        <a href="#" data-cursor-text="View">
                             <figure class="image-anime">
-                                <img src="images/team-3.jpg" alt="">
+                                <img src="{{ asset('images/team-3.jpg') }}" alt="">
                             </figure>
                         </a>
                     </div>
@@ -479,7 +317,7 @@
                     <div class="team-body">
                         <!-- Team Content Start -->
                         <div class="team-content">
-                            <h3><a href="team-single.html">sophia evans</a></h3>
+                            <h3><a href="#">sophia evans</a></h3>
                         </div>
                         <!-- Team Content End -->
 
@@ -504,9 +342,9 @@
                 <div class="team-item wow fadeInUp" data-wow-delay="0.6s">
                     <!-- team Image Start -->
                     <div class="team-image">
-                        <a href="team-single.html" data-cursor-text="View">
+                        <a href="#" data-cursor-text="View">
                             <figure class="image-anime">
-                                <img src="images/team-4.jpg" alt="">
+                                <img src="{{ asset('images/team-4.jpg') }}" alt="">
                             </figure>
                         </a>
                     </div>
@@ -516,7 +354,7 @@
                     <div class="team-body">
                         <!-- Team Content Start -->
                         <div class="team-content">
-                            <h3><a href="team-single.html">noah bennett</a></h3>
+                            <h3><a href="#">noah bennett</a></h3>
                         </div>
                         <!-- Team Content End -->
 
@@ -540,287 +378,42 @@
 </div>
 <!-- Our Team Section End -->
 
-<!-- Our Testimonial Section Start -->
-<div class="our-testimonial bg-section">
-    <div class="container">
-        <div class="row section-row align-items-center">
-            <div class="col-lg-12">
-                <!-- Section Title Start -->
-                <div class="section-title">
-                    <h3 class="wow fadeInUp">testimonials</h3>
-                    <h2 class="text-anime-style-2" data-cursor="-opaque">Hear from our <span>happy clients</span></h2>
-                </div>
-                <!-- Section Title End -->
-            </div>
-        </div>
+<!-- Use Testimonials Section Component -->
+@include('components.testimonials-section')
 
-        <div class="row">
-            <div class="col-lg-12">
-                <!-- Testimonial Slider Start -->
-                <div class="testimonial-slider">
-                    <div class="swiper">
-                        <div class="swiper-wrapper" data-cursor-text="Drag">
-                            <!-- Testimonial Slide Start -->
-                            <div class="swiper-slide">
-                                <div class="testimonial-item">
-                                    <div class="testimonial-header">
-                                        <div class="testimonial-logo-img">
-                                            <img src="images/client-logo-1.svg" alt="">
-                                        </div>
-                                        <div class="testimonial-rating">
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                        </div>
-                                    </div>
-                                    <div class="testimonial-content">
-                                        <p>The creativity professionalism shown by Rovex exceeded our expectations Their design transformed brand and the results speak for themselves.</p>
-                                    </div>
-                                    <div class="testimonial-author">
-                                        <div class="author-image">
-                                            <figure class="image-anime">
-                                                <img src="images/author-1.jpg" alt="">
-                                            </figure>
-                                        </div>
-                                        <div class="author-content">
-                                            <h3>arlene mcCoy</h3>
-                                            <p>Co Founder</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Testimonial Slide End -->
+@php
+    $faqs = [
+        [
+            'question' => 'Who are your typical clients?',
+            'answer' => 'We partner with startups, growing SMEs, and established corporations who value strategic design and want to elevate their brand, drive engagement, and achieve measurable business results.'
+        ],
+        [
+            'question' => 'How long does a typical project take?',
+            'answer' => 'Timelines vary by scope and complexity. Branding projects usually take 2–3 weeks, while UI/UX or website designs can take 2–4+ weeks. A detailed timeline will be shared after the initial consultation.'
+        ],
+        [
+            'question' => 'What is your pricing structure?',
+            'answer' => 'We offer project-based fixed fees for defined scopes and custom agreements for ongoing collaborations. All pricing is transparent with no hidden costs. A detailed proposal is provided after understanding your needs.'
+        ],
+        [
+            'question' => 'Can you work with existing brand guidelines?',
+            'answer' => 'Yes! We ensure consistency with your existing guidelines while enhancing and evolving your brand.'
+        ],
+        [
+            'question' => 'How do we get started with Vienhance Studio?',
+            'answer' => 'Reach out via our contact form, email, or phone. We\'ll schedule a consultation to discuss your project, then provide a tailored proposal with scope, timeline, and investment.'
+        ]
+    ];
+@endphp
 
-                            <!-- Testimonial Slide Start -->
-                            <div class="swiper-slide">
-                                <div class="testimonial-item">
-                                    <div class="testimonial-header">
-                                        <div class="testimonial-logo-img">
-                                            <img src="images/client-logo-2.svg" alt="">
-                                        </div>
-                                        <div class="testimonial-rating">
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                        </div>
-                                    </div>
-                                    <div class="testimonial-content">
-                                        <p>Working with Rovex has been an absolute pleasure. Their creativity and attention to detail truly brought our vision to life.</p>
-                                    </div>
-                                    <div class="testimonial-author">
-                                        <div class="author-image">
-                                            <figure class="image-anime">
-                                                <img src="images/author-2.jpg" alt="">
-                                            </figure>
-                                        </div>
-                                        <div class="author-content">
-                                            <h3>Esther Howard</h3>
-                                            <p>Director</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Testimonial Slide End -->
+@include('components.our-faqs-section', [
+    'faqs' => $faqs,
+    'accordionId' => 'about',
+    'showButton' => false,
+    'buttonUrl' => 'faqs.html',
+    'buttonText' => 'view all FAQ',
+    'imageUrl' => 'images/our-faq-img.jpg',
+    'imageAlt' => 'FAQ Image'
+])
 
-                            <!-- Testimonial Slide Start -->
-                            <div class="swiper-slide">
-                                <div class="testimonial-item">
-                                    <div class="testimonial-header">
-                                        <div class="testimonial-logo-img">
-                                            <img src="images/client-logo-4.svg" alt="">
-                                        </div>
-                                        <div class="testimonial-rating">
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                        </div>
-                                    </div>
-                                    <div class="testimonial-content">
-                                        <p>We couldn't be happier with the final result and have received glowing feedback from both our team and users. Rovex is a true professional.</p>
-                                    </div>
-                                    <div class="testimonial-author">
-                                        <div class="author-image">
-                                            <figure class="image-anime">
-                                                <img src="images/author-3.jpg" alt="">
-                                            </figure>
-                                        </div>
-                                        <div class="author-content">
-                                            <h3>Arlene McCoy</h3>
-                                            <p>CEO</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Testimonial Slide End -->
-
-                            <!-- Testimonial Slide Start -->
-                            <div class="swiper-slide">
-                                <div class="testimonial-item">
-                                    <div class="testimonial-header">
-                                        <div class="testimonial-logo-img">
-                                            <img src="images/client-logo-5.svg" alt="">
-                                        </div>
-                                        <div class="testimonial-rating">
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                            <i class="fa-solid fa-star"></i>
-                                        </div>
-                                    </div>
-                                    <div class="testimonial-content">
-                                        <p>Working with Rovex has been an absolute pleasure. Their creativity and attention to detail truly brought our vision to life.</p>
-                                    </div>
-                                    <div class="testimonial-author">
-                                        <div class="author-image">
-                                            <figure class="image-anime">
-                                                <img src="images/author-4.jpg" alt="">
-                                            </figure>
-                                        </div>
-                                        <div class="author-content">
-                                            <h3>nai jex</h3>
-                                            <p>Director</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Testimonial Slide End -->
-                        </div>
-                        <div class="testimonial-pagination"></div>
-                    </div>
-                </div>
-                <!-- Testimonial Slider End -->
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Our Testimonial Section End -->
-
-<!-- Our Faqs Section Start -->
-<div class="our-faqs">
-    <div class="container">
-        <div class="row section-row align-items-center">
-            <div class="col-lg-9">
-                <!-- Section Title Start -->
-                <div class="section-title">
-                    <h3 class="wow fadeInUp">FAQ's</h3>
-                    <h2 class="text-anime-style-2" data-cursor="-opaque">Everything you <span>need to know</span></h2>
-                </div>
-                <!-- Section Title End -->
-            </div>
-
-            <div class="col-lg-3">
-                <!-- Section Button Start -->
-                <div class="section-btn wow fadeInUp" data-wow-delay="0.2s">
-                    <a href="faqs.html" class="btn-default">view all FAQ</a>
-                </div>
-                <!-- Section Button End -->
-            </div>
-        </div>
-
-        <div class="row align-items-center">
-            <div class="col-lg-6">
-                <!-- Our FAQ Section Start -->
-                <div class="our-faq-section">
-                    <!-- FAQ Accordion Start -->
-                    <div class="faq-accordion" id="accordion">
-                        <!-- FAQ Item Start -->
-                        <div class="accordion-item wow fadeInUp">
-                            <h2 class="accordion-header" id="heading1">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
-                                    What services does your agency provide?
-                                </button>
-                            </h2>
-                            <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="heading1" data-bs-parent="#accordion">
-                                <div class="accordion-body">
-                                    <p>We specialize in including graphic design, branding, website design and development, UX/UI design, social media marketing, digital advertising, video production, and content creation.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- FAQ Item End -->
-
-                        <!-- FAQ Item Start -->
-                        <div class="accordion-item wow fadeInUp" data-wow-delay="0.2s">
-                            <h2 class="accordion-header" id="heading2">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
-                                    Who are your typical clients?
-                                </button>
-                            </h2>
-                            <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2" data-bs-parent="#accordion">
-                                <div class="accordion-body">
-                                    <p>We work with businesses of all sizes, from startups and small businesses to large enterprises. Our clients span industries such as technology, retail, hospitality, healthcare, and more.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- FAQ Item End -->
-
-                        <!-- FAQ Item Start -->
-                        <div class="accordion-item wow fadeInUp" data-wow-delay="0.4s">
-                            <h2 class="accordion-header" id="heading3">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
-                                    How long does a typical project take?
-                                </button>
-                            </h2>
-                            <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3" data-bs-parent="#accordion">
-                                <div class="accordion-body">
-                                    <p>The timeline depends on the scope and complexity of the project. Smaller projects may take 2-4 weeks, while larger ones can take several months. We'll provide an estimated timeline after discussing your needs.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- FAQ Item End -->
-
-                        <!-- FAQ Item Start -->
-                        <div class="accordion-item wow fadeInUp" data-wow-delay="0.6s">
-                            <h2 class="accordion-header" id="heading4">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
-                                    What is your pricing structure?
-                                </button>
-                            </h2>
-                            <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4" data-bs-parent="#accordion">
-                                <div class="accordion-body">
-                                    <p>We offer customized pricing based on the specific requirements of each project. After our initial consultation, we'll provide a detailed proposal with a breakdown of costs.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- FAQ Item End -->
-
-                        <!-- FAQ Item Start -->
-                        <div class="accordion-item wow fadeInUp" data-wow-delay="0.8s">
-                            <h2 class="accordion-header" id="heading5">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="true" aria-controls="collapse5">
-                                    Why are UX and UI important?
-                                </button>
-                            </h2>
-                            <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5" data-bs-parent="#accordion">
-                                <div class="accordion-body">
-                                    <p>User Experience (UX) design focuses on enhancing the overall experience users have when interacting with a product or service. It involves researching user needs, creating user personas, designing user journeys, and testing how easy or efficient the product is to use.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- FAQ Item End -->
-                    </div>
-                    <!-- FAQ Accordion End -->
-                </div>
-                <!-- Our FAQ Section End -->
-            </div>
-
-            <div class="col-lg-6">
-                <!-- Our Faqs Image Start -->
-                <div class="our-faqs-img">
-                    <figure class="image-anime reveal">
-                        <img src="images/our-faq-img.jpg" alt="">
-                    </figure>
-                </div>
-                <!-- Our Faqs Image End -->
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Our Faqs Section End -->
 @endsection

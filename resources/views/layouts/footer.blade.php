@@ -7,7 +7,7 @@
                     <div class="col-lg-12">
                         <!-- Footer Title Content Start -->
                         <div class="footer-title-content">
-                            <h2><a href="contact.html">Let's Connect</a></h2>
+                            <h2><a href="{{ route('contact') }}">Let's Connect</a></h2>
                         </div>
                         <!-- Footer Title Content End -->
                     </div>
@@ -24,7 +24,7 @@
                         <div class="about-footer">
                             <!-- Footer Logo Start -->
                             <div class="footer-logo">
-                                <img src="images/footer-logo.svg" alt="">
+                                <img src="{{ asset('images/footer-logo.svg') }}" alt="">
                             </div>
                             <!-- Footer Logo End -->
 
@@ -52,10 +52,9 @@
                         <div class="footer-links">
                             <h3>quick links</h3>
                             <ul>
-                                <li><a href="index-2.html">home</a></li>
-                                <li><a href="about.html">about us</a></li>
-                                <li><a href="team.html">team</a></li>
-                                <li><a href="portfolio.html">our portfolio</a></li>
+                                <li><a href="{{ route('home') }}">home</a></li>
+                                <li><a href="{{ route('about') }}">about us</a></li>
+                                <li><a href="#">our portfolio</a></li>
                             </ul>
                         </div>
                         <!-- About Links End -->
@@ -66,10 +65,10 @@
                         <div class="footer-links">
                             <h3>our services</h3>
                             <ul>
-                                <li><a href="service-single.html">UI/UX Design</a></li>
-                                <li><a href="service-single.html">3D Designs</a></li>
-                                <li><a href="service-single.html">Web Development</a></li>
-                                <li><a href="service-single.html">Motion Graphics</a></li>
+                                <li><a href="#">UI/UX Design</a></li>
+                                <li><a href="#">3D Designs</a></li>
+                                <li><a href="#">Web Development</a></li>
+                                <li><a href="#">Motion Graphics</a></li>
                             </ul>
                         </div>
                         <!-- About Links End -->
@@ -143,38 +142,38 @@
 <!-- Footer Section End -->
 
 <!-- Jquery Library File -->
-<script src="js/jquery-3.7.1.min.js"></script>
+<script src="{{ asset('js/jquery-3.7.1.min.js') }}"></script>
 <!-- Bootstrap js file -->
-<script src="js/bootstrap.min.js"></script>
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
 <!-- Validator js file -->
-<script src="js/validator.min.js"></script>
+<script src="{{ asset('js/validator.min.js') }}"></script>
 <!-- SlickNav js file -->
-<script src="js/jquery.slicknav.js"></script>
+<script src="{{ asset('js/jquery.slicknav.js') }}"></script>
 <!-- Swiper js file -->
-<script src="js/swiper-bundle.min.js"></script>
+<script src="{{ asset('js/swiper-bundle.min.js') }}"></script>
 <!-- Counter js file -->
-<script src="js/jquery.waypoints.min.js"></script>
-<script src="js/jquery.counterup.min.js"></script>
+<script src="{{ asset('js/jquery.waypoints.min.js') }}"></script>
+<script src="{{ asset('js/jquery.counterup.min.js') }}"></script>
 <!-- Isotop js file -->
-<script src="js/isotope.min.js"></script>
+<script src="{{ asset('js/isotope.min.js') }}"></script>
 <!-- Magnific js file -->
-<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
 <!-- SmoothScroll -->
-<script src="js/SmoothScroll.js"></script>
+<script src="{{ asset('js/SmoothScroll.js') }}"></script>
 <!-- Parallax js -->
-<script src="js/parallaxie.js"></script>
+<script src="{{ asset('js/parallaxie.js') }}"></script>
 <!-- MagicCursor js file -->
-<script src="js/gsap.min.js"></script>
-<script src="js/magiccursor.js"></script>
+<script src="{{ asset('js/gsap.min.js') }}"></script>
+<script src="{{ asset('js/magiccursor.js') }}"></script>
 <!-- Text Effect js file -->
-<script src="js/SplitText.js"></script>
-<script src="js/ScrollTrigger.min.js"></script>
+<script src="{{ asset('js/SplitText.js') }}"></script>
+<script src="{{ asset('js/ScrollTrigger.min.js') }}"></script>
 <!-- YTPlayer js File -->
-<script src="js/jquery.mb.YTPlayer.min.js"></script>
+<script src="{{ asset('js/jquery.mb.YTPlayer.min.js') }}"></script>
 <!-- Wow js file -->
-<script src="js/wow.min.js"></script>
+<script src="{{ asset('js/wow.min.js') }}"></script>
 <!-- Main Custom js file -->
-<script src="js/function.js"></script>
+<script src="{{ asset('js/function.js') }}"></script>
 
 </body>
 </html>
