@@ -1,3 +1,10 @@
+<!-- Floating Social Media Call Buttons Start -->
+<div class="callbtn">
+    <a href="https://www.facebook.com/Vienhancestudio/" class="fa-brands fa-facebook-f" aria-hidden="true"></a>
+    <a href="https://wa.me/918057911777" class="fa-brands fa-whatsapp"  aria-hidden="true"></a>
+    <a href="https://www.instagram.com/vienhancestudio/" class="fa-brands fa-instagram"  aria-hidden="true"></a>
+</div>
+<!-- Floating Social Media Call Buttons End -->
 <!-- Footer Section Start -->
 <footer class="footer-section">
     <div class="footer-box bg-section">
@@ -30,15 +37,14 @@
 
                             <!-- About Footer Content Start -->
                             <div class="about-footer-content">
-                                <p>The creativity and professionalism shown by Rovex  exceeded our expectations. Their design transformed our brand, and the results speak for themselves.</p>
+                                <p>At Vi Enhance, we endorse your business to outshine and widespread your brand messages by creating impressive visual designs. we are ambitious, passionate, and creative souls dedicated to each and every project so that your digital presence looks alluring and interactive while paying close attention to each and every corner of the projects.</p>
                             </div>
                             <!-- Footer Social Links Start -->
                             <div class="footer-social-links">
                                 <ul>
-                                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                                    <li><a href="https://www.facebook.com/Vienhancestudio/"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                    <li><a href="https://wa.me/918057911777"><i class="fa-brands fa-whatsapp"></i></a></li>
+                                    <li><a href="https://www.instagram.com/vienhancestudio/"><i class="fa-brands fa-instagram"></i></a></li>
                                 </ul>
                             </div>
                             <!-- Footer Social Links End -->
@@ -64,11 +70,11 @@
                         <!-- About Links Start -->
                         <div class="footer-links">
                             <h3>our services</h3>
+                           
                             <ul>
-                                <li><a href="#">UI/UX Design</a></li>
-                                <li><a href="#">3D Designs</a></li>
-                                <li><a href="#">Web Development</a></li>
-                                <li><a href="#">Motion Graphics</a></li>
+                                @foreach($response['services'] as $service)
+                                    <li><a href="{{ $service['link'] }}">{{ $service['title'] }}</a></li>
+                                @endforeach
                             </ul>
                         </div>
                         <!-- About Links End -->
@@ -86,7 +92,7 @@
                                         <i class="fa-solid fa-phone"></i>
                                     </div>
                                     <div class="footer-info-box-content">
-                                        <p><a href="tel:456852789">+01 456-852-789</a></p>
+                                        <p><a href="tel:+918057911777">+91 80579 11777</a></p>
                                     </div>
                                 </div>
                                 <!-- Footer Info Box End -->
@@ -97,7 +103,7 @@
                                         <i class="fa-solid fa-envelope"></i>
                                     </div>
                                     <div class="footer-info-box-content">
-                                        <p><a href="#">info@domainname.com</a></p>
+                                        <p><a href="mailto:hello@vienhancestudio.com">hello@vienhancestudio.com</a></p>
                                     </div>
                                 </div>
                                 <!-- Footer Info Box End -->
@@ -108,7 +114,7 @@
                                         <i class="fa-solid fa-location-dot"></i>
                                     </div>
                                     <div class="footer-info-box-content">
-                                        <p>843, Apple LanePeoria</p>
+                                        <p>Roorkee, Uttrakhand, <br> India - 247667</p>
                                     </div>
                                 </div>
                                 <!-- Footer Info Box End -->
@@ -129,7 +135,7 @@
                     <div class="col-lg-12">
                         <!-- Footer Copyright Start -->
                         <div class="footer-copyright-text">
-                            <p>Copyright © 2025 All Rights Reserved.</p>
+                            <p>Copyright © {{ date('Y') }} All Rights Reserved.</p>
                         </div>
                         <!-- Footer Copyright End -->
                     </div>
