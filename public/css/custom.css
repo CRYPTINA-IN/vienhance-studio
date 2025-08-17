@@ -328,6 +328,9 @@ body{
 	max-width: 66px;
 	transform: translate(-50%, -50%);
 }
+#loading-icon img{
+	width: 100%;
+}
 
 @keyframes rotate-loading{
 	0%{
