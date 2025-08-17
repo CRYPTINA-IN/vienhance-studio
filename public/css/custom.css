@@ -6342,3 +6342,76 @@ header.main-header .header-sticky.active{
 		height: 350px;
 	}
 }
+
+/************************************/
+/*** 	 31. Floating Social Media Buttons	  ***/
+/************************************/
+
+.callbtn {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.callbtn a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: var(--accent-color);
+    color: var(--white-color);
+    border-radius: 50%;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(190, 143, 220, 0.3);
+}
+
+.callbtn a:hover {
+    background: var(--primary-color);
+    color: var(--bg-color);
+    transform: scale(1.1) rotate(90deg);
+    box-shadow: 0 6px 20px rgba(215, 215, 215, 0.4);
+}
+
+.callbtn a i {
+    font-size: 20px;
+}
+
+/* Responsive adjustments for floating social buttons */
+@media (max-width: 768px) {
+    .callbtn {
+        right: 15px;
+        gap: 10px;
+    }
+    
+    .callbtn a {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .callbtn a i {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .callbtn {
+        right: 10px;
+        gap: 8px;
+    }
+    
+    .callbtn a {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .callbtn a i {
+        font-size: 16px;
+    }
+}

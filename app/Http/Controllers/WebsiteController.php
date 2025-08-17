@@ -6,76 +6,87 @@ use Illuminate\Http\Request;
 
 class WebsiteController extends Controller
 {
-    //index
+
+    public $services = [
+        [
+            'id' => 1,
+            'title' => 'UI/UX & Digital Experience Design',
+            'slug' => 'ui-ux-digital-experience-design',
+            'description' => 'Developing seamless, intuitive digital experiences that engage and convert.',
+            'image' => 'images/service-image-1.jpg',
+            'link' => '/services/ui-ux-digital-experience-design',
+            'delay' => '0s'
+        ],
+        [
+            'id' => 2,
+            'title' => 'Branding & Identity Design',
+            'slug' => 'branding-identity-design',
+            'description' => 'Developing bold, memorable brand identities that leave a lasting impression.',
+            'image' => 'images/service-image-2.jpg',
+            'link' => '/services/branding-identity-design',
+            'delay' => '0.2s'
+        ],
+        [
+            'id' => 3,
+            'title' => 'Illustration & Graphic Design',
+            'slug' => 'illustration-graphic-design',
+            'description' => 'Bringing simplicity and artistry to ideas with visually striking illustrations and graphics that tell your story.',
+            'image' => 'images/service-image-3.jpg',
+            'link' => '/services/illustration-graphic-design',
+            'delay' => '0.4s'
+        ],
+        [
+            'id' => 4,
+            'title' => 'Print & Marketing Collateral',
+            'slug' => 'print-marketing-collateral',
+            'description' => 'Creating high-impact print materials that make a lasting, strong impression.',
+            'image' => 'images/service-image-4.jpg',
+            'link' => '/services/print-marketing-collateral',
+            'delay' => '0.6s'
+        ],
+        [
+
+            'id' => 5,
+            'title' => '3D & Motion Graphics',
+            'slug' => '3d-motion-graphics',
+            'description' => 'Transforming static concepts into dynamic, immersive visual experiences with motion and 3D design.',
+            'image' => 'images/service-image-5.jpg',
+            'link' => '/services/3d-motion-graphics',
+            'delay' => '0.8s'
+        ]
+    ];
 
     public function index()
     {
 
+        $response = [
+            'services' => $this->services,
+            
+        ];
 
-        return view('index');
+        return view('index', ['response' => $response]);
     }
 
     public function about()
     {
-        return view('about');
+        $response = [
+            'services' => $this->services,
+        ];
+        return view('about', ['response' => $response]);
     }
 
     public function services()
     {
-        $services = [
-            [
-                'id' => 1,
-                'title' => 'UI/UX & Digital Experience Design',
-                'slug' => 'ui-ux-digital-experience-design',
-                'description' => 'Developing seamless, intuitive digital experiences that engage and convert.',
-                'image' => 'images/service-image-1.jpg',
-                'link' => '/services/ui-ux-digital-experience-design',
-                'delay' => '0s'
-            ],
-            [
-                'id' => 2,
-                'title' => 'Branding & Identity Design',
-                'slug' => 'branding-identity-design',
-                'description' => 'Developing bold, memorable brand identities that leave a lasting impression.',
-                'image' => 'images/service-image-2.jpg',
-                'link' => '/services/branding-identity-design',
-                'delay' => '0.2s'
-            ],
-            [
-                'id' => 3,
-                'title' => 'Illustration & Graphic Design',
-                'slug' => 'illustration-graphic-design',
-                'description' => 'Bringing simplicity and artistry to ideas with visually striking illustrations and graphics that tell your story.',
-                'image' => 'images/service-image-3.jpg',
-                'link' => '/services/illustration-graphic-design',
-                'delay' => '0.4s'
-            ],
-            [
-                'id' => 4,
-                'title' => 'Print & Marketing Collateral',
-                'slug' => 'print-marketing-collateral',
-                'description' => 'Creating high-impact print materials that make a lasting, strong impression.',
-                'image' => 'images/service-image-4.jpg',
-                'link' => '/services/print-marketing-collateral',
-                'delay' => '0.6s'
-            ],
-            [
-
-                'id' => 5,
-                'title' => '3D & Motion Graphics',
-                'slug' => '3d-motion-graphics',
-                'description' => 'Transforming static concepts into dynamic, immersive visual experiences with motion and 3D design.',
-                'image' => 'images/service-image-5.jpg',
-                'link' => '/services/3d-motion-graphics',
-                'delay' => '0.8s'
-            ]
+        $response = [
+            'services' => $this->services,
         ];
 
-        return view('services', ['services' => $services]);
+        return view('services', ['response' => $response]);
     }
 
     public function serviceDetail($slug)
     {
+
        
         $services = [
             [
@@ -368,17 +379,31 @@ class WebsiteController extends Controller
             abort(404);
         }
 
-        return view('service-detail', ['service' => $service , 'services' => $services]);
+        $response = [
+            'service' => $service,
+            'services' => $services,
+        ];
+
+        return view('service-detail', ['response' => $response]);
     }
 
     public function portfolio()
     {
-        return view('portfolio');
+        $response = [
+            'services' => $this->services,
+        ];
+
+        return view('portfolio', ['response' => $response]);
     }
 
     public function contact()
     {
-        return view('contact');
+        $response = [
+            'services' => $this->services,
+        ];
+
+
+        return view('contact', ['response' => $response]);
     }
 
 }

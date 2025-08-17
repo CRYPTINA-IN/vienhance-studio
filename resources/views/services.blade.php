@@ -27,7 +27,7 @@
 <div class="page-services">
     <div class="container">
         <div class="row">
-            @foreach($services as $service)
+            @foreach($response['services'] as $service)
                 <div class="col-lg-4 col-md-6">
                     <!-- Service Item Start -->
                     <div class="service-item wow fadeInUp" data-wow-delay="{{ $service['delay'] }}">

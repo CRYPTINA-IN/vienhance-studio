@@ -46,7 +46,7 @@
                                 </div>
                                 <div class="contact-info-content">
                                     <h3>phone number</h3>
-                                    <p>+987 654 3210</p>
+                                    <p>+91 80579 11777</p>
                                 </div>
                             </div>
                             <!-- Contact Info Item End -->
@@ -58,7 +58,7 @@
                                 </div>
                                 <div class="contact-info-content">
                                     <h3>email us</h3>
-                                    <p>info@domain.com</p>
+                                    <p>Hello@vienhancestudio.com</p>
                                 </div>
                             </div>
                             <!-- Contact Info Item End -->
@@ -70,7 +70,7 @@
                                 </div>
                                 <div class="contact-info-content">
                                     <h3>address</h3>
-                                    <p>7676 Arden Avenue, Ginashire </p>
+                                    <p>Roorkee, Uttrakhand, India - 247667</p>
                                 </div>
                             </div>
                             <!-- Contact Info Item End -->
@@ -146,7 +146,7 @@
                 <div class="col-lg-12">
                     <!-- Google Map IFrame Start -->
                     <div class="google-map-iframe">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d96737.10562045308!2d-74.08535042841811!3d40.739265258395164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sin!4v1703158537552!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55361.57352820278!2d77.85362606329214!3d29.86143749089353!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390eb36e08b35119%3A0x798f5dc25ebd0a72!2sRoorkee%2C%20Uttarakhand!5e0!3m2!1sen!2sin!4v1755438893274!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                     <!-- Google Map IFrame End -->
                 </div>
