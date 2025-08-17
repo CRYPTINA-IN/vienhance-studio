@@ -26,7 +26,7 @@
 
     @include('components.testimonials-section')
 
-    @include('components.blog-section')
+    
 
 
 

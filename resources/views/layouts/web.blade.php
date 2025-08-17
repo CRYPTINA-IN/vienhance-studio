@@ -5,11 +5,19 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="author" content="Awaiken">
-    <!-- Page Title -->
-    <title>Rovex - Design Agency HTML Template</title>
+    <meta name="author" content="Vienhance Studio">
+    
+    <!-- SEO Meta Tags -->
+    {!! \Artesaos\SEOTools\Facades\SEOMeta::generate() !!}
+    
+    <!-- Open Graph Meta Tags -->
+    {!! \Artesaos\SEOTools\Facades\OpenGraph::generate() !!}
+    
+    <!-- Twitter Card Meta Tags -->
+    {!! \Artesaos\SEOTools\Facades\TwitterCard::generate() !!}
+    
+    <!-- JSON-LD Structured Data -->
+    {!! \Artesaos\SEOTools\Facades\JsonLd::generate() !!}
     <!-- Favicon Icon -->
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('images/favicon.png') }}">
     <!-- Google Fonts Css-->
