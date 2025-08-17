@@ -470,6 +470,9 @@ header.main-header .header-sticky.active{
 	padding: 0;
 	margin: 0;
 }
+.navbar-brand img{
+	width: 100%;
+}
 
 .main-menu .nav-menu-wrapper{
 	flex: 1;
