@@ -1,6 +1,7 @@
 @extends('layouts.web')
 
 @section('content')
+
 <!-- Page Header Start -->
 <div class="page-header bg-section">
     <div class="container">
@@ -70,92 +71,100 @@
                         </figure>
                     </div>
                     <!-- Service Feature Image End -->
-
                     <!-- Service Entry Start -->
                     <div class="service-entry">
-                        <p class="wow fadeInUp">{{ $response['service']['description'] }}</p>
+                        <!-- Note: The service description text is not available in the current data structure -->
+                        <p class="wow fadeInUp">{{$response['service']['description']['section_1']}} </p>
 
-                        <!-- Service Benefits Start -->
-                        <div class="service-benefits">
-                            <h2 class="text-anime-style-2">Benefits <span>{{ $response['service']['title'] }}</span></h2>
-                            <p class="wow fadeInUp">{{ $response['service']['benefits_intro'] ?? '' }}</p>
+                        @if(isset($response['service']['description']) && is_array($response['service']['description']))
+                            <!-- Service Benefits Start -->
+                            <div class="service-benefits">
+                                <h2 class="text-anime-style-2">Benefits <span>{{ $response['service']['title'] }}</span></h2>
+                                <p class="wow fadeInUp">{{ $response['service']['description']['section_2'] ?? '' }}</p>
 
-                            <!-- Service Benefit List Start -->
-                            <div class="service-benefit-list wow fadeInUp" data-wow-delay="0.2s">
-                                <ul>
-                                    @foreach($response['service']['benefits'] as $benefit)
-                                        <li>{{ $benefit }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                            <!-- Service Benefit List End -->
-
-                            <!-- Service Benefits Images Start -->
-                            <div class="service-benefits-images">
-                                <!-- foreach($response['service']['benefit_images'] as $image)
-                                    <div class="service-benefits-img">
-                                        <figure class="image-anime reveal">
-                                            <img src=" asset($image) " alt="">
-                                        </figure>
+                                <!-- Service Benefit List Start -->
+                                @if(isset($response['service']['description']['benefits']) && is_array($response['service']['description']['benefits']))
+                                    <div class="service-benefit-list wow fadeInUp" data-wow-delay="0.2s">
+                                        <ul>
+                                            @foreach($response['service']['description']['benefits'] as $benefit)
+                                                <li>{{ $benefit }}</li>
+                                            @endforeach
+                                        </ul>
                                     </div>
-                                endforeach -->
+                                @endif
+                                <!-- Service Benefit List End -->
+
+                                <!-- Service Benefits Images Start -->
+                                <div class="service-benefits-images">
+                                    <!-- foreach($response['service']['benefit_images'] as $image)
+                                        <div class="service-benefits-img">
+                                            <figure class="image-anime reveal">
+                                                <img src=" asset($image) " alt="">
+                                            </figure>
+                                        </div>
+                                    endforeach -->
+                                </div>
+                                <!-- Service Benefits Images End -->
                             </div>
-                            <!-- Service Benefits Images End -->
-                        </div>
-                        <!-- Service Benefits End -->
+                            <!-- Service Benefits End -->
 
-                        <!-- Service Design Process Start -->
-                        <div class="service-design-process">
-                            <h2 class="text-anime-style-2">Design <span>process</span></h2>
-                            <p class="wow fadeInUp">{{ $response['service']['process_intro'] ?? '' }}</p>
+                            <!-- Service Design Process Start -->
+                            <div class="service-design-process">
+                                <h2 class="text-anime-style-2">Design <span>process</span></h2>
+                                <p class="wow fadeInUp">{{ $response['service']['description']['section_3'] ?? '' }}</p>
 
-                            <!-- Design Process Item List Start -->
-                            <div class="design-process-item-list">
-                                @foreach($response['service']['process'] as $index => $step)
-                                    <div class="design-process-item wow fadeInUp" data-wow-delay="{{ 0.2 + (intval($index) * 0.2) }}s">
-                                        <div class="icon-box">
-                                            <img src="{{ asset($step['icon']) }}" alt="">
-                                        </div>
-                                        <div class="design-process-item-content">
-                                            <h3>{{ $step['title'] }}</h3>
-                                            <p>{{ $step['description'] }}</p>
-                                        </div>
+                                <!-- Design Process Item List Start -->
+                                @if(isset($response['service']['description']['process']) && is_array($response['service']['description']['process']))
+                                    <div class="design-process-item-list">
+                                        @foreach($response['service']['description']['process'] as $index => $step)
+                                            <div class="design-process-item wow fadeInUp" data-wow-delay="{{ 0.2 + (intval($index) * 0.2) }}s">
+                                                <div class="icon-box">
+                                                    <img src="{{ asset($step['icon'] ?? 'images/icon-service-1.svg') }}" alt="">
+                                                </div>
+                                                <div class="design-process-item-content">
+                                                    <h3>{{ $step['title'] ?? '' }}</h3>
+                                                    <p>{{ $step['description'] ?? '' }}</p>
+                                                </div>
+                                            </div>
+                                        @endforeach
                                     </div>
-                                @endforeach
+                                @endif
+                                <!-- Design Process Item List End -->
                             </div>
-                            <!-- Design Process Item List End -->
-                        </div>
-                        <!-- Service Design Process End -->
+                            <!-- Service Design Process End -->
+                        @endif
                     </div>
                     <!-- Service Entry End -->
 
                     <!-- Page Single Faqs Start -->
-                    <div class="page-single-faqs">
-                        <div class="section-title">
-                            <h3 class="wow fadeInUp">FAQ's</h3>
-                            <h2 class="text-anime-style-2" data-cursor="-opaque">Find your <span>answers here</span></h2>
-                        </div>
+                    @if(isset($response['service']['description']['faqs']) && is_array($response['service']['description']['faqs']))
+                        <div class="page-single-faqs">
+                            <div class="section-title">
+                                <h3 class="wow fadeInUp">FAQ's</h3>
+                                <h2 class="text-anime-style-2" data-cursor="-opaque">Find your <span>answers here</span></h2>
+                            </div>
 
-                        <div class="faq-accordion" id="accordion">
-                            @foreach($response['service']['faqs'] as $index => $faq)
-                                <div class="accordion-item wow fadeInUp" data-wow-delay="{{ intval($index) * 0.2 }}s">
-                                    <h2 class="accordion-header" id="heading{{ $index }}">
-                                        <button class="accordion-button {{ $index != 0 ? 'collapsed' : '' }}" type="button" 
-                                            data-bs-toggle="collapse" data-bs-target="#collapse{{ $index }}" 
-                                            aria-expanded="{{ $index == 0 ? 'true' : 'false' }}" aria-controls="collapse{{ $index }}">
-                                            {{ $faq['question'] }}
-                                        </button>
-                                    </h2>
-                                    <div id="collapse{{ $index }}" class="accordion-collapse collapse {{ $index == 0 ? 'show' : '' }}" 
-                                         aria-labelledby="heading{{ $index }}" data-bs-parent="#accordion">
-                                        <div class="accordion-body">
-                                            <p>{{ $faq['answer'] }}</p>
+                            <div class="faq-accordion" id="accordion">
+                                @foreach($response['service']['description']['faqs'] as $index => $faq)
+                                    <div class="accordion-item wow fadeInUp" data-wow-delay="{{ intval($index) * 0.2 }}s">
+                                        <h2 class="accordion-header" id="heading{{ $index }}">
+                                            <button class="accordion-button {{ $index != 0 ? 'collapsed' : '' }}" type="button" 
+                                                data-bs-toggle="collapse" data-bs-target="#collapse{{ $index }}" 
+                                                aria-expanded="{{ $index == 0 ? 'true' : 'false' }}" aria-controls="collapse{{ $index }}">
+                                                {{ $faq['question'] ?? '' }}
+                                            </button>
+                                        </h2>
+                                        <div id="collapse{{ $index }}" class="accordion-collapse collapse {{ $index == 0 ? 'show' : '' }}" 
+                                             aria-labelledby="heading{{ $index }}" data-bs-parent="#accordion">
+                                            <div class="accordion-body">
+                                                <p>{{ $faq['answer'] ?? '' }}</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            @endforeach
+                                @endforeach
+                            </div>
                         </div>
-                    </div>
+                    @endif
                     <!-- Page Single Faqs End -->
                 </div>
                 <!-- Service Single Content End -->
