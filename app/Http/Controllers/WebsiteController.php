@@ -3,12 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Models\Service;
+use App\Models\Portfolio;
+use App\Services\SeoService;
 use Illuminate\Http\Request;
 
 class WebsiteController extends Controller
 {
     public function index()
     {
+        // Set SEO for home page
+        SeoService::setSeoForPage('home');
+
         $services = Service::active()->ordered()->get();
 
         $response = [
@@ -20,6 +25,9 @@ class WebsiteController extends Controller
 
     public function about()
     {
+        // Set SEO for about page
+        SeoService::setSeoForPage('about');
+
         $services = Service::active()->ordered()->get();
 
         $response = [
@@ -30,6 +38,9 @@ class WebsiteController extends Controller
 
     public function services()
     {
+        // Set SEO for services page
+        SeoService::setSeoForPage('services');
+
         $services = Service::active()->ordered()->get();
 
         $response = [
@@ -50,6 +61,9 @@ class WebsiteController extends Controller
             abort(404);
         }
 
+        // Set SEO for service detail page
+        SeoService::setSeoForService($service->toArray());
+
         $services = Service::active()->ordered()->get();
 
         // Safely get the service description data
@@ -69,17 +83,46 @@ class WebsiteController extends Controller
 
     public function portfolio()
     {
+        // Set SEO for portfolio page
+        SeoService::setSeoForPage('portfolio');
+
         $services = Service::active()->ordered()->get();
+        $portfolios = Portfolio::published()->with('gallery')->orderBy('created_at', 'desc')->get();
 
         $response = [
             'services' => $services,
+            'portfolios' => $portfolios,
         ];
 
         return view('portfolio', ['response' => $response]);
     }
 
+    public function portfolioDetail($slug)
+    {
+        $portfolio = Portfolio::findBySlug($slug);
+
+        if (!$portfolio) {
+            abort(404);
+        }
+
+        // Set SEO for portfolio detail page
+        SeoService::setSeoForPortfolio($portfolio->toArray());
+
+        $services = Service::active()->ordered()->get();
+
+        $response = [
+            'portfolio' => $portfolio,
+            'services' => $services,
+        ];
+
+        return view('portfolio-detail', ['response' => $response]);
+    }
+
     public function contact()
     {
+        // Set SEO for contact page
+        SeoService::setSeoForPage('contact');
+
         $services = Service::active()->ordered()->get();
 
         $response = [

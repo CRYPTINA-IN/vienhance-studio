@@ -60,7 +60,8 @@
                             <ul>
                                 <li><a href="{{ route('home') }}">home</a></li>
                                 <li><a href="{{ route('about') }}">about us</a></li>
-                                <li><a href="#">our portfolio</a></li>
+                                <li><a href="{{ route('portfolio') }}">our portfolio</a></li>
+                                <li><a href="{{ route('services') }}">our services</a></li>
                             </ul>
                         </div>
                         <!-- About Links End -->
