@@ -67,7 +67,7 @@
                     <!-- Service Feature Image Start -->
                     <div class="service-feature-image">
                         <figure class="image-anime reveal">
-                            <img src="{{ asset($response['service']['image']) }}" alt="{{ $response['service']['title'] }}">
+                            <img src="{{ asset('storage/' . $response['service']['image']) }}" alt="{{ $response['service']['title'] }}">
                         </figure>
                     </div>
                     <!-- Service Feature Image End -->
@@ -99,7 +99,7 @@
                                     <!-- foreach($response['service']['benefit_images'] as $image)
                                         <div class="service-benefits-img">
                                             <figure class="image-anime reveal">
-                                                <img src=" asset($image) " alt="">
+                                                <img src= asset('storage/' . $image)" alt="">
                                             </figure>
                                         </div>
                                     endforeach -->
@@ -119,7 +119,7 @@
                                         @foreach($response['service']['description']['process'] as $index => $step)
                                             <div class="design-process-item wow fadeInUp" data-wow-delay="{{ 0.2 + (intval($index) * 0.2) }}s">
                                                 <div class="icon-box">
-                                                    <img src="{{ asset($step['icon'] ?? 'images/icon-service-1.svg') }}" alt="">
+                                                    <img src="{{ asset('storage/' . ($step['icon'] ?? 'images/icon-service-1.svg')) }}" alt="">
                                                 </div>
                                                 <div class="design-process-item-content">
                                                     <h3>{{ $step['title'] ?? '' }}</h3>

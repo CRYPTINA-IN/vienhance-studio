@@ -51,7 +51,7 @@
                              role="tabpanel">
                             <div class="service-box-image">
                                 <figure>
-                                    <img src="{{ asset($service['image']) }}" alt="{{ $service['title'] }}">
+                                    <img src="{{ asset('storage/' . $service['image']) }}" alt="{{ $service['title'] }}">
                                 </figure>
                             </div>
                             <div class="service-box-item">

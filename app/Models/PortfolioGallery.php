@@ -19,6 +19,18 @@ class PortfolioGallery extends Model
     ];
 
     /**
+     * Set the image attribute with proper directory path.
+     */
+    public function setImageAttribute($value)
+    {
+        if ($value && !str_starts_with($value, 'uploads/')) {
+            $this->attributes['image'] = 'uploads/portfolio-gallery/' . $value;
+        } else {
+            $this->attributes['image'] = $value;
+        }
+    }
+
+    /**
      * Get the portfolio that owns the gallery image.
      */
     public function portfolio()

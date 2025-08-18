@@ -34,7 +34,7 @@
                         <div class="service-image">
                             <a href="{{ $service['link'] }}" data-cursor-text="View">
                                 <figure class="image-anime">
-                                    <img src="{{ asset( $service['image']) }}" alt="{{ $service['title'] }}">
+                                    <img src="{{ asset('storage/' . $service['image']) }}" alt="{{ $service['title'] }}">
                                 </figure>
                             </a>
                         </div>

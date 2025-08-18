@@ -38,7 +38,7 @@
                                 <div class="work-image">
                                     <a href="{{ route('portfolio.detail', $portfolio->slug) }}" data-cursor-text="View">
                                         <figure class="image-anime">
-                                            <img src="images/{{ $portfolio->image }}" alt="{{ $portfolio->title }}">
+                                            <img src="{{ asset('storage/' . $portfolio->image) }}" alt="{{ $portfolio->title }}">
                                         </figure>
                                     </a>
                                 </div>

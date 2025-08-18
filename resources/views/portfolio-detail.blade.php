@@ -102,7 +102,7 @@
                         <!-- Work Featured Image Start -->
                         <div class="work-feature-image">
                             <figure class="image-anime reveal">
-                                <img src="{{ asset('images/' . $response['portfolio']->image) }}" alt="{{ $response['portfolio']->title }}" class="image-fluid rounded-3">
+                                <img src="{{ asset('storage/' . $response['portfolio']->image) }}" alt="{{ $response['portfolio']->title }}" class="image-fluid rounded-3">
                             </figure>
                         </div>
                         <!-- Work Featured Image End -->
@@ -129,7 +129,7 @@
                                     <div class="col-md-6">
                                         <div class="gallery-item wow fadeInUp" @if($index % 2 == 1) data-wow-delay="0.2s" @endif>
                                             <figure class="image-anime">
-                                                <img src="{{ asset('images/' . $galleryItem->image) }}" alt="{{ $galleryItem->alt_text ?? 'Gallery Image ' . ($index + 1) }}" class="image-fluid rounded-3">
+                                                <img src="{{ asset('storage/' . $galleryItem->image) }}" alt="{{ $galleryItem->alt_text ?? 'Gallery Image ' . ($index + 1) }}" class="image-fluid rounded-3">
                                             </figure>
                                         </div>
                                     </div>
