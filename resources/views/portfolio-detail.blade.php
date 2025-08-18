@@ -44,18 +44,12 @@
                                     <h3><img src="images/icon-work-category-1.svg" alt=""> project name:</h3>
                                     <p>{{ strtolower($response['portfolio']->title) }}</p>
                                 </div>
-                                <div class="category-list-item">
-                                    <h3><img src="images/icon-work-category-2.svg" alt=""> clients:</h3>
-                                    <p>{{ $response['portfolio']->client }}</p>
-                                </div>
+                               
                                 <div class="category-list-item">
                                     <h3><img src="images/icon-work-category-3.svg" alt=""> industry:</h3>
                                     <p>{{ $response['portfolio']->industry }}</p>
                                 </div>
-                                <div class="category-list-item">
-                                    <h3><img src="images/icon-work-category-4.svg" alt=""> status:</h3>
-                                    <p>{{ ucfirst($response['portfolio']->status) }}</p>
-                                </div>
+                               
                                 <div class="category-list-item category-social-link">
                                     <h3>share:</h3>
                                     <ul>
@@ -71,27 +65,19 @@
                         <!-- Work Category List End -->
 
                         <!-- Sidebar Cta Box Start -->
-                        <div class="sidebar-cta-box wow fadeInUp" data-wow-delay="0.25s">
-                            <!-- Icon Box Start -->
-                            <div class="icon-box">
-                                <img src="images/icon-sidebar-cta.svg" alt="">
-                            </div>
-                            <!-- Icon Box End -->
-
-                            <!-- CTA Contact Content Start -->
-                            <div class="cta-contact-content">
-                                <p>We always available to discus with you</p>
-                                <h3><a href="#">info@domain.com</a></h3>
-                            </div>
-                            <!-- CTA Contact Content End -->
-
-                            <!-- CTA Contact Button Start -->
-                            <div class="cta-contact-btn">
-                                <a href="{{ route('contact') }}" class="btn-default">contact us</a>
-                            </div>
-                            <!-- CTA Contact Button End -->
+                    <div class="sidebar-cta-box wow fadeInUp" data-wow-delay="0.25s">
+                        <div class="icon-box">
+                            <img src="{{ asset('images/icon-sidebar-cta.svg') }}" alt="">
                         </div>
-                        <!-- Sidebar Cta Box End -->
+                        <div class="cta-contact-content">
+                            <p>We are always available to <br> discuss with you</p>
+                            <h3><a href="mailto:hello@vienhancestudio.com">hello@vienhancestudio.com</a></h3>
+                        </div>
+                        <div class="cta-contact-btn">
+                            <a href="{{ route('contact') }}" class="btn-default">contact us</a>
+                        </div>
+                    </div>
+                    <!-- Sidebar Cta Box End -->
                     </div>
                     <!-- Work Single Sidebar End -->
                 </div>
@@ -122,7 +108,7 @@
 
                             <!-- Project Gallery Start -->
                             <div class="project-gallery">
-                                <h2 class="text-anime-style-2">Project <span>gallery</span></h2>
+                              
                                 
                                 <div class="row g-4">
                                     @foreach($response['portfolio']->gallery as $index => $galleryItem)

@@ -49,7 +49,7 @@
                             <img src="{{ asset('images/icon-sidebar-cta.svg') }}" alt="">
                         </div>
                         <div class="cta-contact-content">
-                            <p>We are always available to discuss with you</p>
+                            <p>We are always available to <br> discuss with you</p>
                             <h3><a href="mailto:hello@vienhancestudio.com">hello@vienhancestudio.com</a></h3>
                         </div>
                         <div class="cta-contact-btn">

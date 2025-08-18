@@ -12,7 +12,7 @@
 
     @include('components.our-services-section')
 
-    @include('components.our-work-section')
+    @include('components.our-work-section', ['portfolios' => $response['portfolios']])
 
     @include('components.creative-tools-section')
 

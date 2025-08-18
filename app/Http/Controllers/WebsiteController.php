@@ -15,9 +15,11 @@ class WebsiteController extends Controller
         SeoService::setSeoForPage('home');
 
         $services = Service::active()->ordered()->get();
+        $portfolios = Portfolio::published()->with('gallery')->orderBy('created_at', 'desc')->take(3)->get();
 
         $response = [
             'services' => $services,
+            'portfolios' => $portfolios,
         ];
 
         return view('index', ['response' => $response]);
