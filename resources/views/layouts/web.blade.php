@@ -18,6 +18,10 @@
     
     <!-- JSON-LD Structured Data -->
     {!! \Artesaos\SEOTools\Facades\JsonLd::generate() !!}
+    
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    
     <!-- Favicon Icon -->
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('images/favicon.png') }}">
     <!-- Google Fonts Css-->

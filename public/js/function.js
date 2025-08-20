@@ -269,10 +269,38 @@
 
 	/* Contact form validation */
 	var $contactform = $("#contactForm");
-	$contactform.validator({focus: false}).on("submit", function (event) {
+	
+	// Add custom validation for mobile number
+	$contactform.validator({
+		focus: false,
+		custom: {
+			mobile: function($el) {
+				var mobile = $el.val();
+				var mobileRegex = /^[6-9]\d{9}$/;
+				return mobileRegex.test(mobile);
+			}
+		},
+		errors: {
+			mobile: "Mobile number must be exactly 10 digits starting with 6, 7, 8, or 9."
+		}
+	}).on("submit", function (event) {
 		if (!event.isDefaultPrevented()) {
 			event.preventDefault();
 			submitForm();
+		}
+	});
+	
+	// Add real-time validation for mobile number
+	$("#phone").on("input", function() {
+		var mobile = $(this).val();
+		var mobileRegex = /^[6-9]\d{9}$/;
+		
+		if (mobile.length > 0 && !mobileRegex.test(mobile)) {
+			$(this).addClass("is-invalid");
+			$(this).siblings(".help-block").text("Mobile number must be exactly 10 digits starting with 6, 7, 8, or 9.");
+		} else {
+			$(this).removeClass("is-invalid");
+			$(this).siblings(".help-block").text("");
 		}
 	});
 
@@ -280,13 +308,34 @@
 		/* Ajax call to submit form */
 		$.ajax({
 			type: "POST",
-			url: "form-process.php",
+			url: "/contact/submit",
 			data: $contactform.serialize(),
-			success : function(text){
-				if (text === "success"){
+			headers: {
+				'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+			},
+			success : function(response){
+				if (response.status === "success"){
 					formSuccess();
 				} else {
-					submitMSG(false,text);
+					submitMSG(false, response.message || "An error occurred");
+				}
+			},
+			error: function(xhr) {
+				if (xhr.status === 422) {
+					// Check if it's our custom email validation error
+					if (xhr.responseJSON && xhr.responseJSON.message) {
+						submitMSG(false, xhr.responseJSON.message);
+					} else {
+						// Regular validation errors
+						var errors = xhr.responseJSON.errors;
+						var errorMessage = "Please fix the following errors:\n";
+						for (var field in errors) {
+							errorMessage += "- " + errors[field][0] + "\n";
+						}
+						submitMSG(false, errorMessage);
+					}
+				} else {
+					submitMSG(false, "An error occurred. Please try again.");
 				}
 			}
 		});

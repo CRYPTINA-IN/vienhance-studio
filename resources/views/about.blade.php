@@ -202,7 +202,7 @@
     </div>
 </div>
 <!-- Our Vision Mission Section End -->
-
+@if(0)
 <!-- Our Team Section Start -->
 <div class="our-team">
     <div class="container">
@@ -377,7 +377,7 @@
     </div>
 </div>
 <!-- Our Team Section End -->
-
+@endif
 <!-- Use Testimonials Section Component -->
 @include('components.testimonials-section')
 

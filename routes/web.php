@@ -11,14 +11,9 @@ Route::controller(WebsiteController::class)->group(function () {
     Route::get('/portfolio', 'portfolio')->name('portfolio');
     Route::get('/portfolio/{slug}', 'portfolioDetail')->name('portfolio.detail');
     Route::get('/contact', 'contact')->name('contact');
+    Route::post('/contact/submit', 'submitContactForm')->name('contact.submit');
 });
 
 // Sitemap routes
 Route::get('/sitemap.xml', [App\Http\Controllers\SitemapController::class, 'index']);
 Route::get('/robots.txt', [App\Http\Controllers\SitemapController::class, 'robots']);
-
-// Test SEO route
-Route::get('/test-seo', function() {
-    \App\Services\SeoService::setSeoForPage('home');
-    return view('test-seo');
-});

@@ -113,7 +113,7 @@
 
                                     <div class="form-group col-md-6 mb-4">
                                         <label class="form-label">mobile number</label>
-                                        <input type="text" name="phone" class="form-control" id="phone" placeholder="Mobile Number" required>
+                                        <input type="text" name="phone" class="form-control" id="phone" placeholder="Mobile Number (e.g., 9876543210)" required pattern="^[6-9]\d{9}$" title="Mobile number must be exactly 10 digits starting with 6, 7, 8, or 9">
                                         <div class="help-block with-errors"></div>
                                     </div>
 

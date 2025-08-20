@@ -1,0 +1,50 @@
+@import '../../../../vendor/filament/filament/resources/css/theme.css';
+
+/* Force black top bar */
+.fi-header {
+    background-color: #000000 !important;
+    border-bottom-color: #1f2937 !important;
+}
+
+.fi-header .fi-header-content {
+    background-color: #000000 !important;
+}
+
+/* Ensure logo and text are visible on black background */
+.fi-header .fi-brand {
+    color: #ffffff !important;
+}
+
+.fi-header .fi-brand-logo {
+    filter: brightness(0) invert(1) !important;
+}
+
+/* User menu styling for black header */
+.fi-header .fi-user-menu {
+    background-color: #000000 !important;
+}
+
+.fi-header .fi-user-menu-trigger {
+    color: #ffffff !important;
+}
+
+/* Global search styling */
+.fi-header .fi-global-search {
+    background-color: #1f2937 !important;
+}
+
+.fi-header .fi-global-search-input {
+    background-color: #1f2937 !important;
+    color: #ffffff !important;
+    border-color: #374151 !important;
+}
+
+/* Notifications styling */
+.fi-header .fi-notifications-trigger {
+    color: #ffffff !important;
+}
+
+/* Sidebar toggle button */
+.fi-header .fi-sidebar-toggle {
+    color: #ffffff !important;
+}

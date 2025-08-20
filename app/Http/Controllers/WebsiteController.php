@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Service;
 use App\Models\Portfolio;
+use App\Models\Contact;
 use App\Services\SeoService;
 use Illuminate\Http\Request;
 
@@ -133,4 +134,55 @@ class WebsiteController extends Controller
 
         return view('contact', ['response' => $response]);
     }
+
+    public function submitContactForm(Request $request)
+    {
+        // Validate the form data
+        $validated = $request->validate([
+            'fname' => 'required|string|max:255',
+            'lname' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'phone' => 'required|string|regex:/^[6-9]\d{9}$/',
+            'message' => 'required|string|max:1000',
+        ], [
+            'phone.regex' => 'Mobile number must be exactly 10 digits starting with 6, 7, 8, or 9.',
+            'email.required' => 'Email address is required.',
+            'email.email' => 'Please enter a valid email address.',
+        ]);
+
+        try {
+            // Check if email already exists and message is unread
+            $existingContact = Contact::where('email', $validated['email'])
+                ->where('is_read', false)
+                ->first();
+
+            if ($existingContact) {
+                return response()->json([
+                    'status' => 'error', 
+                    'message' => 'One of our representatives will get back to you shortly. Please wait for our response.'
+                ], 422);
+            }
+
+            // Add IP address to the validated data
+            $validated['ip_address'] = $request->ip();
+            
+            // Save to database
+            Contact::create($validated);
+            
+            // Here you can add logic to:
+            // 1. Send email notification
+            // 2. Log the contact request
+            
+            // You can implement email sending using Laravel's Mail facade
+            // Example:
+            // Mail::to('your-email@example.com')->send(new ContactFormMail($validated));
+            
+            return response()->json(['status' => 'success', 'message' => 'Message sent successfully!']);
+            
+        } catch (\Exception $e) {
+            return response()->json(['status' => 'error', 'message' => 'Failed to send message. Please try again.'], 500);
+        }
+    }
+
+
 }

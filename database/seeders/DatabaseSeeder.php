@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
             ServiceSeeder::class,
             StaticPageSeeder::class,
             PortfolioSeeder::class,
+            ContactSeeder::class,
         ]);
     }
 }

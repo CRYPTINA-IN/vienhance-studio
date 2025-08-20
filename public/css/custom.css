@@ -47,6 +47,8 @@
 	--divider-color			: #FFFFFF1A;
 	--dark-divider-color	: #1C1C1C33;
 	--error-color			: rgb(230, 87, 87);
+	--success-color			: rgb(87, 230, 87);
+	--warning-color			: rgb(230, 230, 87);
 	--default-font			: "Montserrat", serif;
 }
 
@@ -6420,5 +6422,200 @@ header.main-header .header-sticky.active{
     
     .callbtn a i {
         font-size: 16px;
+    }
+}
+
+/************************************/
+/*** 	 32. Form Validation Styles	  ***/
+/************************************/
+
+/* Invalid input styling */
+.form-control.is-invalid {
+    border-color: var(--error-color) !important;
+    box-shadow: 0 0 0 0.2rem rgba(230, 87, 87, 0.15) !important;
+    background-color: rgba(230, 87, 87, 0.05) !important;
+    transition: all 0.3s ease;
+}
+
+.form-control.is-invalid:focus {
+    border-color: var(--error-color) !important;
+    box-shadow: 0 0 0 0.2rem rgba(230, 87, 87, 0.25) !important;
+    background-color: rgba(230, 87, 87, 0.08) !important;
+}
+
+/* Valid input styling */
+.form-control.is-valid {
+    border-color: var(--success-color) !important;
+    box-shadow: 0 0 0 0.2rem rgba(87, 230, 87, 0.15) !important;
+    background-color: rgba(87, 230, 87, 0.05) !important;
+    transition: all 0.3s ease;
+}
+
+.form-control.is-valid:focus {
+    border-color: var(--success-color) !important;
+    box-shadow: 0 0 0 0.2rem rgba(87, 230, 87, 0.25) !important;
+    background-color: rgba(87, 230, 87, 0.08) !important;
+}
+
+/* Error message styling */
+.help-block {
+    color: var(--error-color);
+    font-size: 13px;
+    margin-top: 8px;
+    display: block;
+    font-weight: 500;
+    padding: 8px 12px;
+    background: rgba(230, 87, 87, 0.1);
+    border-left: 3px solid var(--error-color);
+    border-radius: 4px;
+    position: relative;
+    animation: slideIn 0.3s ease-out;
+}
+
+.help-block:empty {
+    display: none;
+}
+
+/* Success message styling */
+#msgSubmit.h4.text-success {
+    color: var(--success-color) !important;
+    font-weight: 600;
+    background: rgba(87, 230, 87, 0.1);
+    padding: 12px 16px;
+    border-radius: 6px;
+	font-size: 14px;
+    border-left: 4px solid var(--success-color);
+    margin-top: 15px;
+    animation: slideIn 0.3s ease-out;
+}
+
+/* Error message styling */
+#msgSubmit.h4.text-danger {
+    color: var(--error-color) !important;
+    font-weight: 600;
+    background: rgba(230, 87, 87, 0.1);
+    padding: 12px 16px;
+    border-radius: 6px;
+    border-left: 4px solid var(--error-color);
+    margin-top: 15px;
+	font-size: 14px;
+    animation: slideIn 0.3s ease-out;
+}
+
+/* Animation for error messages */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Form validation icon */
+.help-block::before {
+    content: "⚠";
+    margin-right: 8px;
+    font-size: 14px;
+}
+
+/* Success message icon */
+#msgSubmit.h4.text-success::before {
+    content: "✓";
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+/* Error message icon */
+#msgSubmit.h4.text-danger::before {
+    content: "✕";
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+/* Mobile number validation specific styling */
+#phone:invalid {
+    border-color: var(--error-color);
+}
+
+#phone:valid {
+    border-color: var(--success-color);
+}
+
+/************************************/
+/*** 	 33. Filament Admin Styling	  ***/
+/************************************/
+
+/* Force black top bar for Filament admin */
+.fi-header {
+    background-color: #000000 !important;
+    border-bottom-color: #1f2937 !important;
+}
+
+.fi-header .fi-header-content {
+    background-color: #000000 !important;
+}
+
+/* Ensure logo and text are visible on black background */
+.fi-header .fi-brand {
+    color: #ffffff !important;
+}
+
+.fi-header .fi-brand-logo {
+    filter: brightness(0) invert(1) !important;
+}
+
+/* User menu styling for black header */
+.fi-header .fi-user-menu {
+    background-color: #000000 !important;
+}
+
+.fi-header .fi-user-menu-trigger {
+    color: #ffffff !important;
+}
+
+/* Global search styling */
+.fi-header .fi-global-search {
+    background-color: #1f2937 !important;
+}
+
+.fi-header .fi-global-search-input {
+    background-color: #1f2937 !important;
+    color: #ffffff !important;
+    border-color: #374151 !important;
+}
+
+/* Notifications styling */
+.fi-header .fi-notifications-trigger {
+    color: #ffffff !important;
+}
+
+/* Sidebar toggle button */
+.fi-header .fi-sidebar-toggle {
+    color: #ffffff !important;
+}
+
+/* Responsive validation styling */
+@media (max-width: 768px) {
+    .help-block {
+        font-size: 12px;
+        padding: 6px 10px;
+        margin-top: 6px;
+    }
+    
+    #msgSubmit.h4.text-success,
+    #msgSubmit.h4.text-danger {
+        padding: 10px 12px;
+        font-size: 14px;
+        margin-top: 12px;
+    }
+    
+    .help-block::before,
+    #msgSubmit.h4.text-success::before,
+    #msgSubmit.h4.text-danger::before {
+        font-size: 12px;
+        margin-right: 6px;
     }
 }
