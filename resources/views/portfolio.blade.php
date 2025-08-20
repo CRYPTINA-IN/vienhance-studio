@@ -62,35 +62,17 @@
             </div>
 
             <!-- Pagination Start -->
+            @if($response['portfolios']->hasPages())
             <div class="row">
                 <div class="col-lg-12">
                     <div class="pagination-wrapper wow fadeInUp" data-wow-delay="0.2s">
                         <nav aria-label="Portfolio pagination">
-                            <ul class="pagination justify-content-center">
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
-                                        <i class="fas fa-chevron-left"></i>
-                                    </a>
-                                </li>
-                                <li class="page-item active">
-                                    <a class="page-link" href="#">1</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">2</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">3</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">
-                                        <i class="fas fa-chevron-right"></i>
-                                    </a>
-                                </li>
-                            </ul>
+                            {{ $response['portfolios']->links() }}
                         </nav>
                     </div>
                 </div>
             </div>
+            @endif
             <!-- Pagination End -->
         </div>
     </div>

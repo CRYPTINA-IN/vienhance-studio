@@ -84,13 +84,16 @@ class WebsiteController extends Controller
         return view('service-detail', ['response' => $response]);
     }
 
-    public function portfolio()
+    public function portfolio(Request $request)
     {
         // Set SEO for portfolio page
         SeoService::setSeoForPage('portfolio');
 
         $services = Service::active()->ordered()->get();
-        $portfolios = Portfolio::published()->with('gallery')->orderBy('created_at', 'desc')->get();
+        $portfolios = Portfolio::published()
+            ->with('gallery')
+            ->orderBy('created_at', 'desc')
+            ->paginate(3); // Show 9 portfolios per page (3x3 grid)
 
         $response = [
             'services' => $services,

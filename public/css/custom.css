@@ -3441,9 +3441,11 @@ header.main-header .header-sticky.active{
 }
 
 .page-pagination ul{
+    display: flex;
     justify-content: center;
     padding: 0;
     margin: 0;
+    list-style: none;
 }
 
 .page-pagination ul li a,
@@ -3464,6 +3466,7 @@ header.main-header .header-sticky.active{
 }
 
 .page-pagination ul li.active a,
+.page-pagination ul li.active span,
 .page-pagination ul li a:hover{
     background: var(--accent-color);
     color: var(--secondary-color);
