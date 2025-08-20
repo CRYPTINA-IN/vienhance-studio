@@ -43,7 +43,7 @@ class StaticPageSeeder extends Seeder
                     'sameAs' => [
                         'https://twitter.com/vienhancestudio',
                         'https://facebook.com/vienhancestudio',
-                        'https://www.linkedin.com/company/vienhancestudio',
+                        'https://www.linkedin.com/company/vienhance-studio',
                         'https://www.instagram.com/vienhancestudio'
                     ]
                 ],
