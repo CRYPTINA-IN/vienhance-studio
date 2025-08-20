@@ -93,7 +93,7 @@ class WebsiteController extends Controller
         $portfolios = Portfolio::published()
             ->with('gallery')
             ->orderBy('created_at', 'desc')
-            ->paginate(3); // Show 9 portfolios per page (3x3 grid)
+            ->paginate(9); // Show 9 portfolios per page (3x3 grid)
 
         $response = [
             'services' => $services,
