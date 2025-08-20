@@ -32,7 +32,7 @@ class PortfolioSeeder extends Seeder
                 'og_description' => 'See how we redesigned Stellar Tech Solutions\' website to enhance their digital presence and improve user experience.',
                 'og_image' => 'work-image-1.jpg',
                 'og_type' => 'website',
-                'og_url' => 'https://vienhance-studio.com/portfolio/stellar-tech-solutions',
+                'og_url' => 'https://vienhancestudio.com/portfolio/stellar-tech-solutions',
                 'og_site_name' => 'Vienhance Studio',
                 'twitter_card' => 'summary_large_image',
                 'twitter_title' => 'Stellar Tech Solutions - Web Design Project',
@@ -40,7 +40,7 @@ class PortfolioSeeder extends Seeder
                 'twitter_image' => 'work-image-1.jpg',
                 'twitter_site' => '@vienhancestudio',
                 'twitter_creator' => '@vienhancestudio',
-                'canonical_url' => 'https://vienhance-studio.com/portfolio/stellar-tech-solutions',
+                'canonical_url' => 'https://vienhancestudio.com/portfolio/stellar-tech-solutions',
                 'schema_markup' => [
                     '@context' => 'https://schema.org',
                     '@type' => 'CreativeWork',
@@ -51,7 +51,7 @@ class PortfolioSeeder extends Seeder
                         'name' => 'Vienhance Studio'
                     ],
                     'dateCreated' => '2023-01-25',
-                    'url' => 'https://vienhance-studio.com/portfolio/stellar-tech-solutions'
+                    'url' => 'https://vienhancestudio.com/portfolio/stellar-tech-solutions'
                 ],
                 'priority' => 0.8,
                 'change_frequency' => 'monthly',
@@ -84,7 +84,7 @@ class PortfolioSeeder extends Seeder
                 'og_description' => 'Modern e-commerce platform for Green Wave Foods with mobile-first design and sustainable branding.',
                 'og_image' => 'work-image-2.jpg',
                 'og_type' => 'website',
-                'og_url' => 'https://vienhance-studio.com/portfolio/green-wave-foods',
+                'og_url' => 'https://vienhancestudio.com/portfolio/green-wave-foods',
                 'og_site_name' => 'Vienhance Studio',
                 'twitter_card' => 'summary_large_image',
                 'twitter_title' => 'Green Wave Foods - E-commerce Platform',
@@ -92,7 +92,7 @@ class PortfolioSeeder extends Seeder
                 'twitter_image' => 'work-image-2.jpg',
                 'twitter_site' => '@vienhancestudio',
                 'twitter_creator' => '@vienhancestudio',
-                'canonical_url' => 'https://vienhance-studio.com/portfolio/green-wave-foods',
+                'canonical_url' => 'https://vienhancestudio.com/portfolio/green-wave-foods',
                 'schema_markup' => [
                     '@context' => 'https://schema.org',
                     '@type' => 'CreativeWork',
@@ -103,7 +103,7 @@ class PortfolioSeeder extends Seeder
                         'name' => 'Vienhance Studio'
                     ],
                     'dateCreated' => '2023-03-15',
-                    'url' => 'https://vienhance-studio.com/portfolio/green-wave-foods'
+                    'url' => 'https://vienhancestudio.com/portfolio/green-wave-foods'
                 ],
                 'priority' => 0.8,
                 'change_frequency' => 'monthly',
@@ -136,7 +136,7 @@ class PortfolioSeeder extends Seeder
                 'og_description' => 'Complete brand identity overhaul for Horizon Real Estate including logo design and marketing materials.',
                 'og_image' => 'work-image-3.jpg',
                 'og_type' => 'website',
-                'og_url' => 'https://vienhance-studio.com/portfolio/horizon-real-estate',
+                'og_url' => 'https://vienhancestudio.com/portfolio/horizon-real-estate',
                 'og_site_name' => 'Vienhance Studio',
                 'twitter_card' => 'summary_large_image',
                 'twitter_title' => 'Horizon Real Estate - Brand Identity Design',
@@ -144,7 +144,7 @@ class PortfolioSeeder extends Seeder
                 'twitter_image' => 'work-image-3.jpg',
                 'twitter_site' => '@vienhancestudio',
                 'twitter_creator' => '@vienhancestudio',
-                'canonical_url' => 'https://vienhance-studio.com/portfolio/horizon-real-estate',
+                'canonical_url' => 'https://vienhancestudio.com/portfolio/horizon-real-estate',
                 'schema_markup' => [
                     '@context' => 'https://schema.org',
                     '@type' => 'CreativeWork',
@@ -155,7 +155,7 @@ class PortfolioSeeder extends Seeder
                         'name' => 'Vienhance Studio'
                     ],
                     'dateCreated' => '2023-02-10',
-                    'url' => 'https://vienhance-studio.com/portfolio/horizon-real-estate'
+                    'url' => 'https://vienhancestudio.com/portfolio/horizon-real-estate'
                 ],
                 'priority' => 0.8,
                 'change_frequency' => 'monthly',
