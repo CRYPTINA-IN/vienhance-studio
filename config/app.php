@@ -123,4 +123,22 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Trusted Hosts
+    |--------------------------------------------------------------------------
+    |
+    | You may configure trusted hosts for your application. This is useful
+    | when you need to allow access to your application from multiple
+    | domains or IP addresses.
+    |
+    */
+
+    'trusted_hosts' => [
+        'localhost',
+        '127.0.0.1',
+        '0.0.0.0',
+        '::1',
+    ],
+
 ];
