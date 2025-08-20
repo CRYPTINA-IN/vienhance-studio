@@ -46,6 +46,15 @@
     <!-- Main Custom Css -->
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet" media="screen">
 
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L0CLNY66DG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-L0CLNY66DG');
+</script>
 </head>
 <body>
 
