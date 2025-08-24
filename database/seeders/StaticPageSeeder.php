@@ -33,20 +33,7 @@ class StaticPageSeeder extends Seeder
                 'twitter_site' => '@vienhancestudio',
                 'twitter_creator' => '@vienhancestudio',
                 'canonical_url' => 'https://vienhancestudio.com',
-                'schema_markup' => [
-                    '@context' => 'https://schema.org',
-                    '@type' => 'Organization',
-                    'name' => 'Vienhance Studio',
-                    'url' => 'https://vienhancestudio.com',
-                    'logo' => 'https://vienhancestudio.com/images/logo.svg',
-                    'description' => 'Professional web design and development services',
-                    'sameAs' => [
-                        'https://twitter.com/vienhancestudio',
-                        'https://facebook.com/vienhancestudio',
-                        'https://www.linkedin.com/company/vienhance-studio',
-                        'https://www.instagram.com/vienhancestudio'
-                    ]
-                ],
+                'schema_markup' => '{"@context":"https://schema.org","@type":"Organization","name":"Vienhance Studio","url":"https://vienhancestudio.com","logo":"https://vienhancestudio.com/images/logo.svg","description":"Professional web design and development services","sameAs":["https://twitter.com/vienhancestudio","https://facebook.com/vienhancestudio","https://linkedin.com/company/vienhance-studio"]}',
                 'priority' => 1,
                 'change_frequency' => 'weekly',
             ],
@@ -69,14 +56,8 @@ class StaticPageSeeder extends Seeder
                 'twitter_site' => '@vienhancestudio',
                 'twitter_creator' => '@vienhancestudio',
                 'canonical_url' => 'https://vienhancestudio.com/about',
-                'schema_markup' => [
-                    '@context' => 'https://schema.org',
-                    '@type' => 'AboutPage',
-                    'name' => 'About Vienhance Studio',
-                    'description' => 'Learn about our journey and mission to deliver exceptional web design and development solutions.',
-                    'url' => 'https://vienhancestudio.com/about'
-                ],
-                'priority' => 0.8,
+                'schema_markup' => '{"@context":"https://schema.org","@type":"AboutPage","name":"About Vienhance Studio","description":"Learn about our journey and mission to deliver exceptional web design and development solutions.","url":"https://vienhancestudio.com/about"}',
+                'priority' => 1,
                 'change_frequency' => 'monthly',
             ],
             [
@@ -98,19 +79,8 @@ class StaticPageSeeder extends Seeder
                 'twitter_site' => '@vienhancestudio',
                 'twitter_creator' => '@vienhancestudio',
                 'canonical_url' => 'https://vienhancestudio.com/services',
-                'schema_markup' => [
-                    '@context' => 'https://schema.org',
-                    '@type' => 'Service',
-                    'name' => 'Web Design and Development Services',
-                    'description' => 'Comprehensive digital services including web design, development, SEO, and digital marketing solutions.',
-                    'provider' => [
-                        '@type' => 'Organization',
-                        'name' => 'Vienhance Studio'
-                    ],
-                    'areaServed' => 'Worldwide',
-                    'url' => 'https://vienhancestudio.com/services'
-                ],
-                'priority' => 0.9,
+                'schema_markup' => '{"@context":"https://schema.org","@type":"Service","name":"Web Design and Development Services","description":"Comprehensive digital services including web design, development, SEO, and digital marketing solutions.","provider":{"@type":"Organization","name":"Vienhance Studio"},"areaServed":"Worldwide","url":"https://vienhancestudio.com/services"}',
+                'priority' => 1,
                 'change_frequency' => 'weekly',
             ],
             [
@@ -132,18 +102,8 @@ class StaticPageSeeder extends Seeder
                 'twitter_site' => '@vienhancestudio',
                 'twitter_creator' => '@vienhancestudio',
                 'canonical_url' => 'https://vienhancestudio.com/portfolio',
-                'schema_markup' => [
-                    '@context' => 'https://schema.org',
-                    '@type' => 'CreativeWork',
-                    'name' => 'Portfolio',
-                    'description' => 'Our collection of web design and development projects',
-                    'creator' => [
-                        '@type' => 'Organization',
-                        'name' => 'Vienhance Studio'
-                    ],
-                    'url' => 'https://vienhancestudio.com/portfolio'
-                ],
-                'priority' => 0.7,
+                'schema_markup' => '{"@context":"https://schema.org","@type":"CreativeWork","name":"Portfolio","description":"Our collection of web design and development projects","creator":{"@type":"Organization","name":"Vienhance Studio"},"url":"https://vienhancestudio.com/portfolio"}',
+                'priority' => 1,
                 'change_frequency' => 'weekly',
             ],
             [
@@ -165,32 +125,14 @@ class StaticPageSeeder extends Seeder
                 'twitter_site' => '@vienhancestudio',
                 'twitter_creator' => '@vienhancestudio',
                 'canonical_url' => 'https://vienhancestudio.com/contact',
-                'schema_markup' => [
-                    '@context' => 'https://schema.org',
-                    '@type' => 'ContactPage',
-                    'name' => 'Contact Vienhance Studio',
-                    'description' => 'Get in touch with us to discuss your web design and development needs',
-                    'url' => 'https://vienhancestudio.com/contact',
-                    'mainEntity' => [
-                        '@type' => 'Organization',
-                        'name' => 'Vienhance Studio',
-                        'contactPoint' => [
-                            '@type' => 'ContactPoint',
-                            'contactType' => 'customer service',
-                            'availableLanguage' => 'English'
-                        ]
-                    ]
-                ],
-                'priority' => 0.6,
+                'schema_markup' => '{"@context":"https://schema.org","@type":"ContactPage","name":"Contact Vienhance Studio","description":"Get in touch with us to discuss your web design and development needs","url":"https://vienhancestudio.com/contact","mainEntity":{"@type":"Organization","name":"Vienhance Studio","contactPoint":{"@type":"ContactPoint","contactType":"customer service","availableLanguage":"English"}}}',
+                'priority' => 1,
                 'change_frequency' => 'monthly',
-            ],
+            ]
         ];
 
-        foreach ($pages as $page) {
-            StaticPage::updateOrCreate(
-                ['page_name' => $page['page_name']],
-                $page
-            );
+        foreach ($pages as $pageData) {
+            StaticPage::create($pageData);
         }
     }
 }

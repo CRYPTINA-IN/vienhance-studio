@@ -19,7 +19,7 @@ class ServiceSeeder extends Seeder
                 'title' => 'UI/UX & Digital Experience Design',
                 'slug' => 'ui-ux-digital-experience-design',
                 'description' => 'Developing seamless, intuitive digital experiences that engage and convert.',
-                'image' => 'images/service-image-1.jpg',
+                'image' => 'uploads/services/01K2Z2Z0CHSGZ0KQ3E49DFG77H.png',
                 'link' => '/services/ui-ux-digital-experience-design',
                 'delay' => '0s',
                 'sort_order' => 1,
@@ -39,17 +39,17 @@ class ServiceSeeder extends Seeder
                         [
                             'title' => 'Research & Strategy',
                             'description' => 'We start by learning about user requirements, business objectives, and market trends to develop a design strategy that is in sync with your vision.',
-                            'icon' => 'images/icon-design-process-1.svg'
+                            'icon' => 'uploads/service-descriptions/01K3DTBBHSXDPMCB3YKNHAX2ME.svg'
                         ],
                         [
                             'title' => 'Wireframing & Prototyping',
                             'description' => 'We make wireframes and interactive prototypes to plan out the user experience, providing a smooth ride before final development.',
-                            'icon' => 'images/icon-design-process-2.svg'
+                            'icon' => 'uploads/service-descriptions/01K3DTBBHVHMZ2BRNE5HD6Z3SX.svg'
                         ],
                         [
                             'title' => 'Design & Testing',
                             'description' => 'Our experts create a beautifully designed, fully functional design and then conduct vigorous usability testing to optimize and complete the user experience.',
-                            'icon' => 'images/icon-design-process-3.svg'
+                            'icon' => 'uploads/service-descriptions/01K3DTBBHVHMZ2BRNE5HD6Z3SY.svg'
                         ]
                     ],
                     'faqs' => [
@@ -76,7 +76,7 @@ class ServiceSeeder extends Seeder
                 'title' => 'Branding & Identity Design',
                 'slug' => 'branding-identity-design',
                 'description' => 'Developing bold, memorable brand identities that leave a lasting impression.',
-                'image' => 'images/service-image-2.jpg',
+                'image' => 'uploads/services/01K2Z2ZPR3PB5CP9DNZ1VCMHM6.png',
                 'link' => '/services/branding-identity-design',
                 'delay' => '0.2s',
                 'sort_order' => 2,
@@ -96,17 +96,17 @@ class ServiceSeeder extends Seeder
                         [
                             'title' => 'Discovery & Strategy',
                             'description' => 'We delve deep into your business, audience, and industry to define your brand\'s core values, unique positioning, and distinct voice.',
-                            'icon' => 'images/icon-design-process-1.svg'
+                            'icon' => 'uploads/service-descriptions/01K3DV1STPMG67GRJPSA9C207R.svg'
                         ],
                         [
                             'title' => 'Design & Development',
                             'description' => 'From strategic insights, we craft distinctive logos, harmonious typography, compelling color palettes, and comprehensive brand elements.',
-                            'icon' => 'images/icon-design-process-2.svg'
+                            'icon' => 'uploads/service-descriptions/01K3DV1STQ2R74J48XA8E6WA3C.svg'
                         ],
                         [
                             'title' => 'Implementation & Consistency',
                             'description' => 'We create detailed brand guidelines and essential assets, ensuring your new identity is seamlessly integrated and consistent across all platforms.',
-                            'icon' => 'images/icon-design-process-3.svg'
+                            'icon' => 'uploads/service-descriptions/01K3DV1STQ2R74J48XA8E6WA3D.svg'
                         ]
                     ],
                     'faqs' => [
@@ -133,7 +133,7 @@ class ServiceSeeder extends Seeder
                 'title' => 'Illustration & Graphic Design',
                 'slug' => 'illustration-graphic-design',
                 'description' => 'Bringing simplicity and artistry to ideas with visually striking illustrations and graphics that tell your story.',
-                'image' => 'images/service-image-3.jpg',
+                'image' => 'uploads/services/01K2Z30XEFXVHAKVFN6RGCFBYZ.png',
                 'link' => '/services/illustration-graphic-design',
                 'delay' => '0.4s',
                 'sort_order' => 3,
@@ -153,17 +153,17 @@ class ServiceSeeder extends Seeder
                         [
                             'title' => 'Concept & Ideation',
                             'description' => 'We begin by dissecting your brand\'s personality and objectives, developing innovative directions and sketching preliminary ideas to build a solid visual foundation.',
-                            'icon' => 'images/icon-design-process-1.svg'
+                            'icon' => 'uploads/service-descriptions/01K3DV3BYG7X6TW1527K3JXT2E.svg'
                         ],
                         [
                             'title' => 'Design & Refinement',
                             'description' => 'We craft high-end illustrations, graphics, and iconography using digital tools and fine art techniques, tailored precisely to your brand\'s narrative and visual identity.',
-                            'icon' => 'images/icon-design-process-2.svg'
+                            'icon' => 'uploads/service-descriptions/01K3DV3BYH9JAZPK6WTXDV5YJZ.svg'
                         ],
                         [
                             'title' => 'Implementation & Consistency',
                             'description' => 'We optimize and adjust designs across various platforms to ensure seamless consistency for print, digital, and social media, providing a smooth brand experience.',
-                            'icon' => 'images/icon-design-process-3.svg'
+                            'icon' => 'uploads/service-descriptions/01K3DV3BYJHFFM8KQ6NEEMD20W.svg'
                         ]
                     ],
                     'faqs' => [
@@ -194,7 +194,7 @@ class ServiceSeeder extends Seeder
                 'title' => 'Print & Marketing Collateral',
                 'slug' => 'print-marketing-collateral',
                 'description' => 'Creating high-impact print materials that make a lasting, strong impression.',
-                'image' => 'images/service-image-4.jpg',
+                'image' => 'uploads/services/01K2Z31HHH9V7EQ6VG3ZMJWZ4Q.png',
                 'link' => '/services/print-marketing-collateral',
                 'delay' => '0.6s',
                 'sort_order' => 4,
@@ -214,17 +214,17 @@ class ServiceSeeder extends Seeder
                         [
                             'title' => 'Understanding Goals & Audience',
                             'description' => 'We start by deeply understanding your brand, target audience, and specific marketing goals to lay a strong foundation for your materials.',
-                            'icon' => 'images/icon-design-process-1.svg'
+                            'icon' => 'uploads/service-descriptions/01K3DV67KNTC88EY0RXFTVXSHK.svg'
                         ],
                         [
                             'title' => 'Design & Layout',
                             'description' => 'Applying strategic design principles, we create compelling layouts that maximize readability, captivate your audience, and communicate your brand\'s message effectively.',
-                            'icon' => 'images/icon-design-process-2.svg'
+                            'icon' => 'uploads/service-descriptions/01K3DV67KPVYEGSA0XF7XEAACG.svg'
                         ],
                         [
                             'title' => 'Finalization & Production',
                             'description' => 'We meticulously finalize designs for print media and digital displays, ensuring high-quality outputs, smooth brand continuity, and clear communication across all platforms.',
-                            'icon' => 'images/icon-design-process-3.svg'
+                            'icon' => 'uploads/service-descriptions/01K3DV67KQH560TF8HKR9Y9TM0.svg'
                         ]
                     ],
                     'faqs' => [
@@ -255,7 +255,7 @@ class ServiceSeeder extends Seeder
                 'title' => '3D & Motion Graphics',
                 'slug' => '3d-motion-graphics',
                 'description' => 'Transforming static concepts into dynamic, immersive visual experiences with motion and 3D design.',
-                'image' => 'images/service-image-5.jpg',
+                'image' => 'uploads/services/01K2Z328Z95CAT0GQZVNGHWR72.png',
                 'link' => '/services/3d-motion-graphics',
                 'delay' => '0.8s',
                 'sort_order' => 5,
@@ -275,17 +275,17 @@ class ServiceSeeder extends Seeder
                         [
                             'title' => 'Concept & Storyboarding',
                             'description' => 'Defining objectives, developing creative concepts, scripting, and visualizing the narrative through detailed storyboards and animatics.',
-                            'icon' => 'images/icon-design-process-1.svg'
+                            'icon' => 'uploads/service-descriptions/01K3DV6Z48BZ0XM4KWSEVCSKEF.svg'
                         ],
                         [
                             'title' => '3D Modeling & Animation',
                             'description' => 'Creating detailed 3D models, applying textures and lighting, then animating elements to bring scenes and characters to life with fluid motion.',
-                            'icon' => 'images/icon-design-process-2.svg'
+                            'icon' => 'uploads/service-descriptions/01K3DV6Z49VBN0JJEE2X23VP4E.svg'
                         ],
                         [
                             'title' => 'Rendering & Post-Production',
                             'description' => 'Rendering high-quality visuals, adding sound design, voiceovers, and final polish to deliver a captivating and impactful motion graphic.',
-                            'icon' => 'images/icon-design-process-3.svg'
+                            'icon' => 'uploads/service-descriptions/01K3DV6Z49VBN0JJEE2X23VP4F.svg'
                         ]
                     ],
                     'faqs' => [
@@ -315,15 +315,15 @@ class ServiceSeeder extends Seeder
             unset($serviceData['description_data']);
 
             $service = Service::create($serviceData);
-            
+
             ServiceDescription::create([
                 'service_id' => $service->id,
                 'section_1' => $descriptionData['section_1'],
                 'section_2' => $descriptionData['section_2'],
                 'section_3' => $descriptionData['section_3'],
-                'benefits' => $descriptionData['benefits'],
-                'process' => $descriptionData['process'],
-                'faqs' => $descriptionData['faqs']
+                'benefits' => json_encode($descriptionData['benefits']),
+                'process' => json_encode($descriptionData['process']),
+                'faqs' => json_encode($descriptionData['faqs']),
             ]);
         }
     }

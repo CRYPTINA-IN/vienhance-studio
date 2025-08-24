@@ -20,6 +20,7 @@ class ContactSeeder extends Seeder
             'phone' => '+1234567890',
             'message' => 'This is a test message from John Doe. I would like to discuss a potential project.',
             'ip_address' => '127.0.0.1',
+            'location_data' => null,
             'is_read' => false,
         ]);
 
@@ -30,6 +31,7 @@ class ContactSeeder extends Seeder
             'phone' => '+1987654321',
             'message' => 'Hello! I am interested in your web design services. Please contact me for more details.',
             'ip_address' => '127.0.0.1',
+            'location_data' => null,
             'is_read' => true,
         ]);
 
@@ -40,6 +42,7 @@ class ContactSeeder extends Seeder
             'phone' => '+1555123456',
             'message' => 'I need help with my portfolio website. Can you provide a quote for the project?',
             'ip_address' => '127.0.0.1',
+            'location_data' => null,
             'is_read' => false,
         ]);
     }
