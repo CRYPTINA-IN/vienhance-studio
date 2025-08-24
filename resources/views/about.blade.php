@@ -130,7 +130,8 @@
                             <div class="section-title">
                                 <h3 class="wow fadeInUp">our vision</h3>
                                 <h2 class="text-anime-style-2" data-cursor="-opaque">Setting New Standards in
-                                    <span>Digital Excellence</span></h2>
+                                    <span>Digital Excellence</span>
+                                </h2>
                                 <p class="wow fadeInUp" data-wow-delay="0.2s">
                                     At Vienhance Studio, we give clients a distinct market edge by integrating
                                     innovation and design with business objectives. We craft strategic solutions that
@@ -202,7 +203,7 @@
     </div>
 </div>
 <!-- Our Vision Mission Section End -->
-@if(0)
+
 <!-- Our Team Section Start -->
 <div class="our-team">
     <div class="container">
@@ -216,204 +217,220 @@
                 <!-- Section Title End -->
             </div>
 
-            <div class="col-lg-4">
-                <!-- Section Button Start -->
-                <div class="section-btn wow fadeInUp" data-wow-delay="0.2s">
-                    <a href="#" class="btn-default">all team members</a>
-                </div>
-                <!-- Section Button End -->
-            </div>
+            
         </div>
 
         <div class="row">
-            <div class="col-lg-3 col-md-6">
-                <!-- Team Member Item Start -->
-                <div class="team-item wow fadeInUp">
-                    <!-- team Image Start -->
-                    <div class="team-image">
-                        <a href="#" data-cursor-text="View">
-                            <figure class="image-anime">
+
+            <div class="col-lg-12 col-md-12">
+                <div class="team-single-box">
+                    <!-- Team About Box Start -->
+                    <div class="team-about-box">
+                        <!-- Team Single Image Start -->
+                        <div class="team-single-image">
+                            <figure class="image-anime reveal">
                                 <img src="{{ asset('images/team-1.jpg') }}" alt="">
                             </figure>
-                        </a>
-                    </div>
-                    <!-- team Image End -->
 
-                    <!-- Team Body Start -->
-                    <div class="team-body">
-                        <!-- Team Content Start -->
-                        <div class="team-content">
-                            <h3><a href="#">Joseph g. brown</a></h3>
                         </div>
-                        <!-- Team Content End -->
+                        <!-- Team Single Image End -->
 
-                        <!-- Team Social List Start -->
-                        <div class="team-social-list">
-                            <span>director</span>
-                            <ul>
-                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                            </ul>
+                        <!-- Team About Contact Start -->
+                        <div class="team-about-content">
+                            <!-- Section Title Start -->
+                            <div class="section-title">
+                                <h2 class="text-anime-style-2" data-cursor="-opaque">Vidushi <span>Singh</span></h2>
+                                <h3 class="wow fadeInUp">Optimistic, innovative, and determined.</h3>
+                                <p class="wow fadeInUp">
+Hello! I'm Vidushi, an optimistic, innovative, and determined designer committed to turning creative obsession into powerful business solutions. My passion for design began in childhood, evolving over the years into a relentless pursuit of excellence. This journey led me to challenge my creative knowledge, which paved the way for Vi Enhance.
+</p>
+
+<p class="wow fadeInUp">
+At Vi Enhance, we believe the most important thing is combining skill with the right mindset. My true passion lies in working with businesses that are committed to making a positive change in our world. My extensive experience has granted me a wealth of knowledge in many areas of design, allowing us to deliver incredible services for your business with big dreams.
+</p>
+                            </div>
+                            <!-- Section Title End -->
+
+                            <!-- Team Contact List Start -->
+                            <div class="team-contact-list">
+                                <!-- Team Member Box Start -->
+                                <div class="team-contact-box wow fadeInUp" data-wow-delay="0.2s">
+                                    <div class="icon-box">
+                                        <img src="images/icon-team-contact-1.svg" alt="">
+                                    </div>
+
+                                    <div class="team-contact-content">
+                                        <h3>position</h3>
+                                        <p>Founder and CCO </p>
+                                    </div>
+                                </div>
+                                <!-- Team Member Box End -->
+
+                                <!-- Team Member Box Start -->
+                                <div class="team-contact-box wow fadeInUp" data-wow-delay="0.4s">
+                                    <div class="icon-box">
+                                        <img src="images/icon-team-contact-2.svg" alt="">
+                                    </div>
+
+                                    <div class="team-contact-content">
+                                        <h3>email address</h3>
+                                        <p>vidushi@vienhancestudio.com</p>
+                                    </div>
+                                </div>
+                                <!-- Team Member Box End -->
+
+                                
+
+                            </div>
+                            <!-- Team Contact List End -->
+
+                            <!-- Team Social Icon Start -->
+                            <div class="team-social-icon wow fadeInUp" data-wow-delay="1s">
+                                <h3>Connect with me:</h3>
+                                <ul>
+                                    <li><a href="https://www.facebook.com/vidu.vidushisingh"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                    <li><a href="https://x.com/vidushivie"><i class="fa-brands fa-x-twitter"></i></a></li>
+                                    <li><a href="https://www.linkedin.com/in/viduvidushisingh/"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                    <li><a href="https://www.instagram.com/__vidushii/"><i class="fa-brands fa-instagram"></i></a></li>
+                                </ul>
+                            </div>
+                            <!-- Team Social Icon End -->
                         </div>
-                        <!-- Team Social List End -->
+                        <!-- Team About Contact End -->
                     </div>
-                    <!-- Team Body End -->
+                    <!-- Team About Box End -->
+
+
                 </div>
-                <!-- Team Member Item End -->
+
             </div>
 
-            <div class="col-lg-3 col-md-6">
-                <!-- Team Member Item Start -->
-                <div class="team-item wow fadeInUp" data-wow-delay="0.2s">
-                    <!-- team Image Start -->
-                    <div class="team-image">
-                        <a href="#" data-cursor-text="View">
-                            <figure class="image-anime">
+            <div class="col-lg-12 col-md-12">
+                <div class="team-single-box">
+                    <!-- Team About Box Start -->
+                    <div class="team-about-box">
+                       
+
+                        <!-- Team About Contact Start -->
+                        <div class="team-about-content">
+                            <!-- Section Title Start -->
+                            <div class="section-title">
+                                <h2 class="text-anime-style-2" data-cursor="-opaque">Aditya Naman <span>Singh</span></h2>
+                                <h3 class="wow fadeInUp">Adventurous, passionate, and ambitious.</h3>
+                                <p class="wow fadeInUp">Hello! I'm Aditya Naman. I'm a passionate and ambitious person who believes there are no limits to what we can achieve when we work together. My adventurous spirit fuels a constant drive for innovation, pushing us to explore new creative territories for every client.
+</p>
+
+<p class="wow fadeInUp">
+I love collaborating with people who are committed to growth—in their business, their knowledge, and their positive energy. This shared mindset is what makes our partnerships so successful. I believe that where there is hard work, love for what you do, and genuine inspiration, nothing can go wrong. This is the simple philosophy that guides our team and ensures we deliver a remarkable experience for every client.
+</p>
+                            </div>
+                            <!-- Section Title End -->
+
+                            <!-- Team Contact List Start -->
+                            <div class="team-contact-list">
+                                <!-- Team Member Box Start -->
+                                <div class="team-contact-box wow fadeInUp" data-wow-delay="0.2s">
+                                    <div class="icon-box">
+                                        <img src="images/icon-team-contact-1.svg" alt="">
+                                    </div>
+
+                                    <div class="team-contact-content">
+                                        <h3>position</h3>
+                                        <p>Co-Founder</p>
+                                    </div>
+                                </div>
+                                <!-- Team Member Box End -->
+
+                                <!-- Team Member Box Start -->
+                                <div class="team-contact-box wow fadeInUp" data-wow-delay="0.4s">
+                                    <div class="icon-box">
+                                        <img src="images/icon-team-contact-2.svg" alt="">
+                                    </div>
+
+                                    <div class="team-contact-content">
+                                        <h3>email address</h3>
+                                        <p>aditya@vienhancestudio.com</p>
+                                    </div>
+                                </div>
+                                <!-- Team Member Box End -->
+
+                              
+
+                               
+                            </div>
+                            <!-- Team Contact List End -->
+
+                            <!-- Team Social Icon Start -->
+                            <div class="team-social-icon wow fadeInUp" data-wow-delay="1s">
+                                <h3>Connect with me:</h3>
+                                <ul>
+
+                                    <li><a href="https://facebook.com/adityanamansingh"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                    <li><a href="https://x.com/namantastic"><i class="fa-brands fa-x-twitter"></i></a></li>
+                                    <li><a href="https://linkedin.com/in/adityanamansingh"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                    <li><a href="https://instagram.com/namantastic"><i class="fa-brands fa-instagram"></i></a></li>
+                                </ul>
+                            </div>
+                            <!-- Team Social Icon End -->
+                        </div>
+                        <!-- Team About Contact End -->
+
+                         <!-- Team Single Image Start -->
+                         <div class="team-single-image">
+                            <figure class="image-anime reveal">
                                 <img src="{{ asset('images/team-2.jpg') }}" alt="">
                             </figure>
-                        </a>
-                    </div>
-                    <!-- team Image End -->
 
-                    <!-- Team Body Start -->
-                    <div class="team-body">
-                        <!-- Team Content Start -->
-                        <div class="team-content">
-                            <h3><a href="#">Liam brooks</a></h3>
                         </div>
-                        <!-- Team Content End -->
-
-                        <!-- Team Social List Start -->
-                        <div class="team-social-list">
-                            <span>art director</span>
-                            <ul>
-                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                            </ul>
-                        </div>
-                        <!-- Team Social List End -->
+                        <!-- Team Single Image End -->
                     </div>
-                    <!-- Team Body End -->
+                    <!-- Team About Box End -->
+
+
                 </div>
-                <!-- Team Member Item End -->
-            </div>
 
-            <div class="col-lg-3 col-md-6">
-                <!-- Team Member Item Start -->
-                <div class="team-item wow fadeInUp" data-wow-delay="0.4s">
-                    <!-- team Image Start -->
-                    <div class="team-image">
-                        <a href="#" data-cursor-text="View">
-                            <figure class="image-anime">
-                                <img src="{{ asset('images/team-3.jpg') }}" alt="">
-                            </figure>
-                        </a>
-                    </div>
-                    <!-- team Image End -->
-
-                    <!-- Team Body Start -->
-                    <div class="team-body">
-                        <!-- Team Content Start -->
-                        <div class="team-content">
-                            <h3><a href="#">sophia evans</a></h3>
-                        </div>
-                        <!-- Team Content End -->
-
-                        <!-- Team Social List Start -->
-                        <div class="team-social-list">
-                            <span>illustrator</span>
-                            <ul>
-                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                            </ul>
-                        </div>
-                        <!-- Team Social List End -->
-                    </div>
-                    <!-- Team Body End -->
-                </div>
-                <!-- Team Member Item End -->
-            </div>
-
-            <div class="col-lg-3 col-md-6">
-                <!-- Team Member Item Start -->
-                <div class="team-item wow fadeInUp" data-wow-delay="0.6s">
-                    <!-- team Image Start -->
-                    <div class="team-image">
-                        <a href="#" data-cursor-text="View">
-                            <figure class="image-anime">
-                                <img src="{{ asset('images/team-4.jpg') }}" alt="">
-                            </figure>
-                        </a>
-                    </div>
-                    <!-- team Image End -->
-
-                    <!-- Team Body Start -->
-                    <div class="team-body">
-                        <!-- Team Content Start -->
-                        <div class="team-content">
-                            <h3><a href="#">noah bennett</a></h3>
-                        </div>
-                        <!-- Team Content End -->
-
-                        <!-- Team Social List Start -->
-                        <div class="team-social-list">
-                            <span>UI/UX designer</span>
-                            <ul>
-                                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                            </ul>
-                        </div>
-                        <!-- Team Social List End -->
-                    </div>
-                    <!-- Team Body End -->
-                </div>
-                <!-- Team Member Item End -->
             </div>
         </div>
     </div>
 </div>
 <!-- Our Team Section End -->
-@endif
+
 <!-- Use Testimonials Section Component -->
 @include('components.testimonials-section')
 
 @php
-    $faqs = [
-        [
-            'question' => 'Who are your typical clients?',
-            'answer' => 'We partner with startups, growing SMEs, and established corporations who value strategic design and want to elevate their brand, drive engagement, and achieve measurable business results.'
-        ],
-        [
-            'question' => 'How long does a typical project take?',
-            'answer' => 'Timelines vary by scope and complexity. Branding projects usually take 2–3 weeks, while UI/UX or website designs can take 2–4+ weeks. A detailed timeline will be shared after the initial consultation.'
-        ],
-        [
-            'question' => 'What is your pricing structure?',
-            'answer' => 'We offer project-based fixed fees for defined scopes and custom agreements for ongoing collaborations. All pricing is transparent with no hidden costs. A detailed proposal is provided after understanding your needs.'
-        ],
-        [
-            'question' => 'Can you work with existing brand guidelines?',
-            'answer' => 'Yes! We ensure consistency with your existing guidelines while enhancing and evolving your brand.'
-        ],
-        [
-            'question' => 'How do we get started with Vienhance Studio?',
-            'answer' => 'Reach out via our contact form, email, or phone. We\'ll schedule a consultation to discuss your project, then provide a tailored proposal with scope, timeline, and investment.'
-        ]
-    ];
+$faqs = [
+[
+'question' => 'Who are your typical clients?',
+'answer' => 'We partner with startups, growing SMEs, and established corporations who value strategic design and want to elevate their brand, drive engagement, and achieve measurable business results.'
+],
+[
+'question' => 'How long does a typical project take?',
+'answer' => 'Timelines vary by scope and complexity. Branding projects usually take 2–3 weeks, while UI/UX or website designs can take 2–4+ weeks. A detailed timeline will be shared after the initial consultation.'
+],
+[
+'question' => 'What is your pricing structure?',
+'answer' => 'We offer project-based fixed fees for defined scopes and custom agreements for ongoing collaborations. All pricing is transparent with no hidden costs. A detailed proposal is provided after understanding your needs.'
+],
+[
+'question' => 'Can you work with existing brand guidelines?',
+'answer' => 'Yes! We ensure consistency with your existing guidelines while enhancing and evolving your brand.'
+],
+[
+'question' => 'How do we get started with Vienhance Studio?',
+'answer' => 'Reach out via our contact form, email, or phone. We\'ll schedule a consultation to discuss your project, then provide a tailored proposal with scope, timeline, and investment.'
+]
+];
 @endphp
 
 @include('components.our-faqs-section', [
-    'faqs' => $faqs,
-    'accordionId' => 'about',
-    'showButton' => false,
-    'buttonUrl' => 'faqs.html',
-    'buttonText' => 'view all FAQ',
-    'imageUrl' => 'images/our-faq-img.png',
-    'imageAlt' => 'FAQ Image'
+'faqs' => $faqs,
+'accordionId' => 'about',
+'showButton' => false,
+'buttonUrl' => 'faqs.html',
+'buttonText' => 'view all FAQ',
+'imageUrl' => 'images/our-faq-img.png',
+'imageAlt' => 'FAQ Image'
 ])
 
 @endsection

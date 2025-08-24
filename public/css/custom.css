@@ -1749,7 +1749,7 @@ header.main-header .header-sticky.active{
 .team-item{
     position: relative;
     border-radius: 30px;
-    height: calc(100% - 30px);
+    height: calc(70% - 30px);
     margin-bottom: 30px;
     overflow: hidden;
 }
