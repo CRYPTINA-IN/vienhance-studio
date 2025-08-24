@@ -56,6 +56,7 @@
                             </div>
                             <div class="service-box-item">
                                 <div class="icon-box">
+                                
                                     <img src="{{ asset('images/icon-service-1.svg') }}" alt="">
                                 </div>
                                 <div class="service-box-item-content">

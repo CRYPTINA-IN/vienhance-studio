@@ -34,7 +34,7 @@
                     <!-- How It Work Image Start-->
                     <div class="how-it-work-image">
                         <figure class="image-anime">
-                            <img src="{{ asset('images/how-it-work-image.jpg') }}" alt="">
+                            <img src="{{ asset('images/how-it-work-image.png') }}" alt="">
                         </figure>
                     </div>
                     <!-- How It Work Image End-->

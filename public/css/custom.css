@@ -6539,12 +6539,17 @@ header.main-header .header-sticky.active{
 }
 
 /* Mobile number validation specific styling */
-#phone:invalid {
+#phone.is-invalid {
     border-color: var(--error-color);
 }
 
-#phone:valid {
+#phone.is-valid {
     border-color: var(--success-color);
+}
+
+/* Ensure no default validation styling */
+#phone:not(.is-valid):not(.is-invalid) {
+    border-color: inherit;
 }
 
 /************************************/

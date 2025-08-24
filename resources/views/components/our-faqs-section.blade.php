@@ -102,7 +102,7 @@
                 <!-- Our Faqs Image Start -->
                 <div class="our-faqs-img">
                     <figure class="image-anime reveal">
-                        <img src="{{ $imageUrl ?? 'images/our-faq-img.jpg' }}" alt="{{ $imageAlt ?? 'FAQ Image' }}">
+                        <img src="{{ $imageUrl ?? 'images/our-faq-img.png' }}" alt="{{ $imageAlt ?? 'FAQ Image' }}">
                     </figure>
                 </div>
                 <!-- Our Faqs Image End -->

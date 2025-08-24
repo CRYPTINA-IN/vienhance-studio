@@ -119,7 +119,7 @@
                         <!-- Vision Mission image Start -->
                         <div class="vision-mission-image">
                             <figure class="image-anime reveal">
-                                <img src="{{ asset('images/our-vision-img.jpg') }}" alt="Our Vision">
+                                <img src="{{ asset('images/our-vision-img.png') }}" alt="Our Vision">
                             </figure>
                         </div>
                         <!-- Vision Mission image End -->
@@ -160,7 +160,7 @@
                         <!-- Vision Mission image Start -->
                         <div class="vision-mission-image">
                             <figure class="image-anime reveal">
-                                <img src="{{ asset('images/our-mission-img.jpg') }}" alt="Our Mission">
+                                <img src="{{ asset('images/our-mission-img.png') }}" alt="Our Mission">
                             </figure>
                         </div>
                         <!-- Vision Mission image End -->
@@ -412,7 +412,7 @@
     'showButton' => false,
     'buttonUrl' => 'faqs.html',
     'buttonText' => 'view all FAQ',
-    'imageUrl' => 'images/our-faq-img.jpg',
+    'imageUrl' => 'images/our-faq-img.png',
     'imageAlt' => 'FAQ Image'
 ])
 

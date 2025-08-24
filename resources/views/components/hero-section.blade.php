@@ -25,7 +25,7 @@
 
                                     <!-- Hero Button Start -->
                                     <div class="hero-btn wow fadeInUp" data-wow-delay="0.4s">
-                                        <a href="#" class="btn-default">view our portfolio</a>
+                                        <a href="{{ route('portfolio') }}" class="btn-default">view our portfolio</a>
                                     </div>
                                     <!-- Hero Button End -->
                                 </div>

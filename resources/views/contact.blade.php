@@ -91,29 +91,29 @@
 
                         <!-- Contact Form Start -->
                         <div class="contact-form">
-                            <form id="contactForm" action="#" method="POST" data-toggle="validator" class="wow fadeInUp" data-wow-delay="0.25s">
+                            <form id="contactForm" action="#" method="POST" class="wow fadeInUp" data-wow-delay="0.25s" novalidate>
                                 <div class="row">
                                     <div class="form-group col-md-6 mb-4">
                                         <label class="form-label">first name</label>
-                                        <input type="text" name="fname" class="form-control" id="fname" placeholder="First Name" required>
+                                        <input type="text" name="fname" class="form-control" id="fname" placeholder="First Name" data-required="true">
                                         <div class="help-block with-errors"></div>
                                     </div>
 
                                     <div class="form-group col-md-6 mb-4">
                                         <label class="form-label">last name</label>
-                                        <input type="text" name="lname" class="form-control" id="lname" placeholder="Last Name" required>
+                                        <input type="text" name="lname" class="form-control" id="lname" placeholder="Last Name" data-required="true">
                                         <div class="help-block with-errors"></div>
                                     </div>
 
                                     <div class="form-group col-md-6 mb-4">
                                         <label class="form-label">email address</label>
-                                        <input type="email" name ="email" class="form-control" id="email" placeholder="Email Address" required>
+                                        <input type="email" name="email" class="form-control" id="email" placeholder="Email Address" data-required="true">
                                         <div class="help-block with-errors"></div>
                                     </div>
 
                                     <div class="form-group col-md-6 mb-4">
                                         <label class="form-label">mobile number</label>
-                                        <input type="text" name="phone" class="form-control" id="phone" placeholder="Mobile Number (e.g., 9876543210)" required pattern="^[6-9]\d{9}$" title="Mobile number must be exactly 10 digits starting with 6, 7, 8, or 9">
+                                        <input type="text" name="phone" class="form-control" id="phone" placeholder="Mobile Number (e.g., 9876543210)" data-required="true">
                                         <div class="help-block with-errors"></div>
                                     </div>
 
@@ -155,5 +155,144 @@
     </div>
     <!-- Google Map Section End -->
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contactForm');
+            const phoneInput = document.getElementById('phone');
+            
+            // Function to validate phone number
+            function validatePhone(phone) {
+                const phonePattern = /^[6-9]\d{9}$/;
+                return phonePattern.test(phone);
+            }
+            
+            // Function to show/hide error message
+            function toggleError(input, isValid, message) {
+                const errorDiv = input.parentNode.querySelector('.help-block');
+                if (!isValid && input.value.trim() !== '') {
+                    errorDiv.textContent = message;
+                    errorDiv.style.display = 'block';
+                    input.classList.add('is-invalid');
+                    input.classList.remove('is-valid');
+                } else if (isValid && input.value.trim() !== '') {
+                    errorDiv.textContent = '';
+                    errorDiv.style.display = 'none';
+                    input.classList.remove('is-invalid');
+                    input.classList.add('is-valid');
+                } else {
+                    errorDiv.textContent = '';
+                    errorDiv.style.display = 'none';
+                    input.classList.remove('is-invalid', 'is-valid');
+                }
+            }
+            
+            // Track if user has interacted with the phone field
+            let phoneFieldTouched = false;
+            
+            // Phone validation on blur (when user leaves the field)
+            phoneInput.addEventListener('blur', function() {
+                phoneFieldTouched = true;
+                const isValid = validatePhone(this.value.trim());
+                toggleError(this, isValid, 'Please enter a valid 10-digit mobile number starting with 6, 7, 8, or 9');
+            });
+            
+            // Phone validation on input (real-time validation)
+            phoneInput.addEventListener('input', function() {
+                if (!phoneFieldTouched) return; // Don't validate until user has interacted
+                
+                if (this.value.trim() !== '') {
+                    const isValid = validatePhone(this.value.trim());
+                    toggleError(this, isValid, 'Please enter a valid 10-digit mobile number starting with 6, 7, 8, or 9');
+                } else {
+                    toggleError(this, true, '');
+                }
+            });
+            
+            // Track if user has interacted with form fields
+            let fieldsTouched = {
+                fname: false,
+                lname: false,
+                email: false,
+                phone: false
+            };
+            
+            // Add focus event listeners to track when fields are touched
+            document.getElementById('fname').addEventListener('focus', function() { fieldsTouched.fname = true; });
+            document.getElementById('lname').addEventListener('focus', function() { fieldsTouched.lname = true; });
+            document.getElementById('email').addEventListener('focus', function() { fieldsTouched.email = true; });
+            phoneInput.addEventListener('focus', function() { fieldsTouched.phone = true; });
+            
+            // Form submission validation
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                let isValid = true;
+                
+                // Validate required fields
+                const requiredFields = form.querySelectorAll('[data-required="true"]');
+                requiredFields.forEach(function(field) {
+                    const fieldName = field.name;
+                    const hasBeenTouched = fieldsTouched[fieldName];
+                    
+                    if (field.value.trim() === '') {
+                        const errorDiv = field.parentNode.querySelector('.help-block');
+                        errorDiv.textContent = 'This field is required';
+                        errorDiv.style.display = 'block';
+                        field.classList.add('is-invalid');
+                        field.classList.remove('is-valid');
+                        isValid = false;
+                    } else if (hasBeenTouched) {
+                        // Only show valid state if field has been touched
+                        const errorDiv = field.parentNode.querySelector('.help-block');
+                        errorDiv.textContent = '';
+                        errorDiv.style.display = 'none';
+                        field.classList.remove('is-invalid');
+                        field.classList.add('is-valid');
+                    }
+                });
+                
+                // Validate email format
+                const emailInput = document.getElementById('email');
+                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (emailInput.value.trim() !== '' && !emailPattern.test(emailInput.value.trim())) {
+                    const errorDiv = emailInput.parentNode.querySelector('.help-block');
+                    errorDiv.textContent = 'Please enter a valid email address';
+                    errorDiv.style.display = 'block';
+                    emailInput.classList.add('is-invalid');
+                    emailInput.classList.remove('is-valid');
+                    isValid = false;
+                } else if (emailInput.value.trim() !== '' && emailPattern.test(emailInput.value.trim()) && fieldsTouched.email) {
+                    const errorDiv = emailInput.parentNode.querySelector('.help-block');
+                    errorDiv.textContent = '';
+                    errorDiv.style.display = 'none';
+                    emailInput.classList.remove('is-invalid');
+                    emailInput.classList.add('is-valid');
+                }
+                
+                // Validate phone number
+                if (phoneInput.value.trim() !== '' && !validatePhone(phoneInput.value.trim())) {
+                    const errorDiv = phoneInput.parentNode.querySelector('.help-block');
+                    errorDiv.textContent = 'Please enter a valid 10-digit mobile number starting with 6, 7, 8, or 9';
+                    errorDiv.style.display = 'block';
+                    phoneInput.classList.add('is-invalid');
+                    phoneInput.classList.remove('is-valid');
+                    isValid = false;
+                } else if (phoneInput.value.trim() !== '' && validatePhone(phoneInput.value.trim()) && fieldsTouched.phone) {
+                    const errorDiv = phoneInput.parentNode.querySelector('.help-block');
+                    errorDiv.textContent = '';
+                    errorDiv.style.display = 'none';
+                    phoneInput.classList.remove('is-invalid');
+                    phoneInput.classList.add('is-valid');
+                }
+                
+                if (isValid) {
+                    // Form is valid, you can submit it here
+                    console.log('Form is valid, ready to submit');
+                    // Uncomment the line below to actually submit the form
+                    // form.submit();
+                }
+            });
+        });
+    </script>
 
 @endsection
