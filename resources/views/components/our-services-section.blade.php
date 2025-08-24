@@ -55,10 +55,7 @@
                                 </figure>
                             </div>
                             <div class="service-box-item">
-                                <div class="icon-box">
                                 
-                                    <img src="{{ asset('images/icon-service-1.svg') }}" alt="">
-                                </div>
                                 <div class="service-box-item-content">
                                     <h3><a href="{{ $service['link'] }}">{{ $service['title'] }}</a></h3>
                                     <p>{{ $service['description'] }}</p>
