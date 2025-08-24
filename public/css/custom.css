@@ -1866,7 +1866,7 @@ header.main-header .header-sticky.active{
 
 .our-testimonial{
 	padding: 100px 0;
-	background: url('../images/our-testimonial-bg.png'), var(--secondary-color);
+	
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: contain;

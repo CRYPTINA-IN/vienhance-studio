@@ -14,7 +14,7 @@
                     <div class="col-lg-12">
                         <!-- Footer Title Content Start -->
                         <div class="footer-title-content">
-                            <h2><a href="{{ route('contact') }}">Let's Connect</a></h2>
+                            <h2><a href="{{ route('contact') }}" data-cursor-text="Connect">Let's Connect</a></h2>
                         </div>
                         <!-- Footer Title Content End -->
                     </div>

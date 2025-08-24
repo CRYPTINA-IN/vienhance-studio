@@ -1,5 +1,5 @@
 <!-- Our Testimonial Section Start -->
-<div class="our-testimonial bg-section">
+<div class="our-testimonial ">
     <div class="container">
         <div class="row section-row align-items-center">
             <div class="col-lg-12">
