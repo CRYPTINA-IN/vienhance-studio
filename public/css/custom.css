@@ -6627,3 +6627,153 @@ header.main-header .header-sticky.active{
         margin-right: 6px;
     }
 }
+
+/* AddToAny Social Sharing Styles */
+.category-social-link .a2a_kit {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    max-width: 300px;
+}
+
+.category-social-link .a2a_kit a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--accent-color);
+    color: var(--secondary-color);
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    font-size: 16px;
+    border: none;
+    box-shadow: none;
+}
+
+.category-social-link .a2a_kit a:hover {
+    background: var(--white-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.category-social-link .a2a_kit .a2a_dd {
+    background: var(--secondary-color) !important;
+    color: var(--accent-color) !important;
+    border: 2px solid var(--accent-color) !important;
+    box-shadow: none !important;
+}
+
+.category-social-link .a2a_kit .a2a_dd:hover {
+    background: var(--accent-color) !important;
+    color: var(--secondary-color) !important;
+}
+
+/* Override AddToAny default styles for flat design */
+.category-social-link .a2a_kit a,
+.category-social-link .a2a_kit a:before,
+.category-social-link .a2a_kit a:after {
+    background-image: none !important;
+    background: var(--accent-color) !important;
+    border: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+}
+
+.category-social-link .a2a_kit a:hover,
+.category-social-link .a2a_kit a:hover:before,
+.category-social-link .a2a_kit a:hover:after {
+    background: var(--white-color) !important;
+    background-image: none !important;
+    border: none !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Ensure icons are flat and consistent */
+.category-social-link .a2a_kit svg,
+.category-social-link .a2a_kit img {
+    filter: brightness(0) invert(1) !important;
+    opacity: 1 !important;
+}
+
+.category-social-link .a2a_kit a:hover svg,
+.category-social-link .a2a_kit a:hover img {
+    filter: brightness(0) invert(0) !important;
+}
+
+/* Style AddToAny default background colors */
+.category-social-link .a2a_s__default {
+    background: var(--accent-color) !important;
+    color: var(--secondary-color) !important;
+    border: none !important;
+    box-shadow: none !important;
+    background-image: none !important;
+}
+
+.category-social-link .a2a_s__default:hover {
+    background: var(--white-color) !important;
+    color: var(--primary-color) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Override specific platform colors to use our theme */
+.category-social-link .a2a_s__facebook,
+.category-social-link .a2a_s__twitter,
+.category-social-link .a2a_s__x,
+.category-social-link .a2a_s__whatsapp,
+.category-social-link .a2a_s__linkedin,
+.category-social-link .a2a_s__email,
+.category-social-link .a2a_s__outlook_com {
+    background: var(--accent-color) !important;
+    color: var(--secondary-color) !important;
+    border: none !important;
+    box-shadow: none !important;
+    background-image: none !important;
+}
+
+.category-social-link .a2a_s__facebook:hover,
+.category-social-link .a2a_s__twitter:hover,
+.category-social-link .a2a_s__x:hover,
+.category-social-link .a2a_s__whatsapp:hover,
+.category-social-link .a2a_s__linkedin:hover,
+.category-social-link .a2a_s__email:hover,
+.category-social-link .a2a_s__outlook_com:hover {
+    background: var(--white-color) !important;
+    color: var(--primary-color) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Responsive adjustments for AddToAny */
+@media (max-width: 768px) {
+    .category-social-link .a2a_kit {
+        gap: 8px;
+        max-width: 180px;
+    }
+    
+    .category-social-link .a2a_kit a {
+        width: 36px;
+        height: 36px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .category-social-link {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .category-social-link .a2a_kit {
+        gap: 6px;
+        max-width: 160px;
+    }
+    
+    .category-social-link .a2a_kit a {
+        width: 32px;
+        height: 32px;
+        font-size: 12px;
+    }
+}

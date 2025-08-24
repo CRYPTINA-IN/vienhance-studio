@@ -41,28 +41,51 @@
                             <!-- Category Item List Start -->
                             <div class="category-item-list">
                                 <div class="category-list-item">
-                                    <h3><img src="images/icon-work-category-1.svg" alt=""> project name:</h3>
+                                    <h3>Project name:</h3>
                                     <p>{{ strtolower($response['portfolio']->title) }}</p>
                                 </div>
                                
                                 <div class="category-list-item">
-                                    <h3><img src="images/icon-work-category-3.svg" alt=""> industry:</h3>
+                                    <h3>Industry:</h3>
                                     <p>{{ $response['portfolio']->industry }}</p>
                                 </div>
                                
-                                <div class="category-list-item category-social-link">
-                                    <h3>share:</h3>
-                                    <ul>
-                                        <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                        <li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-                                        <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                        <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
-                                    </ul>
-                                </div>
+                                
                             </div>
                             <!-- Category Item List End -->
                         </div>
                         <!-- Work Category List End -->
+
+                        <div class="work-category-list wow fadeInUp">
+                            <!-- Work Category Title Start -->
+                            <div class="work-category-title">
+                                <h3>Share</h3>
+                            </div>
+                            <!-- Work Category Title End -->
+
+                            <!-- Category Item List Start -->
+                            <div class="category-item-list">
+                               
+                               
+                                <div class="category-list-item category-social-link">
+                                   
+<!-- AddToAny BEGIN -->
+<div class="a2a_kit a2a_kit_size_32 a2a_default_style" data-a2a-title="Vienhance Studio">
+<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+<a class="a2a_button_whatsapp"></a>
+<a class="a2a_button_facebook"></a>
+<a class="a2a_button_twitter"></a>
+<a class="a2a_button_x"></a>
+<a class="a2a_button_outlook_com"></a>
+<a class="a2a_button_email"></a>
+<a class="a2a_button_linkedin"></a>
+</div>
+<script defer src="https://static.addtoany.com/menu/page.js"></script>
+<!-- AddToAny END -->
+                                </div>
+                            </div>
+                            <!-- Category Item List End -->
+                        </div>
 
                         <!-- Sidebar Cta Box Start -->
                     <div class="sidebar-cta-box wow fadeInUp" data-wow-delay="0.25s">
