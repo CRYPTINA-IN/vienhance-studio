@@ -4,40 +4,21 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Traits\HasMetaTags;
 
 class StaticPage extends Model
 {
-    use HasFactory;
+    use HasFactory, HasMetaTags;
 
     protected $fillable = [
         'page_name',
         'route_name',
         'title',
-        'meta_description',
-        'meta_keywords',
-        'og_title',
-        'og_description',
-        'og_image',
-        'og_type',
-        'og_url',
-        'og_site_name',
-        'twitter_card',
-        'twitter_title',
-        'twitter_description',
-        'twitter_image',
-        'twitter_site',
-        'twitter_creator',
-        'canonical_url',
-        'schema_markup',
         'is_active',
-        'priority',
-        'change_frequency',
     ];
 
     protected $casts = [
         'is_active' => 'boolean',
-        'priority' => 'integer',
-        'schema_markup' => 'array',
     ];
 
     /**
@@ -100,24 +81,6 @@ class StaticPage extends Model
      */
     public function getMetaTags()
     {
-        return [
-            'title' => $this->title,
-            'meta_description' => $this->meta_description,
-            'meta_keywords' => $this->meta_keywords,
-            'og_title' => $this->og_title,
-            'og_description' => $this->og_description,
-            'og_image' => $this->og_image,
-            'og_type' => $this->og_type,
-            'og_url' => $this->og_url,
-            'og_site_name' => $this->og_site_name,
-            'twitter_card' => $this->twitter_card,
-            'twitter_title' => $this->twitter_title,
-            'twitter_description' => $this->twitter_description,
-            'twitter_image' => $this->twitter_image,
-            'twitter_site' => $this->twitter_site,
-            'twitter_creator' => $this->twitter_creator,
-            'canonical_url' => $this->canonical_url,
-            'schema_markup' => $this->schema_markup,
-        ];
+        return $this->getMetaTagsArray();
     }
 }

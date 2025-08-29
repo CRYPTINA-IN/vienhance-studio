@@ -29,37 +29,6 @@ class PortfoliosTable
                     ->url(fn ($record) => $record->image ? asset('storage/' . $record->image) : null),
                 TextColumn::make('slug')
                     ->searchable(),
-                TextColumn::make('meta_title')
-                    ->searchable(),
-                TextColumn::make('og_title')
-                    ->searchable(),
-                ImageColumn::make('og_image')
-                    ->disk('public')
-                    ->url(fn ($record) => $record->og_image ? asset('storage/' . $record->og_image) : null),
-                TextColumn::make('og_type')
-                    ->searchable(),
-                TextColumn::make('og_url')
-                    ->searchable(),
-                TextColumn::make('og_site_name')
-                    ->searchable(),
-                TextColumn::make('twitter_card')
-                    ->searchable(),
-                TextColumn::make('twitter_title')
-                    ->searchable(),
-                ImageColumn::make('twitter_image')
-                    ->disk('public')
-                    ->url(fn ($record) => $record->twitter_image ? asset('storage/' . $record->twitter_image) : null),
-                TextColumn::make('twitter_site')
-                    ->searchable(),
-                TextColumn::make('twitter_creator')
-                    ->searchable(),
-                TextColumn::make('canonical_url')
-                    ->searchable(),
-                TextColumn::make('priority')
-                    ->numeric()
-                    ->sortable(),
-                TextColumn::make('change_frequency')
-                    ->searchable(),
                 TextColumn::make('status'),
                 TextColumn::make('deleted_at')
                     ->dateTime()

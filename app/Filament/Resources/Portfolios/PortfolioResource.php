@@ -24,11 +24,11 @@ class PortfolioResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedBriefcase;
 
-    protected static UnitEnum|string|null $navigationGroup = 'Content Management';
+    protected static UnitEnum|string|null $navigationGroup = 'Portfolio Management';
 
     protected static ?string $navigationLabel = 'Portfolios';
 
-    protected static ?int $navigationSort = 3;
+    protected static ?int $navigationSort = 1;
 
     public static function form(Schema $schema): Schema
     {

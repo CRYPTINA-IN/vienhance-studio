@@ -32,6 +32,7 @@ class DatabaseSeeder extends Seeder
             StaticPageSeeder::class,
             PortfolioSeeder::class,
             ContactSeeder::class,
+            BlogSeeder::class,
         ]);
     }
 }

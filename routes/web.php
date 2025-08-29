@@ -12,6 +12,8 @@ Route::controller(WebsiteController::class)->group(function () {
     Route::get('/portfolio/{slug}', 'portfolioDetail')->name('portfolio.detail');
     Route::get('/contact', 'contact')->name('contact');
     Route::post('/contact/submit', 'submitContactForm')->name('contact.submit');
+    Route::get('/blog', 'blog')->name('blog');
+    Route::get('/blog/{slug}', 'blogDetail')->name('blog.detail');
 });
 
 // Sitemap routes

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Service;
 use App\Models\Portfolio;
 use App\Models\Contact;
+use App\Models\Blog;
 use App\Services\SeoService;
 use Illuminate\Http\Request;
 
@@ -185,6 +186,45 @@ class WebsiteController extends Controller
         } catch (\Exception $e) {
             return response()->json(['status' => 'error', 'message' => 'Failed to send message. Please try again.'], 500);
         }
+    }
+
+    public function blog()
+    {
+        // Set SEO for blog page
+        SeoService::setSeoForPage('blog');
+        
+        $blogs = Blog::published()->with(['author', 'tags'])->orderBy('published_at', 'desc')->paginate(6);
+        $services = Service::active()->ordered()->get();
+
+        $response = [
+            'blogs' => $blogs,
+            'services' => $services,
+        ];
+
+        return view('blog', ['response' => $response]);
+    }
+
+    public function blogDetail($slug)
+    {
+        $blog = Blog::findBySlug($slug);
+        
+        if (!$blog) {
+            abort(404);
+        }
+
+        // Increment view count
+        $blog->incrementViewCount();
+
+        $services = Service::active()->ordered()->get();
+        $relatedPosts = $blog->getRelatedPosts(3);
+
+        $response = [
+            'blog' => $blog,
+            'services' => $services,
+            'relatedPosts' => $relatedPosts,
+        ];
+
+        return view('blog-detail', ['response' => $response]);
     }
 
 

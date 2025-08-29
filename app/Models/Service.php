@@ -5,10 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Models\Traits\HasMetaTags;
 
 class Service extends Model
 {
-    use SoftDeletes;
+    use SoftDeletes, HasMetaTags;
 
     protected $fillable = [
         'title',
@@ -46,5 +47,13 @@ class Service extends Model
     public function scopeOrdered($query)
     {
         return $query->orderBy('sort_order');
+    }
+
+    /**
+     * Get the service's meta tags
+     */
+    public function getMetaTags()
+    {
+        return $this->getMetaTagsArray();
     }
 }

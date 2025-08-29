@@ -25,7 +25,7 @@ class StaticPageResource extends Resource
 
     protected static ?string $navigationLabel = 'Static Pages';
 
-    protected static ?int $navigationSort = 5;
+    protected static ?int $navigationSort = 1;
 
     public static function form(Schema $schema): Schema
     {

@@ -24,7 +24,7 @@ class ServiceDescriptionResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedDocumentText;
 
-    protected static UnitEnum|string|null $navigationGroup = 'Content Management';
+    protected static UnitEnum|string|null $navigationGroup = 'Services Management';
 
     protected static ?string $navigationLabel = 'Service Details';
 

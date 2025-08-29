@@ -5,10 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Models\Traits\HasMetaTags;
 
 class Portfolio extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory, SoftDeletes, HasMetaTags;
 
     protected $fillable = [
         'title',
@@ -20,31 +21,11 @@ class Portfolio extends Model
         'slug',
         'short_description',
         'testimonial',
-        'meta_title',
-        'meta_description',
-        'meta_keywords',
-        'og_title',
-        'og_description',
-        'og_image',
-        'og_type',
-        'og_url',
-        'og_site_name',
-        'twitter_card',
-        'twitter_title',
-        'twitter_description',
-        'twitter_image',
-        'twitter_site',
-        'twitter_creator',
-        'canonical_url',
-        'schema_markup',
-        'priority',
-        'change_frequency',
         'status'
     ];
 
     protected $casts = [
-        'schema_markup' => 'array',
-        'priority' => 'decimal:2'
+        // No casts needed after removing SEO fields
     ];
 
     /**
