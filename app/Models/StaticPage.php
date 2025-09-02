@@ -19,6 +19,7 @@ class StaticPage extends Model
 
     protected $casts = [
         'is_active' => 'boolean',
+        'schema_markup' => 'array',
     ];
 
     /**
