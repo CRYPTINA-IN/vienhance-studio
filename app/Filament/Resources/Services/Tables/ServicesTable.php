@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\Services\Tables;
 
+use App\Filament\Actions\GenerateSeoContent;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
@@ -25,7 +26,7 @@ class ServicesTable
                     ->searchable(),
                 ImageColumn::make('image')
                     ->disk('public')
-                    ->url(fn ($record) => $record->image ? asset('storage/' . $record->image) : null),
+                    ->url(fn ($record) => $record->image ? asset('storage/'.$record->image) : null),
                 TextColumn::make('link')
                     ->searchable(),
                 TextColumn::make('delay')
@@ -60,6 +61,7 @@ class ServicesTable
                     ->slideOver(),
             ])
             ->toolbarActions([
+                GenerateSeoContent::make(),
                 BulkActionGroup::make([
                     DeleteBulkAction::make(),
                     ForceDeleteBulkAction::make(),

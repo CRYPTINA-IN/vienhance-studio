@@ -33,6 +33,7 @@ class DatabaseSeeder extends Seeder
             PortfolioSeeder::class,
             ContactSeeder::class,
             BlogSeeder::class,
+            LocationPagesSeeder::class,
         ]);
     }
 }

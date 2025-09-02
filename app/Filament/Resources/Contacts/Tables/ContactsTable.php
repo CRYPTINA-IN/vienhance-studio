@@ -2,19 +2,19 @@
 
 namespace App\Filament\Resources\Contacts\Tables;
 
+use Filament\Actions\Action;
+use Filament\Actions\BulkAction;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ForceDeleteBulkAction;
 use Filament\Actions\RestoreBulkAction;
-use Filament\Actions\BulkAction;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\Filter;
 use Filament\Tables\Filters\TrashedFilter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
-use Filament\Actions\Action;
 
 class ContactsTable
 {
@@ -77,13 +77,13 @@ class ContactsTable
                 Action::make('markAsRead')
                     ->label('Mark as Read')
                     ->color('success')
-                    ->visible(fn ($record) => !$record->is_read)
+                    ->visible(fn ($record) => ! $record->is_read)
                     ->action(fn ($record) => $record->markAsRead())
                     ->requiresConfirmation(),
                 Action::make('fetchLocation')
                     ->label('Fetch Location')
                     ->color('info')
-                    ->visible(fn ($record) => $record->ip_address && !$record->location_data)
+                    ->visible(fn ($record) => $record->ip_address && ! $record->location_data)
                     ->action(fn ($record) => $record->getLocationFromIp())
                     ->requiresConfirmation()
                     ->modalHeading('Fetch Location Data')
@@ -99,9 +99,9 @@ class ContactsTable
                         ->action(function ($records) {
                             $successCount = 0;
                             $failCount = 0;
-                            
+
                             foreach ($records as $record) {
-                                if ($record->ip_address && !$record->location_data) {
+                                if ($record->ip_address && ! $record->location_data) {
                                     $locationData = $record->getLocationFromIp();
                                     if ($locationData) {
                                         $successCount++;
@@ -110,7 +110,7 @@ class ContactsTable
                                     }
                                 }
                             }
-                            
+
                             // Return success message
                             if ($successCount > 0 && $failCount == 0) {
                                 return "Location data fetched for {$successCount} contact(s) successfully!";
@@ -119,7 +119,7 @@ class ContactsTable
                             } elseif ($failCount > 0) {
                                 return "Failed to fetch location data for {$failCount} contact(s).";
                             } else {
-                                return "No contacts selected for location fetching.";
+                                return 'No contacts selected for location fetching.';
                             }
                         })
                         ->requiresConfirmation()

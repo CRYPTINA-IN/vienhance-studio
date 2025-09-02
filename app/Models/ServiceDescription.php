@@ -17,14 +17,14 @@ class ServiceDescription extends Model
         'section_3',
         'benefits',
         'process',
-        'faqs'
+        'faqs',
     ];
 
     protected $casts = [
         'benefits' => 'array',
         'process' => 'array',
         'faqs' => 'array',
-        'deleted_at' => 'datetime'
+        'deleted_at' => 'datetime',
     ];
 
     public function service(): BelongsTo

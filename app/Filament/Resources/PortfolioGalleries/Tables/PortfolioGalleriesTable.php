@@ -23,7 +23,7 @@ class PortfolioGalleriesTable
                     ->sortable(),
                 ImageColumn::make('image')
                     ->disk('public')
-                    ->url(fn ($record) => $record->image ? asset('storage/' . $record->image) : null),
+                    ->url(fn ($record) => $record->image ? asset('storage/'.$record->image) : null),
                 TextColumn::make('alt_text')
                     ->searchable(),
                 TextColumn::make('caption')

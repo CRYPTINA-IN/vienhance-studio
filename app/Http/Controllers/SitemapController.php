@@ -2,12 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Service;
-use App\Models\StaticPage;
 use App\Models\Portfolio;
-use App\Services\SeoService;
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
+use App\Models\Service;
 use Spatie\Sitemap\Sitemap;
 use Spatie\Sitemap\Tags\Url;
 
@@ -74,8 +70,8 @@ class SitemapController extends Controller
     {
         $content = "User-agent: *\n";
         $content .= "Allow: /\n\n";
-        $content .= "Sitemap: " . url('/sitemap.xml') . "\n";
-        
+        $content .= 'Sitemap: '.url('/sitemap.xml')."\n";
+
         return response($content, 200, [
             'Content-Type' => 'text/plain',
         ]);

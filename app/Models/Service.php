@@ -2,14 +2,14 @@
 
 namespace App\Models;
 
+use App\Models\Traits\HasMetaTags;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use App\Models\Traits\HasMetaTags;
 
 class Service extends Model
 {
-    use SoftDeletes, HasMetaTags;
+    use HasMetaTags, SoftDeletes;
 
     protected $fillable = [
         'title',
@@ -19,13 +19,13 @@ class Service extends Model
         'link',
         'delay',
         'is_active',
-        'sort_order'
+        'sort_order',
     ];
 
     protected $casts = [
         'is_active' => 'boolean',
         'sort_order' => 'integer',
-        'deleted_at' => 'datetime'
+        'deleted_at' => 'datetime',
     ];
 
     public function description(): HasOne

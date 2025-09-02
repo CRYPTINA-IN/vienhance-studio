@@ -32,6 +32,7 @@ trait HasMetaTags
     public function updateMetaTags(array $data): bool
     {
         $metaTags = $this->getOrCreateMetaTags();
+
         return $metaTags->update($data);
     }
 
@@ -41,11 +42,11 @@ trait HasMetaTags
     public function getMetaTagsArray(): array
     {
         $metaTags = $this->metaTags()->active()->first();
-        
-        if (!$metaTags) {
+
+        if (! $metaTags) {
             return MetaTag::getDefaults();
         }
-        
+
         return $metaTags->toMetaArray();
     }
 

@@ -2,11 +2,10 @@
 
 namespace App\Console\Commands;
 
-use Illuminate\Console\Command;
 use App\Models\Blog;
 use App\Models\Portfolio;
 use App\Models\StaticPage;
-use App\Models\MetaTag;
+use Illuminate\Console\Command;
 
 class MigrateSeoData extends Command
 {
@@ -30,7 +29,7 @@ class MigrateSeoData extends Command
     public function handle()
     {
         $this->info('Starting SEO data migration...');
-        
+
         if ($this->option('dry-run')) {
             $this->warn('DRY RUN MODE - No data will be actually migrated');
         }
@@ -68,9 +67,9 @@ class MigrateSeoData extends Command
 
         foreach ($blogs as $blog) {
             $seoData = $this->extractBlogSeoData($blog);
-            
+
             if ($this->hasSeoData($seoData)) {
-                if (!$this->option('dry-run')) {
+                if (! $this->option('dry-run')) {
                     $blog->updateMetaTags($seoData);
                 }
                 $count++;
@@ -91,9 +90,9 @@ class MigrateSeoData extends Command
 
         foreach ($portfolios as $portfolio) {
             $seoData = $this->extractPortfolioSeoData($portfolio);
-            
+
             if ($this->hasSeoData($seoData)) {
-                if (!$this->option('dry-run')) {
+                if (! $this->option('dry-run')) {
                     $portfolio->updateMetaTags($seoData);
                 }
                 $count++;
@@ -114,9 +113,9 @@ class MigrateSeoData extends Command
 
         foreach ($staticPages as $page) {
             $seoData = $this->extractStaticPageSeoData($page);
-            
+
             if ($this->hasSeoData($seoData)) {
-                if (!$this->option('dry-run')) {
+                if (! $this->option('dry-run')) {
                     $page->updateMetaTags($seoData);
                 }
                 $count++;
@@ -216,8 +215,8 @@ class MigrateSeoData extends Command
      */
     protected function hasSeoData(array $seoData): bool
     {
-        return !empty(array_filter($seoData, function($value) {
-            return !is_null($value) && $value !== '';
+        return ! empty(array_filter($seoData, function ($value) {
+            return ! is_null($value) && $value !== '';
         }));
     }
 }

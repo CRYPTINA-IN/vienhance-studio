@@ -4,7 +4,6 @@ namespace App\Filament\Widgets;
 
 use App\Models\Contact;
 use Filament\Widgets\ChartWidget;
-use Illuminate\Support\Carbon;
 
 class ContactTrendsChartWidget extends ChartWidget
 {
@@ -19,7 +18,7 @@ class ContactTrendsChartWidget extends ChartWidget
         for ($i = 29; $i >= 0; $i--) {
             $date = now()->subDays($i);
             $days->push($date->format('M d'));
-            
+
             $count = Contact::whereDate('created_at', $date)->count();
             $contactCounts->push($count);
         }

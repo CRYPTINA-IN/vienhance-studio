@@ -4,8 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class BlogTag extends Model
 {
@@ -71,11 +71,11 @@ class BlogTag extends Model
     public static function getPopularTags($limit = 10)
     {
         return static::active()
-                    ->withCount(['blogPosts' => function($query) {
-                        $query->published();
-                    }])
-                    ->orderBy('blog_posts_count', 'desc')
-                    ->limit($limit)
-                    ->get();
+            ->withCount(['blogPosts' => function ($query) {
+                $query->published();
+            }])
+            ->orderBy('blog_posts_count', 'desc')
+            ->limit($limit)
+            ->get();
     }
 }

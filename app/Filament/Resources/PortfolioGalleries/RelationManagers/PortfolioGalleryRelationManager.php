@@ -2,14 +2,14 @@
 
 namespace App\Filament\Resources\PortfolioGalleries\RelationManagers;
 
+use Filament\Actions;
 use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Schemas\Schema;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Filament\Actions;
 
 class PortfolioGalleryRelationManager extends RelationManager
 {
@@ -46,7 +46,7 @@ class PortfolioGalleryRelationManager extends RelationManager
             ->columns([
                 Tables\Columns\ImageColumn::make('image')
                     ->disk('public')
-                    ->url(fn ($record) => $record->image ? asset('storage/' . $record->image) : null)
+                    ->url(fn ($record) => $record->image ? asset('storage/'.$record->image) : null)
                     ->size(60),
                 Tables\Columns\TextColumn::make('alt_text')
                     ->searchable(),
@@ -87,6 +87,3 @@ class PortfolioGalleryRelationManager extends RelationManager
             ->reorderable('sort_order');
     }
 }
-
-
-

@@ -2,11 +2,10 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
 use App\Models\Blog;
 use App\Models\BlogTag;
 use App\Models\User;
-use Illuminate\Support\Str;
+use Illuminate\Database\Seeder;
 
 class BlogSeeder extends Seeder
 {
@@ -32,7 +31,7 @@ class BlogSeeder extends Seeder
         // Get the first user as author
         $author = User::first();
 
-        if (!$author) {
+        if (! $author) {
             $author = User::create([
                 'name' => 'Admin User',
                 'email' => 'admin@example.com',
@@ -52,7 +51,7 @@ class BlogSeeder extends Seeder
                 'published_at' => now()->subDays(5),
                 'meta_title' => 'Color Psychology in Branding - How Colors Influence Consumer Behavior',
                 'meta_description' => 'Learn how color psychology affects branding and consumer behavior. Discover the best colors for your brand identity.',
-                'tags' => ['Branding', 'Creative', 'Innovative']
+                'tags' => ['Branding', 'Creative', 'Innovative'],
             ],
             [
                 'title' => 'Typography Tips for Effective Visual Communication',
@@ -64,7 +63,7 @@ class BlogSeeder extends Seeder
                 'published_at' => now()->subDays(3),
                 'meta_title' => 'Typography Tips for Effective Visual Communication',
                 'meta_description' => 'Master typography principles to enhance readability and create compelling visual designs.',
-                'tags' => ['Typography', 'UI/UX', 'Creative']
+                'tags' => ['Typography', 'UI/UX', 'Creative'],
             ],
             [
                 'title' => 'Breaking Down the Design Process From Concept to Completion',
@@ -76,17 +75,17 @@ class BlogSeeder extends Seeder
                 'published_at' => now()->subDays(1),
                 'meta_title' => 'Design Process Guide - From Concept to Completion',
                 'meta_description' => 'Learn the complete design process from research to final delivery. Master the stages of effective design.',
-                'tags' => ['Web Design', 'UI/UX', 'Innovative']
+                'tags' => ['Web Design', 'UI/UX', 'Innovative'],
             ],
         ];
 
         foreach ($blogPosts as $post) {
             $tags = $post['tags'];
             unset($post['tags']);
-            
+
             $post['author_id'] = $author->id;
             $blog = Blog::create($post);
-            
+
             // Attach tags
             foreach ($tags as $tagName) {
                 $tag = BlogTag::where('name', $tagName)->first();
@@ -94,7 +93,7 @@ class BlogSeeder extends Seeder
                     $blog->tags()->attach($tag->id);
                 }
             }
-            
+
             // Calculate reading time
             $blog->calculateReadingTime();
         }

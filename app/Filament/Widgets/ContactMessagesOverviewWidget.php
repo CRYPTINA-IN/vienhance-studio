@@ -9,19 +9,17 @@ use Illuminate\Support\Facades\DB;
 
 class ContactMessagesOverviewWidget extends StatsOverviewWidget
 {
-
-
     protected function getStats(): array
     {
         // Total contacts received
         $totalContacts = Contact::count();
-        
+
         // Unread messages count
         $unreadContacts = Contact::unread()->count();
-        
+
         // Recent contacts (last 7 days)
         $recentContacts = Contact::where('created_at', '>=', now()->subDays(7))->count();
-        
+
         // Contacts by country (from IP geolocation)
         $contactsByCountry = Contact::whereNotNull('location_data')
             ->select('location_data->country as country', DB::raw('count(*) as count'))

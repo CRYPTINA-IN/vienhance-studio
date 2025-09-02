@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WebsiteController;
+use Illuminate\Support\Facades\Route;
 
 Route::controller(WebsiteController::class)->group(function () {
     Route::get('/', 'index')->name('home');
@@ -14,6 +14,7 @@ Route::controller(WebsiteController::class)->group(function () {
     Route::post('/contact/submit', 'submitContactForm')->name('contact.submit');
     Route::get('/blog', 'blog')->name('blog');
     Route::get('/blog/{slug}', 'blogDetail')->name('blog.detail');
+    Route::get('/pages/{slug}', 'seoPage')->name('pages.show');
 });
 
 // Sitemap routes

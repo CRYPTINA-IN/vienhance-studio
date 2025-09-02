@@ -2,16 +2,16 @@
 
 namespace App\Models;
 
+use App\Models\Traits\HasMetaTags;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use App\Models\Traits\HasMetaTags;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Blog extends Model
 {
-    use HasFactory, SoftDeletes, HasMetaTags;
+    use HasFactory, HasMetaTags, SoftDeletes;
 
     protected $fillable = [
         'title',
@@ -54,7 +54,7 @@ class Blog extends Model
     public function scopePublished($query)
     {
         return $query->where('status', 'published')
-                    ->where('published_at', '<=', now());
+            ->where('published_at', '<=', now());
     }
 
     /**
@@ -71,8 +71,8 @@ class Blog extends Model
     public function scopeFeatured($query)
     {
         return $query->where('status', 'published')
-                    ->where('published_at', '<=', now())
-                    ->orderBy('view_count', 'desc');
+            ->where('published_at', '<=', now())
+            ->orderBy('view_count', 'desc');
     }
 
     /**
@@ -89,9 +89,9 @@ class Blog extends Model
     public static function findBySlug($slug)
     {
         return static::where('slug', $slug)
-                    ->with(['author', 'tags'])
-                    ->published()
-                    ->first();
+            ->with(['author', 'tags'])
+            ->published()
+            ->first();
     }
 
     /**
@@ -134,9 +134,9 @@ class Blog extends Model
     public function getRelatedPosts($limit = 3)
     {
         return static::published()
-                    ->where('id', '!=', $this->id)
-                    ->orderBy('published_at', 'desc')
-                    ->limit($limit)
-                    ->get();
+            ->where('id', '!=', $this->id)
+            ->orderBy('published_at', 'desc')
+            ->limit($limit)
+            ->get();
     }
 }

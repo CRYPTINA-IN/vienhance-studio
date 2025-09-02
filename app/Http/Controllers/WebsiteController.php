@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Service;
-use App\Models\Portfolio;
-use App\Models\Contact;
 use App\Models\Blog;
+use App\Models\Contact;
+use App\Models\Portfolio;
+use App\Models\SeoPage;
+use App\Models\Service;
 use App\Services\SeoService;
 use Illuminate\Http\Request;
 
@@ -37,6 +38,7 @@ class WebsiteController extends Controller
         $response = [
             'services' => $services,
         ];
+
         return view('about', ['response' => $response]);
     }
 
@@ -61,7 +63,7 @@ class WebsiteController extends Controller
             ->with('description')
             ->first();
 
-        if (!$service) {
+        if (! $service) {
             abort(404);
         }
 
@@ -108,7 +110,7 @@ class WebsiteController extends Controller
     {
         $portfolio = Portfolio::findBySlug($slug);
 
-        if (!$portfolio) {
+        if (! $portfolio) {
             abort(404);
         }
 
@@ -162,27 +164,27 @@ class WebsiteController extends Controller
 
             if ($existingContact) {
                 return response()->json([
-                    'status' => 'error', 
-                    'message' => 'One of our representatives will get back to you shortly. Please wait for our response.'
+                    'status' => 'error',
+                    'message' => 'One of our representatives will get back to you shortly. Please wait for our response.',
                 ], 422);
             }
 
             // Add IP address to the validated data
             $validated['ip_address'] = $request->ip();
-            
+
             // Save to database
             Contact::create($validated);
-            
+
             // Here you can add logic to:
             // 1. Send email notification
             // 2. Log the contact request
-            
+
             // You can implement email sending using Laravel's Mail facade
             // Example:
             // Mail::to('your-email@example.com')->send(new ContactFormMail($validated));
-            
+
             return response()->json(['status' => 'success', 'message' => 'Message sent successfully!']);
-            
+
         } catch (\Exception $e) {
             return response()->json(['status' => 'error', 'message' => 'Failed to send message. Please try again.'], 500);
         }
@@ -192,7 +194,7 @@ class WebsiteController extends Controller
     {
         // Set SEO for blog page
         SeoService::setSeoForPage('blog');
-        
+
         $blogs = Blog::published()->with(['author', 'tags'])->orderBy('published_at', 'desc')->paginate(6);
         $services = Service::active()->ordered()->get();
 
@@ -207,8 +209,8 @@ class WebsiteController extends Controller
     public function blogDetail($slug)
     {
         $blog = Blog::findBySlug($slug);
-        
-        if (!$blog) {
+
+        if (! $blog) {
             abort(404);
         }
 
@@ -227,5 +229,26 @@ class WebsiteController extends Controller
         return view('blog-detail', ['response' => $response]);
     }
 
+    public function seoPage($slug)
+    {
+        $seoPage = SeoPage::findBySlug($slug);
 
+        if (! $seoPage) {
+            abort(404);
+        }
+
+        // Set SEO for the page using the associated meta tag
+        if ($seoPage->metaTag) {
+            SeoService::setSeoForSeoPage($seoPage);
+        }
+
+        $services = Service::active()->ordered()->get();
+
+        $response = [
+            'seoPage' => $seoPage,
+            'services' => $services,
+        ];
+
+        return view('seo-page', ['response' => $response]);
+    }
 }

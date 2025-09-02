@@ -67,9 +67,9 @@ class MetaTag extends Model
     public static function getForModel($modelType, $modelId)
     {
         return static::where('taggable_type', $modelType)
-                    ->where('taggable_id', $modelId)
-                    ->active()
-                    ->first();
+            ->where('taggable_id', $modelId)
+            ->active()
+            ->first();
     }
 
     /**

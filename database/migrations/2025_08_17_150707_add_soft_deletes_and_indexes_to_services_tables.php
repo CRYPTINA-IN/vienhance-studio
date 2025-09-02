@@ -14,7 +14,7 @@ return new class extends Migration
         // Add soft deletes and indexes to services table
         Schema::table('services', function (Blueprint $table) {
             $table->softDeletes();
-            
+
             // Indexes for better performance
             $table->index('is_active');
             $table->index('sort_order');
@@ -24,7 +24,7 @@ return new class extends Migration
         // Add soft deletes and indexes to service_descriptions table
         Schema::table('service_descriptions', function (Blueprint $table) {
             $table->softDeletes();
-            
+
             // Indexes for better performance
             $table->index('service_id');
         });

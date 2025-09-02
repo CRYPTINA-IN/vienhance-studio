@@ -2,9 +2,8 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
 use App\Models\StaticPage;
+use Illuminate\Database\Seeder;
 
 class StaticPageSeeder extends Seeder
 {
@@ -128,7 +127,7 @@ class StaticPageSeeder extends Seeder
                 'schema_markup' => '{"@context":"https://schema.org","@type":"ContactPage","name":"Contact Vienhance Studio","description":"Get in touch with us to discuss your web design and development needs","url":"https://vienhancestudio.com/contact","mainEntity":{"@type":"Organization","name":"Vienhance Studio","contactPoint":{"@type":"ContactPoint","contactType":"customer service","availableLanguage":"English"}}}',
                 'priority' => 1,
                 'change_frequency' => 'monthly',
-            ]
+            ],
         ];
 
         foreach ($pages as $pageData) {

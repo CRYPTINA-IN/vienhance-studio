@@ -2,14 +2,14 @@
 
 namespace App\Models;
 
+use App\Models\Traits\HasMetaTags;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use App\Models\Traits\HasMetaTags;
 
 class Portfolio extends Model
 {
-    use HasFactory, SoftDeletes, HasMetaTags;
+    use HasFactory, HasMetaTags, SoftDeletes;
 
     protected $fillable = [
         'title',
@@ -21,7 +21,7 @@ class Portfolio extends Model
         'slug',
         'short_description',
         'testimonial',
-        'status'
+        'status',
     ];
 
     protected $casts = [

@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->text('short_description');
             $table->text('testimonial')->nullable();
-            
+
             // SEO columns
             $table->string('meta_title')->nullable();
             $table->text('meta_description')->nullable();
@@ -43,7 +43,7 @@ return new class extends Migration
             $table->json('schema_markup')->nullable();
             $table->decimal('priority', 3, 2)->nullable();
             $table->string('change_frequency')->nullable();
-            
+
             $table->enum('status', ['live', 'in-development', 'recurring'])->default('in-development');
             $table->softDeletes();
             $table->timestamps();

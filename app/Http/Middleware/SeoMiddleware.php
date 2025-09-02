@@ -2,13 +2,13 @@
 
 namespace App\Http\Middleware;
 
-use Closure;
-use Illuminate\Http\Request;
-use App\Models\MetaTag;
 use App\Models\Blog;
+use App\Models\MetaTag;
 use App\Models\Portfolio;
 use App\Models\Service;
 use App\Models\StaticPage;
+use Closure;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
 
 class SeoMiddleware
@@ -19,16 +19,16 @@ class SeoMiddleware
     public function handle(Request $request, Closure $next)
     {
         $response = $next($request);
-        
+
         // Only process HTML responses
-        if (!$response->headers->get('content-type') || 
-            !str_contains($response->headers->get('content-type'), 'text/html')) {
+        if (! $response->headers->get('content-type') ||
+            ! str_contains($response->headers->get('content-type'), 'text/html')) {
             return $response;
         }
 
         // Meta tags are now handled directly in the layout
         // This middleware can be used for other SEO-related functionality in the future
-        
+
         return $response;
     }
 
@@ -39,30 +39,32 @@ class SeoMiddleware
     {
         $routeName = $request->route()->getName();
         $path = $request->path();
-        
-        Log::info('SEO Middleware - Route: ' . $routeName . ', Path: ' . $path);
-        
+
+        Log::info('SEO Middleware - Route: '.$routeName.', Path: '.$path);
+
         // Check for specific model routes
         if ($this->isBlogDetailRoute($request)) {
             Log::info('SEO Middleware - Detected blog detail route');
+
             return $this->getBlogMetaTags($request);
         }
-        
+
         if ($this->isPortfolioDetailRoute($request)) {
             return $this->getPortfolioMetaTags($request);
         }
-        
+
         if ($this->isServiceDetailRoute($request)) {
             return $this->getServiceMetaTags($request);
         }
-        
+
         // Check for static pages
         $staticPage = StaticPage::findByRoute($routeName);
         if ($staticPage) {
             return $this->getStaticPageMetaTags($staticPage);
         }
-        
-        Log::info('SEO Middleware - Using default meta tags for route: ' . $routeName);
+
+        Log::info('SEO Middleware - Using default meta tags for route: '.$routeName);
+
         // Return default meta tags
         return $this->getDefaultMetaTags($routeName);
     }
@@ -98,24 +100,27 @@ class SeoMiddleware
     {
         $slug = $request->route('slug');
         $blog = Blog::findBySlug($slug);
-        
-        Log::info('SEO Middleware - Blog lookup: slug=' . $slug . ', blog found=' . ($blog ? 'yes' : 'no'));
-        
-        if (!$blog) {
+
+        Log::info('SEO Middleware - Blog lookup: slug='.$slug.', blog found='.($blog ? 'yes' : 'no'));
+
+        if (! $blog) {
             Log::info('SEO Middleware - Blog not found, returning defaults');
+
             return MetaTag::getDefaults();
         }
-        
-        Log::info('SEO Middleware - Blog found: ID=' . $blog->id . ', Title=' . $blog->title);
-        
+
+        Log::info('SEO Middleware - Blog found: ID='.$blog->id.', Title='.$blog->title);
+
         // Try to get custom meta tags first
         $metaTag = MetaTag::getForModel(Blog::class, $blog->id);
         if ($metaTag) {
-            Log::info('SEO Middleware - Meta tag found in centralized table: ' . $metaTag->title);
+            Log::info('SEO Middleware - Meta tag found in centralized table: '.$metaTag->title);
+
             return $metaTag->toMetaArray();
         }
-        
+
         Log::info('SEO Middleware - No meta tag in centralized table, using blog defaults');
+
         // Fallback to blog's built-in meta tags
         return $blog->getMetaTags();
     }
@@ -127,17 +132,17 @@ class SeoMiddleware
     {
         $slug = $request->route('slug');
         $portfolio = Portfolio::where('slug', $slug)->first();
-        
-        if (!$portfolio) {
+
+        if (! $portfolio) {
             return MetaTag::getDefaults();
         }
-        
+
         // Try to get custom meta tags first
         $metaTag = MetaTag::getForModel(Portfolio::class, $portfolio->id);
         if ($metaTag) {
             return $metaTag->toMetaArray();
         }
-        
+
         // Fallback to portfolio's built-in meta tags
         return [
             'title' => $portfolio->meta_title ?: $portfolio->title,
@@ -167,22 +172,22 @@ class SeoMiddleware
     {
         $slug = $request->route('slug');
         $service = Service::where('slug', $slug)->active()->first();
-        
-        if (!$service) {
+
+        if (! $service) {
             return MetaTag::getDefaults();
         }
-        
+
         // Try to get custom meta tags
         $metaTag = MetaTag::getForModel(Service::class, $service->id);
         if ($metaTag) {
             return $metaTag->toMetaArray();
         }
-        
+
         // Fallback to default service meta tags
         return [
-            'title' => $service->title . ' - ' . config('app.name'),
+            'title' => $service->title.' - '.config('app.name'),
             'meta_description' => $service->description,
-            'meta_keywords' => 'web design, development, ' . strtolower($service->title),
+            'meta_keywords' => 'web design, development, '.strtolower($service->title),
             'og_title' => $service->title,
             'og_description' => $service->description,
             'og_image' => $service->image,
@@ -207,7 +212,7 @@ class SeoMiddleware
         if ($metaTag) {
             return $metaTag->toMetaArray();
         }
-        
+
         // Fallback to static page's built-in meta tags
         return $page->getMetaTags();
     }
@@ -218,35 +223,35 @@ class SeoMiddleware
     protected function getDefaultMetaTags(string $routeName): array
     {
         $defaults = MetaTag::getDefaults();
-        
+
         // Customize based on route
         switch ($routeName) {
             case 'home':
-                $defaults['title'] = 'Home - ' . config('app.name');
-                $defaults['meta_description'] = 'Welcome to ' . config('app.name') . ' - Professional web design and development services';
+                $defaults['title'] = 'Home - '.config('app.name');
+                $defaults['meta_description'] = 'Welcome to '.config('app.name').' - Professional web design and development services';
                 break;
             case 'about':
-                $defaults['title'] = 'About Us - ' . config('app.name');
-                $defaults['meta_description'] = 'Learn about ' . config('app.name') . ' and our team of web design and development experts';
+                $defaults['title'] = 'About Us - '.config('app.name');
+                $defaults['meta_description'] = 'Learn about '.config('app.name').' and our team of web design and development experts';
                 break;
             case 'services':
-                $defaults['title'] = 'Our Services - ' . config('app.name');
+                $defaults['title'] = 'Our Services - '.config('app.name');
                 $defaults['meta_description'] = 'Explore our comprehensive web design and development services';
                 break;
             case 'portfolio':
-                $defaults['title'] = 'Our Portfolio - ' . config('app.name');
+                $defaults['title'] = 'Our Portfolio - '.config('app.name');
                 $defaults['meta_description'] = 'View our latest web design and development projects';
                 break;
             case 'blog':
-                $defaults['title'] = 'Blog - ' . config('app.name');
+                $defaults['title'] = 'Blog - '.config('app.name');
                 $defaults['meta_description'] = 'Read our latest insights on web design, development, and digital trends';
                 break;
             case 'contact':
-                $defaults['title'] = 'Contact Us - ' . config('app.name');
-                $defaults['meta_description'] = 'Get in touch with ' . config('app.name') . ' for your web design and development needs';
+                $defaults['title'] = 'Contact Us - '.config('app.name');
+                $defaults['meta_description'] = 'Get in touch with '.config('app.name').' for your web design and development needs';
                 break;
         }
-        
+
         return $defaults;
     }
 }

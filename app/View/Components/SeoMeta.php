@@ -2,12 +2,13 @@
 
 namespace App\View\Components;
 
-use Illuminate\View\Component;
 use App\Services\SeoService;
+use Illuminate\View\Component;
 
 class SeoMeta extends Component
 {
     public $routeName;
+
     public $customData;
 
     /**

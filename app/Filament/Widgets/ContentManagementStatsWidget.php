@@ -2,27 +2,25 @@
 
 namespace App\Filament\Widgets;
 
-use App\Models\Service;
 use App\Models\Portfolio;
+use App\Models\Service;
 use App\Models\StaticPage;
 use Filament\Widgets\StatsOverviewWidget;
 use Filament\Widgets\StatsOverviewWidget\Stat;
 
 class ContentManagementStatsWidget extends StatsOverviewWidget
 {
-
-
     protected function getStats(): array
     {
         // Total services published
         $totalServices = Service::active()->count();
-        
+
         // Total portfolios published
         $totalPortfolios = Portfolio::published()->count();
-        
+
         // Total static pages
         $totalStaticPages = StaticPage::count();
-        
+
         // Recent content updates (last 7 days)
         $recentServices = Service::where('updated_at', '>=', now()->subDays(7))->count();
         $recentPortfolios = Portfolio::where('updated_at', '>=', now()->subDays(7))->count();

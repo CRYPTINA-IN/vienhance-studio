@@ -3,10 +3,10 @@
 namespace App\Services;
 
 use App\Models\StaticPage;
-use Artesaos\SEOTools\Facades\SEOMeta;
-use Artesaos\SEOTools\Facades\OpenGraph;
-use Artesaos\SEOTools\Facades\TwitterCard;
 use Artesaos\SEOTools\Facades\JsonLd;
+use Artesaos\SEOTools\Facades\OpenGraph;
+use Artesaos\SEOTools\Facades\SEOMeta;
+use Artesaos\SEOTools\Facades\TwitterCard;
 
 class SeoService
 {
@@ -16,9 +16,10 @@ class SeoService
     public static function setSeoForPage($routeName, $customData = [])
     {
         $page = StaticPage::findByRoute($routeName);
-        
-        if (!$page) {
+
+        if (! $page) {
             self::setDefaultSeo($routeName);
+
             return;
         }
 
@@ -34,7 +35,7 @@ class SeoService
         OpenGraph::setUrl($page->og_url ?: url()->current());
         OpenGraph::setSiteName($page->og_site_name ?: config('app.name'));
         OpenGraph::setType($page->og_type ?: 'website');
-        
+
         if ($page->og_image) {
             OpenGraph::addImage(asset($page->og_image));
         }
@@ -44,21 +45,21 @@ class SeoService
         TwitterCard::setDescription($page->twitter_description ?: $page->meta_description);
         TwitterCard::setUrl($page->canonical_url ?: url()->current());
         TwitterCard::setType($page->twitter_card ?: 'summary_large_image');
-        
+
         if ($page->twitter_site) {
             TwitterCard::setSite($page->twitter_site);
         }
-        
+
         if ($page->twitter_creator) {
             TwitterCard::addValue('creator', $page->twitter_creator);
         }
-        
+
         if ($page->twitter_image) {
             TwitterCard::addImage(asset($page->twitter_image));
         }
-        
+
         // Set default Twitter site if not set
-        if (!$page->twitter_site) {
+        if (! $page->twitter_site) {
             TwitterCard::setSite('@vienhancestudio');
         }
 
@@ -70,7 +71,7 @@ class SeoService
         }
 
         // Apply custom data if provided
-        if (!empty($customData)) {
+        if (! empty($customData)) {
             self::applyCustomData($customData);
         }
     }
@@ -80,7 +81,7 @@ class SeoService
      */
     public static function setDefaultSeo($routeName)
     {
-        $defaultTitle = config('app.name') . ' - Professional Web Design & Development Services';
+        $defaultTitle = config('app.name').' - Professional Web Design & Development Services';
         $defaultDescription = 'Professional web design and development services. We create stunning, responsive websites that drive results for your business.';
         $defaultKeywords = 'web design, web development, digital marketing, responsive design, SEO, Laravel, PHP, modern websites';
 
@@ -115,7 +116,7 @@ class SeoService
             'https://twitter.com/vienhancestudio',
             'https://facebook.com/vienhancestudio',
             'https://www.linkedin.com/company/vienhance-studio',
-            'https://www.instagram.com/vienhancestudio'
+            'https://www.instagram.com/vienhancestudio',
         ]);
     }
 
@@ -124,9 +125,9 @@ class SeoService
      */
     public static function setSeoForService($service)
     {
-        $title = $service['title'] . ' - ' . config('app.name');
-        $description = $service['meta_description'] ?? 'Professional ' . strtolower($service['title']) . ' services. We deliver high-quality solutions tailored to your business needs.';
-        $keywords = $service['meta_keywords'] ?? strtolower($service['title']) . ', web design, development, digital services';
+        $title = $service['title'].' - '.config('app.name');
+        $description = $service['meta_description'] ?? 'Professional '.strtolower($service['title']).' services. We deliver high-quality solutions tailored to your business needs.';
+        $keywords = $service['meta_keywords'] ?? strtolower($service['title']).', web design, development, digital services';
 
         SEOMeta::setTitle($title);
         SEOMeta::setDescription($description);
@@ -138,7 +139,7 @@ class SeoService
         OpenGraph::setUrl(url()->current());
         OpenGraph::setSiteName(config('app.name'));
         OpenGraph::setType('website');
-        
+
         if (isset($service['image'])) {
             OpenGraph::addImage(asset($service['image']));
         } else {
@@ -151,7 +152,7 @@ class SeoService
         TwitterCard::setType('summary_large_image');
         TwitterCard::setSite('@vienhancestudio');
         TwitterCard::addValue('creator', '@vienhancestudio');
-        
+
         if (isset($service['image'])) {
             TwitterCard::addImage(asset($service['image']));
         } else {
@@ -166,7 +167,7 @@ class SeoService
         JsonLd::addValue('provider', [
             '@type' => 'Organization',
             'name' => config('app.name'),
-            'url' => url('/')
+            'url' => url('/'),
         ]);
         JsonLd::addValue('areaServed', 'Worldwide');
         JsonLd::addValue('url', url()->current());
@@ -177,9 +178,9 @@ class SeoService
      */
     public static function setSeoForPortfolio($portfolio)
     {
-        $title = $portfolio['meta_title'] ?? $portfolio['title'] . ' - Portfolio Project | ' . config('app.name');
-        $description = $portfolio['meta_description'] ?? $portfolio['overview'] ?? 'Portfolio project by ' . config('app.name');
-        $keywords = $portfolio['meta_keywords'] ?? 'portfolio, web design, web development, ' . strtolower($portfolio['industry'] ?? '');
+        $title = $portfolio['meta_title'] ?? $portfolio['title'].' - Portfolio Project | '.config('app.name');
+        $description = $portfolio['meta_description'] ?? $portfolio['overview'] ?? 'Portfolio project by '.config('app.name');
+        $keywords = $portfolio['meta_keywords'] ?? 'portfolio, web design, web development, '.strtolower($portfolio['industry'] ?? '');
 
         SEOMeta::setTitle($title);
         SEOMeta::setDescription($description);
@@ -191,10 +192,10 @@ class SeoService
         OpenGraph::setUrl($portfolio['og_url'] ?? url()->current());
         OpenGraph::setSiteName($portfolio['og_site_name'] ?? config('app.name'));
         OpenGraph::setType($portfolio['og_type'] ?? 'website');
-        
+
         if (isset($portfolio['og_image'])) {
             OpenGraph::addImage(asset($portfolio['og_image']));
-        } else if (isset($portfolio['image'])) {
+        } elseif (isset($portfolio['image'])) {
             OpenGraph::addImage(asset($portfolio['image']));
         } else {
             OpenGraph::addImage(asset('images/work-image-1.jpg'));
@@ -206,10 +207,10 @@ class SeoService
         TwitterCard::setType($portfolio['twitter_card'] ?? 'summary_large_image');
         TwitterCard::setSite($portfolio['twitter_site'] ?? '@vienhancestudio');
         TwitterCard::addValue('creator', $portfolio['twitter_creator'] ?? '@vienhancestudio');
-        
+
         if (isset($portfolio['twitter_image'])) {
             TwitterCard::addImage(asset($portfolio['twitter_image']));
-        } else if (isset($portfolio['image'])) {
+        } elseif (isset($portfolio['image'])) {
             TwitterCard::addImage(asset($portfolio['image']));
         } else {
             TwitterCard::addImage(asset('images/work-image-1.jpg'));
@@ -223,11 +224,11 @@ class SeoService
         JsonLd::addValue('creator', [
             '@type' => 'Organization',
             'name' => config('app.name'),
-            'url' => url('/')
+            'url' => url('/'),
         ]);
         JsonLd::addValue('dateCreated', $portfolio['created_at'] ?? date('Y-m-d'));
         JsonLd::addValue('url', url()->current());
-        
+
         if (isset($portfolio['schema_markup'])) {
             foreach ($portfolio['schema_markup'] as $key => $value) {
                 JsonLd::addValue($key, $value);
@@ -290,6 +291,69 @@ class SeoService
                     'last_modified' => $page->updated_at,
                 ];
             });
+    }
+
+    /**
+     * Set SEO for a SEO page
+     */
+    public static function setSeoForSeoPage($seoPage)
+    {
+        $metaTag = $seoPage->metaTag;
+
+        if (! $metaTag) {
+            self::setDefaultSeo('seo-page');
+
+            return;
+        }
+
+        // Basic Meta Tags
+        SEOMeta::setTitle($metaTag->title ?: $seoPage->title);
+        SEOMeta::setDescription($metaTag->meta_description ?: $seoPage->description);
+        SEOMeta::addKeyword($metaTag->meta_keywords);
+        SEOMeta::setCanonical($metaTag->canonical_url ?: url()->current());
+
+        // Open Graph (Facebook)
+        OpenGraph::setTitle($metaTag->og_title ?: $seoPage->title);
+        OpenGraph::setDescription($metaTag->og_description ?: $seoPage->description);
+        OpenGraph::setUrl($metaTag->og_url ?: url()->current());
+        OpenGraph::setSiteName($metaTag->og_site_name ?: config('app.name'));
+        OpenGraph::setType($metaTag->og_type ?: 'website');
+
+        if ($metaTag->og_image) {
+            OpenGraph::addImage(asset($metaTag->og_image));
+        } elseif ($seoPage->featured_image) {
+            OpenGraph::addImage(asset($seoPage->featured_image));
+        }
+
+        // Twitter Card
+        TwitterCard::setTitle($metaTag->twitter_title ?: $seoPage->title);
+        TwitterCard::setDescription($metaTag->twitter_description ?: $seoPage->description);
+        TwitterCard::setUrl(url()->current());
+        TwitterCard::setType($metaTag->twitter_card ?: 'summary_large_image');
+        TwitterCard::setSite($metaTag->twitter_site ?: '@vienhancestudio');
+        TwitterCard::addValue('creator', $metaTag->twitter_creator ?: '@vienhancestudio');
+
+        if ($metaTag->twitter_image) {
+            TwitterCard::addImage(asset($metaTag->twitter_image));
+        } elseif ($seoPage->featured_image) {
+            TwitterCard::addImage(asset($seoPage->featured_image));
+        }
+
+        // JSON-LD Structured Data
+        if ($metaTag->schema_markup) {
+            foreach ($metaTag->schema_markup as $key => $value) {
+                JsonLd::addValue($key, $value);
+            }
+        } else {
+            // Default WebPage schema
+            JsonLd::addValue('@context', 'https://schema.org');
+            JsonLd::addValue('@type', 'WebPage');
+            JsonLd::addValue('name', $seoPage->title);
+            JsonLd::addValue('description', $seoPage->description);
+            JsonLd::addValue('url', url()->current());
+            JsonLd::addValue('datePublished', $seoPage->published_at);
+            JsonLd::addValue('dateModified', $seoPage->updated_at);
+        }
     }
 
     /**

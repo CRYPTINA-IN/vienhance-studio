@@ -5,6 +5,7 @@ namespace App\Filament\Resources\Portfolios;
 use App\Filament\Resources\Portfolios\Pages\CreatePortfolio;
 use App\Filament\Resources\Portfolios\Pages\EditPortfolio;
 use App\Filament\Resources\Portfolios\Pages\ListPortfolios;
+use App\Filament\Resources\Portfolios\RelationManagers\PortfolioGalleryRelationManager;
 use App\Filament\Resources\Portfolios\Schemas\PortfolioForm;
 use App\Filament\Resources\Portfolios\Tables\PortfoliosTable;
 use App\Models\Portfolio;
@@ -15,7 +16,6 @@ use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
-use App\Filament\Resources\Portfolios\RelationManagers\PortfolioGalleryRelationManager;
 use UnitEnum;
 
 class PortfolioResource extends Resource

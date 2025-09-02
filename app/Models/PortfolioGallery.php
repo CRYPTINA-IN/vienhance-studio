@@ -15,7 +15,7 @@ class PortfolioGallery extends Model
         'image',
         'alt_text',
         'caption',
-        'sort_order'
+        'sort_order',
     ];
 
     /**
@@ -23,8 +23,8 @@ class PortfolioGallery extends Model
      */
     public function setImageAttribute($value)
     {
-        if ($value && !str_starts_with($value, 'uploads/')) {
-            $this->attributes['image'] = 'uploads/portfolio-gallery/' . $value;
+        if ($value && ! str_starts_with($value, 'uploads/')) {
+            $this->attributes['image'] = 'uploads/portfolio-gallery/'.$value;
         } else {
             $this->attributes['image'] = $value;
         }

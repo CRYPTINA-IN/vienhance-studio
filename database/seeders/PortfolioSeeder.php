@@ -2,10 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
 use App\Models\Portfolio;
 use App\Models\PortfolioGallery;
+use Illuminate\Database\Seeder;
 
 class PortfolioSeeder extends Seeder
 {
@@ -54,7 +53,7 @@ class PortfolioSeeder extends Seeder
                     ['image' => 'post-4.jpg', 'alt_text' => 'Stellar Tech Solutions Features', 'caption' => 'Key Features', 'sort_order' => 6],
                     ['image' => 'post-4.jpg', 'alt_text' => 'Stellar Tech Solutions Integration', 'caption' => 'System Integration', 'sort_order' => 7],
                     ['image' => 'post-4.jpg', 'alt_text' => 'Stellar Tech Solutions Final', 'caption' => 'Final Implementation', 'sort_order' => 8],
-                ]
+                ],
             ],
             [
                 'title' => 'Green Wave Foods',
@@ -95,7 +94,7 @@ class PortfolioSeeder extends Seeder
                     ['image' => 'post-4.jpg', 'alt_text' => 'Green Wave Foods Admin', 'caption' => 'Admin Dashboard', 'sort_order' => 6],
                     ['image' => 'post-4.jpg', 'alt_text' => 'Green Wave Foods Analytics', 'caption' => 'Sales Analytics', 'sort_order' => 7],
                     ['image' => 'post-4.jpg', 'alt_text' => 'Green Wave Foods Final', 'caption' => 'Final Platform', 'sort_order' => 8],
-                ]
+                ],
             ],
             [
                 'title' => 'Horizon Real Estate',
@@ -136,7 +135,7 @@ class PortfolioSeeder extends Seeder
                     ['image' => 'post-4.jpg', 'alt_text' => 'Horizon Real Estate Social Media', 'caption' => 'Social Media Assets', 'sort_order' => 6],
                     ['image' => 'post-4.jpg', 'alt_text' => 'Horizon Real Estate Signage', 'caption' => 'Office Signage', 'sort_order' => 7],
                     ['image' => 'post-4.jpg', 'alt_text' => 'Horizon Real Estate Final', 'caption' => 'Final Brand Package', 'sort_order' => 8],
-                ]
+                ],
             ],
             [
                 'title' => 'Hylnfluencer',
@@ -175,7 +174,7 @@ class PortfolioSeeder extends Seeder
                     ['image' => 'uploads/portfolio-gallery/01K2Z4TJF93SPJ14QTPME23G22.png', 'alt_text' => 'Hylnfluencer', 'caption' => null, 'sort_order' => 4],
                     ['image' => 'uploads/portfolio-gallery/01K2Z4TY67Z32JQADQA1HMAWD1.png', 'alt_text' => 'Hylnfluencer', 'caption' => null, 'sort_order' => 5],
                     ['image' => 'uploads/portfolio-gallery/01K2Z4VBR9BGW28D6ZWYG3D4JY.png', 'alt_text' => 'Hylnfluencer', 'caption' => null, 'sort_order' => 6],
-                ]
+                ],
             ],
             [
                 'title' => 'EV Charging Station App Design',
@@ -213,7 +212,7 @@ class PortfolioSeeder extends Seeder
                     ['image' => 'uploads/portfolio-gallery/01K2Z5BHXPQTP36GDRH6N78PX6.png', 'alt_text' => 'EV Charging Station App Design', 'caption' => 'EV Charging Station App Design', 'sort_order' => 3],
                     ['image' => 'uploads/portfolio-gallery/01K2Z5C2QQ9WFE0KGKQAPGMXFF.png', 'alt_text' => 'EV Charging Station App Design', 'caption' => 'EV Charging Station App Design', 'sort_order' => 4],
                     ['image' => 'uploads/portfolio-gallery/01K2Z5CG6A9ACAX8JFRJS9B50C.png', 'alt_text' => 'EV Charging Station App Design', 'caption' => 'EV Charging Station App Design', 'sort_order' => 1],
-                ]
+                ],
             ],
             [
                 'title' => 'SI Industries Branding ',
@@ -259,7 +258,7 @@ class PortfolioSeeder extends Seeder
                     ['image' => 'uploads/portfolio-gallery/01K2Z5W6N1BABZHMFSCBHM2M40.jpg', 'alt_text' => 'SI Industries', 'caption' => 'SI Industries', 'sort_order' => 10],
                     ['image' => 'uploads/portfolio-gallery/01K2Z5WHQ7JZK707PMFRAZ1A03.jpg', 'alt_text' => 'SI Industries', 'caption' => 'SI Industries', 'sort_order' => 11],
                     ['image' => 'uploads/portfolio-gallery/01K2Z5WXDH93F2RWPA4W4CY8QJ.jpg', 'alt_text' => 'SI Industries', 'caption' => 'SI Industries', 'sort_order' => 12],
-                ]
+                ],
             ],
             [
                 'title' => 'Ramdhan jewellers',
@@ -302,7 +301,7 @@ class PortfolioSeeder extends Seeder
                     ['image' => 'uploads/portfolio-gallery/01K2Z6CH4D7D75VWM9DTS8KB8Q.png', 'alt_text' => 'Ramdhan jewellers', 'caption' => 'Ramdhan jewellers', 'sort_order' => 7],
                     ['image' => 'uploads/portfolio-gallery/01K2Z6CVA6NK9NRBBQZMFSZ3PV.png', 'alt_text' => 'Ramdhan jewellers', 'caption' => 'Ramdhan jewellers', 'sort_order' => 8],
                     ['image' => 'uploads/portfolio-gallery/01K2Z6D6C14A8KMPT7HNP5N0EG.png', 'alt_text' => 'Ramdhan jewellers', 'caption' => 'Ramdhan jewellers', 'sort_order' => 9],
-                ]
+                ],
             ],
             [
                 'title' => 'Layali Arts',
@@ -348,8 +347,8 @@ class PortfolioSeeder extends Seeder
                     ['image' => 'uploads/portfolio-gallery/01K2Z6Q82CBSXDDNY78S7STW0R.jpg', 'alt_text' => 'Layali ', 'caption' => 'Layali ', 'sort_order' => 10],
                     ['image' => 'uploads/portfolio-gallery/01K2Z6QNARHCPBRMGXV57X6XHW.jpg', 'alt_text' => 'Layali ', 'caption' => 'Layali ', 'sort_order' => 12],
                     ['image' => 'uploads/portfolio-gallery/01K2Z6RM5GGK2YX9WX24J3NFW1.jpg', 'alt_text' => 'Layali ', 'caption' => 'Layali ', 'sort_order' => 11],
-                ]
-            ]
+                ],
+            ],
         ];
 
         foreach ($portfolios as $portfolioData) {

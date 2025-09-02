@@ -2,9 +2,9 @@
 
 namespace App\Models;
 
+use App\Models\Traits\HasMetaTags;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Traits\HasMetaTags;
 
 class StaticPage extends Model
 {
@@ -51,8 +51,8 @@ class StaticPage extends Model
     public static function getDefaultSeo($routeName)
     {
         $page = static::findByRoute($routeName);
-        
-        if (!$page) {
+
+        if (! $page) {
             return [
                 'title' => config('app.name'),
                 'meta_description' => 'Professional web design and development services',

@@ -5,6 +5,7 @@ namespace App\Filament\Resources\ServiceDescriptions;
 use App\Filament\Resources\ServiceDescriptions\Pages\CreateServiceDescription;
 use App\Filament\Resources\ServiceDescriptions\Pages\EditServiceDescription;
 use App\Filament\Resources\ServiceDescriptions\Pages\ListServiceDescriptions;
+use App\Filament\Resources\ServiceDescriptions\RelationManagers\ServiceRelationManager;
 use App\Filament\Resources\ServiceDescriptions\Schemas\ServiceDescriptionForm;
 use App\Filament\Resources\ServiceDescriptions\Tables\ServiceDescriptionsTable;
 use App\Models\ServiceDescription;
@@ -15,7 +16,6 @@ use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
-use App\Filament\Resources\ServiceDescriptions\RelationManagers\ServiceRelationManager;
 use UnitEnum;
 
 class ServiceDescriptionResource extends Resource

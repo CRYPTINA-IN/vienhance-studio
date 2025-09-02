@@ -2,6 +2,10 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\Widgets\ContactMessagesOverviewWidget;
+use App\Filament\Widgets\ContactTrendsChartWidget;
+use App\Filament\Widgets\ContentManagementStatsWidget;
+use App\Filament\Widgets\PortfolioPerformanceWidget;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -12,10 +16,6 @@ use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
 use Filament\Widgets\AccountWidget;
 use Filament\Widgets\FilamentInfoWidget;
-use App\Filament\Widgets\ContactMessagesOverviewWidget;
-use App\Filament\Widgets\ContentManagementStatsWidget;
-use App\Filament\Widgets\PortfolioPerformanceWidget;
-use App\Filament\Widgets\ContactTrendsChartWidget;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;

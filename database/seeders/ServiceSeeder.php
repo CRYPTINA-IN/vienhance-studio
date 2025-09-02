@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use App\Models\Service;
 use App\Models\ServiceDescription;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class ServiceSeeder extends Seeder
@@ -33,44 +32,44 @@ class ServiceSeeder extends Seeder
                         'Improved Brand Loyalty',
                         'Reduced Development Costs',
                         'Increased User Retention',
-                        'Accessible & Inclusive Designs'
+                        'Accessible & Inclusive Designs',
                     ],
                     'process' => [
                         [
                             'title' => 'Research & Strategy',
                             'description' => 'We start by learning about user requirements, business objectives, and market trends to develop a design strategy that is in sync with your vision.',
-                            'icon' => 'uploads/service-descriptions/01K3DTBBHSXDPMCB3YKNHAX2ME.svg'
+                            'icon' => 'uploads/service-descriptions/01K3DTBBHSXDPMCB3YKNHAX2ME.svg',
                         ],
                         [
                             'title' => 'Wireframing & Prototyping',
                             'description' => 'We make wireframes and interactive prototypes to plan out the user experience, providing a smooth ride before final development.',
-                            'icon' => 'uploads/service-descriptions/01K3DTBBHVHMZ2BRNE5HD6Z3SX.svg'
+                            'icon' => 'uploads/service-descriptions/01K3DTBBHVHMZ2BRNE5HD6Z3SX.svg',
                         ],
                         [
                             'title' => 'Design & Testing',
                             'description' => 'Our experts create a beautifully designed, fully functional design and then conduct vigorous usability testing to optimize and complete the user experience.',
-                            'icon' => 'uploads/service-descriptions/01K3DTBBHVHMZ2BRNE5HD6Z3SY.svg'
-                        ]
+                            'icon' => 'uploads/service-descriptions/01K3DTBBHVHMZ2BRNE5HD6Z3SY.svg',
+                        ],
                     ],
                     'faqs' => [
                         [
                             'question' => 'Why is user research important in UI/UX projects?',
-                            'answer' => 'User research is fundamental as it provides insights into your target audience\'s needs, behaviors, and pain points. This data informs our design decisions, ensuring the final product genuinely solves user problems and meets their expectations, leading to higher engagement and satisfaction.'
+                            'answer' => 'User research is fundamental as it provides insights into your target audience\'s needs, behaviors, and pain points. This data informs our design decisions, ensuring the final product genuinely solves user problems and meets their expectations, leading to higher engagement and satisfaction.',
                         ],
                         [
                             'question' => 'How do you ensure the design is user-friendly and intuitive?',
-                            'answer' => 'We achieve user-friendliness through a human-centric approach, starting with user research, creating clear information architecture, and rigorous usability testing. We focus on natural navigation flows, accessible design principles, and consistent visual patterns that users find familiar and easy to understand.'
+                            'answer' => 'We achieve user-friendliness through a human-centric approach, starting with user research, creating clear information architecture, and rigorous usability testing. We focus on natural navigation flows, accessible design principles, and consistent visual patterns that users find familiar and easy to understand.',
                         ],
                         [
                             'question' => 'Can you redesign an existing digital product or website?',
-                            'answer' => 'Absolutely. We specialize in redesigning and optimizing existing digital products. Our process involves auditing the current experience, identifying pain points, and then strategically redesigning elements to improve usability, aesthetics, and overall performance, ultimately enhancing your ROI.'
+                            'answer' => 'Absolutely. We specialize in redesigning and optimizing existing digital products. Our process involves auditing the current experience, identifying pain points, and then strategically redesigning elements to improve usability, aesthetics, and overall performance, ultimately enhancing your ROI.',
                         ],
                         [
                             'question' => 'How do you incorporate accessibility into your UI/UX designs?',
-                            'answer' => 'Accessibility is a core consideration from the outset of every project. We adhere to WCAG (Web Content Accessibility Guidelines) best practices, focusing on elements like color contrast, scalable typography, keyboard usability, and proper alt-text for images to ensure your digital experiences are usable and enjoyable for everyone, including those with disabilities.'
-                        ]
-                    ]
-                ]
+                            'answer' => 'Accessibility is a core consideration from the outset of every project. We adhere to WCAG (Web Content Accessibility Guidelines) best practices, focusing on elements like color contrast, scalable typography, keyboard usability, and proper alt-text for images to ensure your digital experiences are usable and enjoyable for everyone, including those with disabilities.',
+                        ],
+                    ],
+                ],
             ],
             [
                 'title' => 'Branding & Identity Design',
@@ -90,44 +89,44 @@ class ServiceSeeder extends Seeder
                         'Consistent Brand Messaging',
                         'Increases Customer Loyalty',
                         'Increases Market Differentiation',
-                        'Enhances Business Development'
+                        'Enhances Business Development',
                     ],
                     'process' => [
                         [
                             'title' => 'Discovery & Strategy',
                             'description' => 'We delve deep into your business, audience, and industry to define your brand\'s core values, unique positioning, and distinct voice.',
-                            'icon' => 'uploads/service-descriptions/01K3DV1STPMG67GRJPSA9C207R.svg'
+                            'icon' => 'uploads/service-descriptions/01K3DV1STPMG67GRJPSA9C207R.svg',
                         ],
                         [
                             'title' => 'Design & Development',
                             'description' => 'From strategic insights, we craft distinctive logos, harmonious typography, compelling color palettes, and comprehensive brand elements.',
-                            'icon' => 'uploads/service-descriptions/01K3DV1STQ2R74J48XA8E6WA3C.svg'
+                            'icon' => 'uploads/service-descriptions/01K3DV1STQ2R74J48XA8E6WA3C.svg',
                         ],
                         [
                             'title' => 'Implementation & Consistency',
                             'description' => 'We create detailed brand guidelines and essential assets, ensuring your new identity is seamlessly integrated and consistent across all platforms.',
-                            'icon' => 'uploads/service-descriptions/01K3DV1STQ2R74J48XA8E6WA3D.svg'
-                        ]
+                            'icon' => 'uploads/service-descriptions/01K3DV1STQ2R74J48XA8E6WA3D.svg',
+                        ],
                     ],
                     'faqs' => [
                         [
                             'question' => 'Why is professional brand identity crucial for my business?',
-                            'answer' => 'A professional brand identity is vital because it establishes immediate recognition, builds trust with your audience, and clearly communicates your company\'s values and unique promise. It sets you apart from competitors, fosters loyalty, and creates a consistent impression across all customer touchpoints, driving long-term success.'
+                            'answer' => 'A professional brand identity is vital because it establishes immediate recognition, builds trust with your audience, and clearly communicates your company\'s values and unique promise. It sets you apart from competitors, fosters loyalty, and creates a consistent impression across all customer touchpoints, driving long-term success.',
                         ],
                         [
                             'question' => 'What is included in your Brand Identity & Branding service?',
-                            'answer' => 'Our service typically includes comprehensive brand strategy, logo design, development of a full visual identity system (color palettes, typography, imagery style), brand guidelines, and assistance in crafting your brand\'s core messaging and narrative. The exact deliverables are tailored to your specific needs.'
+                            'answer' => 'Our service typically includes comprehensive brand strategy, logo design, development of a full visual identity system (color palettes, typography, imagery style), brand guidelines, and assistance in crafting your brand\'s core messaging and narrative. The exact deliverables are tailored to your specific needs.',
                         ],
                         [
                             'question' => 'How long does a typical branding project take?',
-                            'answer' => 'The timeline for a branding project can vary based on complexity and scope. Generally, a complete brand identity project, from discovery to final guidelines, can take anywhere from 2 to 3 weeks. We\'ll provide a detailed project schedule during our initial consultation.'
+                            'answer' => 'The timeline for a branding project can vary based on complexity and scope. Generally, a complete brand identity project, from discovery to final guidelines, can take anywhere from 2 to 3 weeks. We\'ll provide a detailed project schedule during our initial consultation.',
                         ],
                         [
                             'question' => 'Can you help us with rebranding an existing business?',
-                            'answer' => 'Yes, absolutely. We specialize in both creating new brand identities and strategically rebranding existing businesses. Our rebranding process involves an in-depth analysis of your current brand, market position, and future goals to ensure the new identity effectively revitalizes your presence and resonates with your evolving audience.'
-                        ]
-                    ]
-                ]
+                            'answer' => 'Yes, absolutely. We specialize in both creating new brand identities and strategically rebranding existing businesses. Our rebranding process involves an in-depth analysis of your current brand, market position, and future goals to ensure the new identity effectively revitalizes your presence and resonates with your evolving audience.',
+                        ],
+                    ],
+                ],
             ],
             [
                 'title' => 'Illustration & Graphic Design',
@@ -147,48 +146,48 @@ class ServiceSeeder extends Seeder
                         'Enhanced User Engagement',
                         'Versatility Across Platforms',
                         'Boosts Brand Personality',
-                        'Increases Marketing Impact'
+                        'Increases Marketing Impact',
                     ],
                     'process' => [
                         [
                             'title' => 'Concept & Ideation',
                             'description' => 'We begin by dissecting your brand\'s personality and objectives, developing innovative directions and sketching preliminary ideas to build a solid visual foundation.',
-                            'icon' => 'uploads/service-descriptions/01K3DV3BYG7X6TW1527K3JXT2E.svg'
+                            'icon' => 'uploads/service-descriptions/01K3DV3BYG7X6TW1527K3JXT2E.svg',
                         ],
                         [
                             'title' => 'Design & Refinement',
                             'description' => 'We craft high-end illustrations, graphics, and iconography using digital tools and fine art techniques, tailored precisely to your brand\'s narrative and visual identity.',
-                            'icon' => 'uploads/service-descriptions/01K3DV3BYH9JAZPK6WTXDV5YJZ.svg'
+                            'icon' => 'uploads/service-descriptions/01K3DV3BYH9JAZPK6WTXDV5YJZ.svg',
                         ],
                         [
                             'title' => 'Implementation & Consistency',
                             'description' => 'We optimize and adjust designs across various platforms to ensure seamless consistency for print, digital, and social media, providing a smooth brand experience.',
-                            'icon' => 'uploads/service-descriptions/01K3DV3BYJHFFM8KQ6NEEMD20W.svg'
-                        ]
+                            'icon' => 'uploads/service-descriptions/01K3DV3BYJHFFM8KQ6NEEMD20W.svg',
+                        ],
                     ],
                     'faqs' => [
                         [
                             'question' => 'What is the role of graphic design in branding?',
-                            'answer' => 'Graphic design is fundamental to branding as it visually communicates your brand\'s message, personality, and values. It creates the visual assets—like logos, color palettes, and imagery—that build recognition, establish trust, and form the foundation of your brand\'s unique identity.'
+                            'answer' => 'Graphic design is fundamental to branding as it visually communicates your brand\'s message, personality, and values. It creates the visual assets—like logos, color palettes, and imagery—that build recognition, establish trust, and form the foundation of your brand\'s unique identity.',
                         ],
                         [
                             'question' => 'What types of illustrations do you create?',
-                            'answer' => 'We create a wide range of custom illustrations, including editorial illustrations, spot illustrations, character designs, infographics, conceptual art, and technical illustrations. Our style is adaptable to best suit your brand\'s aesthetic and message.'
+                            'answer' => 'We create a wide range of custom illustrations, including editorial illustrations, spot illustrations, character designs, infographics, conceptual art, and technical illustrations. Our style is adaptable to best suit your brand\'s aesthetic and message.',
                         ],
                         [
                             'question' => 'How do custom graphics benefit my marketing efforts?',
-                            'answer' => 'Custom graphics make your marketing materials more unique, memorable, and impactful. They help your content stand out in a crowded market, convey complex information clearly, evoke emotions, and ultimately increase engagement and recall with your target audience across all channels.'
+                            'answer' => 'Custom graphics make your marketing materials more unique, memorable, and impactful. They help your content stand out in a crowded market, convey complex information clearly, evoke emotions, and ultimately increase engagement and recall with your target audience across all channels.',
                         ],
                         [
                             'question' => 'Can you ensure design consistency across different platforms (print, web, social)?',
-                            'answer' => 'Absolutely. A core part of our process is ensuring consistency. We develop comprehensive brand guidelines and meticulously adapt designs for various platforms, ensuring your visuals maintain integrity and recognition whether they appear in print, on your website, or across social media channels.'
+                            'answer' => 'Absolutely. A core part of our process is ensuring consistency. We develop comprehensive brand guidelines and meticulously adapt designs for various platforms, ensuring your visuals maintain integrity and recognition whether they appear in print, on your website, or across social media channels.',
                         ],
                         [
                             'question' => 'What\'s the typical timeline for a graphic design project?',
-                            'answer' => 'Project timelines vary based on complexity and deliverables. A simple icon set might take a few weeks, while a comprehensive illustration project or a full suite of marketing graphics could take longer. We\'ll provide a clear timeline once we understand your specific project scope and needs.'
-                        ]
-                    ]
-                ]
+                            'answer' => 'Project timelines vary based on complexity and deliverables. A simple icon set might take a few weeks, while a comprehensive illustration project or a full suite of marketing graphics could take longer. We\'ll provide a clear timeline once we understand your specific project scope and needs.',
+                        ],
+                    ],
+                ],
             ],
             [
                 'title' => 'Print & Marketing Collateral',
@@ -208,48 +207,48 @@ class ServiceSeeder extends Seeder
                         'Improves Communication',
                         'Aids Marketing Objectives',
                         'Flexible Across Platforms',
-                        'Makes Lasting Impressions'
+                        'Makes Lasting Impressions',
                     ],
                     'process' => [
                         [
                             'title' => 'Understanding Goals & Audience',
                             'description' => 'We start by deeply understanding your brand, target audience, and specific marketing goals to lay a strong foundation for your materials.',
-                            'icon' => 'uploads/service-descriptions/01K3DV67KNTC88EY0RXFTVXSHK.svg'
+                            'icon' => 'uploads/service-descriptions/01K3DV67KNTC88EY0RXFTVXSHK.svg',
                         ],
                         [
                             'title' => 'Design & Layout',
                             'description' => 'Applying strategic design principles, we create compelling layouts that maximize readability, captivate your audience, and communicate your brand\'s message effectively.',
-                            'icon' => 'uploads/service-descriptions/01K3DV67KPVYEGSA0XF7XEAACG.svg'
+                            'icon' => 'uploads/service-descriptions/01K3DV67KPVYEGSA0XF7XEAACG.svg',
                         ],
                         [
                             'title' => 'Finalization & Production',
                             'description' => 'We meticulously finalize designs for print media and digital displays, ensuring high-quality outputs, smooth brand continuity, and clear communication across all platforms.',
-                            'icon' => 'uploads/service-descriptions/01K3DV67KQH560TF8HKR9Y9TM0.svg'
-                        ]
+                            'icon' => 'uploads/service-descriptions/01K3DV67KQH560TF8HKR9Y9TM0.svg',
+                        ],
                     ],
                     'faqs' => [
                         [
                             'question' => 'Why are professional marketing and print materials important for my business?',
-                            'answer' => 'Professional marketing and print materials are crucial for establishing credibility, building brand recognition, and making a tangible connection with your audience. They enhance your message\'s impact, distinguish you from competitors, and serve as powerful tools for sales and communication.'
+                            'answer' => 'Professional marketing and print materials are crucial for establishing credibility, building brand recognition, and making a tangible connection with your audience. They enhance your message\'s impact, distinguish you from competitors, and serve as powerful tools for sales and communication.',
                         ],
                         [
                             'question' => 'What types of print materials do you design?',
-                            'answer' => 'We design a wide range of print materials including brochures, flyers, business cards, packaging, posters, publications, direct mailers, event collateral, and more. Our expertise covers both small-scale runs and large-scale campaigns.'
+                            'answer' => 'We design a wide range of print materials including brochures, flyers, business cards, packaging, posters, publications, direct mailers, event collateral, and more. Our expertise covers both small-scale runs and large-scale campaigns.',
                         ],
                         [
                             'question' => 'How do you ensure consistency between print and digital marketing?',
-                            'answer' => 'We ensure consistency by developing strong brand guidelines that govern all visual elements—colors, fonts, logos, imagery style—across both print and digital mediums. Our designers meticulously adapt artwork for different platforms, maintaining a cohesive and recognizable brand experience.'
+                            'answer' => 'We ensure consistency by developing strong brand guidelines that govern all visual elements—colors, fonts, logos, imagery style—across both print and digital mediums. Our designers meticulously adapt artwork for different platforms, maintaining a cohesive and recognizable brand experience.',
                         ],
                         [
                             'question' => 'Can you help with print production or do you only provide the design files?',
-                            'answer' => 'We primarily provide print-ready design files, ensuring they meet all specifications for high-quality production. However, we can also offer guidance on selecting reputable printers and, for certain projects, can manage the print production process to ensure optimal results and a seamless experience for you.'
+                            'answer' => 'We primarily provide print-ready design files, ensuring they meet all specifications for high-quality production. However, we can also offer guidance on selecting reputable printers and, for certain projects, can manage the print production process to ensure optimal results and a seamless experience for you.',
                         ],
                         [
                             'question' => 'How do these materials contribute to my overall marketing strategy?',
-                            'answer' => 'Our marketing and print designs are strategically crafted to align with your broader marketing objectives. They amplify your campaigns by providing visually compelling content, supporting lead generation, enhancing event presence, and reinforcing your brand\'s message across various touchpoints, driving engagement and conversions.'
-                        ]
-                    ]
-                ]
+                            'answer' => 'Our marketing and print designs are strategically crafted to align with your broader marketing objectives. They amplify your campaigns by providing visually compelling content, supporting lead generation, enhancing event presence, and reinforcing your brand\'s message across various touchpoints, driving engagement and conversions.',
+                        ],
+                    ],
+                ],
             ],
             [
                 'title' => '3D & Motion Graphics',
@@ -269,45 +268,45 @@ class ServiceSeeder extends Seeder
                         'Superior Product Visualization',
                         'Explains Complex Ideas Easily',
                         'Stands Out in Digital Media',
-                        'Boosts Social Media Impact'
+                        'Boosts Social Media Impact',
                     ],
                     'process' => [
                         [
                             'title' => 'Concept & Storyboarding',
                             'description' => 'Defining objectives, developing creative concepts, scripting, and visualizing the narrative through detailed storyboards and animatics.',
-                            'icon' => 'uploads/service-descriptions/01K3DV6Z48BZ0XM4KWSEVCSKEF.svg'
+                            'icon' => 'uploads/service-descriptions/01K3DV6Z48BZ0XM4KWSEVCSKEF.svg',
                         ],
                         [
                             'title' => '3D Modeling & Animation',
                             'description' => 'Creating detailed 3D models, applying textures and lighting, then animating elements to bring scenes and characters to life with fluid motion.',
-                            'icon' => 'uploads/service-descriptions/01K3DV6Z49VBN0JJEE2X23VP4E.svg'
+                            'icon' => 'uploads/service-descriptions/01K3DV6Z49VBN0JJEE2X23VP4E.svg',
                         ],
                         [
                             'title' => 'Rendering & Post-Production',
                             'description' => 'Rendering high-quality visuals, adding sound design, voiceovers, and final polish to deliver a captivating and impactful motion graphic.',
-                            'icon' => 'uploads/service-descriptions/01K3DV6Z49VBN0JJEE2X23VP4F.svg'
-                        ]
+                            'icon' => 'uploads/service-descriptions/01K3DV6Z49VBN0JJEE2X23VP4F.svg',
+                        ],
                     ],
                     'faqs' => [
                         [
                             'question' => 'What types of projects are best suited for 3D & Motion Graphics?',
-                            'answer' => '3D & motion graphics are ideal for explainer videos, product demonstrations, architectural visualizations, immersive brand intros, dynamic social media content, animated logos, and even complex data visualizations. They excel at bringing abstract or detailed concepts to life.'
+                            'answer' => '3D & motion graphics are ideal for explainer videos, product demonstrations, architectural visualizations, immersive brand intros, dynamic social media content, animated logos, and even complex data visualizations. They excel at bringing abstract or detailed concepts to life.',
                         ],
                         [
                             'question' => 'How long does it take to create a typical motion graphics video?',
-                            'answer' => 'The timeline for 3D and motion graphics projects varies widely based on complexity, duration, and required level of detail. A short animated logo might take a few weeks, while a comprehensive explainer video could range from 6–12 weeks or more. We\'ll provide a custom timeline with your proposal.'
+                            'answer' => 'The timeline for 3D and motion graphics projects varies widely based on complexity, duration, and required level of detail. A short animated logo might take a few weeks, while a comprehensive explainer video could range from 6–12 weeks or more. We\'ll provide a custom timeline with your proposal.',
                         ],
                         [
                             'question' => 'Do I need to provide a script or specific assets?',
-                            'answer' => 'While not strictly necessary, providing a script, brand guidelines, existing 3D models, or even a rough concept can significantly expedite the process. We can also assist with scriptwriting, voiceover talent sourcing, and asset creation as part of our comprehensive service.'
+                            'answer' => 'While not strictly necessary, providing a script, brand guidelines, existing 3D models, or even a rough concept can significantly expedite the process. We can also assist with scriptwriting, voiceover talent sourcing, and asset creation as part of our comprehensive service.',
                         ],
                         [
                             'question' => 'Can 3D & Motion Graphics be integrated with existing branding?',
-                            'answer' => 'Absolutely. Our goal is to ensure all 3D and motion graphics seamlessly integrate with and enhance your existing brand identity. We meticulously match colors, typography, and visual styles to maintain consistency and reinforce your brand\'s unique presence.'
-                        ]
-                    ]
-                ]
-            ]
+                            'answer' => 'Absolutely. Our goal is to ensure all 3D and motion graphics seamlessly integrate with and enhance your existing brand identity. We meticulously match colors, typography, and visual styles to maintain consistency and reinforce your brand\'s unique presence.',
+                        ],
+                    ],
+                ],
+            ],
         ];
 
         foreach ($servicesData as $serviceData) {

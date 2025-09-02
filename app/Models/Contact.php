@@ -12,13 +12,13 @@ class Contact extends Model
 
     protected $fillable = [
         'fname',
-        'lname', 
+        'lname',
         'email',
         'phone',
         'message',
         'ip_address',
         'location_data',
-        'is_read'
+        'is_read',
     ];
 
     protected $casts = [
@@ -31,7 +31,7 @@ class Contact extends Model
      */
     public function getFullNameAttribute()
     {
-        return $this->fname . ' ' . $this->lname;
+        return $this->fname.' '.$this->lname;
     }
 
     /**
@@ -63,7 +63,7 @@ class Contact extends Model
      */
     public function getLocationFromIp()
     {
-        if (!$this->ip_address || $this->location_data) {
+        if (! $this->ip_address || $this->location_data) {
             return $this->location_data;
         }
 
@@ -74,10 +74,10 @@ class Contact extends Model
             }
 
             $url = "http://ip-api.com/json/{$this->ip_address}?fields=status,message,country,countryCode,region,regionName,city,zip,lat,lon,timezone,isp,org,as,query";
-            
+
             $response = file_get_contents($url);
             $data = json_decode($response, true);
-            
+
             if ($data && isset($data['status']) && $data['status'] === 'success') {
                 $locationData = [
                     'country' => $data['country'] ?? null,
@@ -93,15 +93,17 @@ class Contact extends Model
                     'organization' => $data['org'] ?? null,
                     'as_number' => $data['as'] ?? null,
                 ];
-                
+
                 // Save the location data
                 $this->update(['location_data' => $locationData]);
+
                 return $locationData;
             }
-            
+
             return null;
         } catch (\Exception $e) {
-            Log::warning('IP geolocation failed for IP: ' . $this->ip_address . ' - ' . $e->getMessage());
+            Log::warning('IP geolocation failed for IP: '.$this->ip_address.' - '.$e->getMessage());
+
             return null;
         }
     }
@@ -112,23 +114,23 @@ class Contact extends Model
     public function getFormattedLocationAttribute()
     {
         $location = $this->location_data ?: $this->getLocationFromIp();
-        
-        if (!$location) {
+
+        if (! $location) {
             return 'Location unavailable';
         }
 
         $parts = [];
-        if (!empty($location['city'])) {
+        if (! empty($location['city'])) {
             $parts[] = $location['city'];
         }
-        if (!empty($location['region_name'])) {
+        if (! empty($location['region_name'])) {
             $parts[] = $location['region_name'];
         }
-        if (!empty($location['country'])) {
+        if (! empty($location['country'])) {
             $parts[] = $location['country'];
         }
 
-        return !empty($parts) ? implode(', ', $parts) : 'Location unavailable';
+        return ! empty($parts) ? implode(', ', $parts) : 'Location unavailable';
     }
 
     /**
@@ -144,6 +146,6 @@ class Contact extends Model
      */
     public function getInitialsAttribute()
     {
-        return strtoupper(substr($this->fname, 0, 1) . substr($this->lname, 0, 1));
+        return strtoupper(substr($this->fname, 0, 1).substr($this->lname, 0, 1));
     }
 }

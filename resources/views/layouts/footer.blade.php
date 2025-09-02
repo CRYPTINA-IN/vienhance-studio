@@ -17,10 +17,22 @@
                             <h2><a href="{{ route('contact') }}" data-cursor-text="Connect">Let's Connect</a></h2>
                         </div>
                         <!-- Footer Title Content End -->
+                        
                     </div>
                 </div>
             </div>
         </div>
+        @if(isset($footerSeoPages) && $footerSeoPages->count())
+                        <div class="footer-marquee">
+                            <div class="marquee-track">
+                                @foreach($footerSeoPages as $page)
+                                    <a href="{{ $page['url'] }}" class="marquee-link">{{ $page['title'] }}</a>
+                                    <span class="marquee-sep">•</span>
+                                @endforeach
+                            </div>
+                        </div>
+                        
+                        @endif
 
         <!-- Main Footer Start -->
         <div class="main-footer">
