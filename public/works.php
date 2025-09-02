@@ -1,5 +1,5 @@
 <?php
-header("Location: https://vienhancestudio.com/works", true, 301);
+header("Location: https://vienhancestudio.com/portfolio", true, 301);
 exit();
 
 
