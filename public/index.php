@@ -1,5 +1,37 @@
 <?php
 
+// Canonical redirects for legacy URLs and protocols
+$host = $_SERVER['HTTP_HOST'] ?? '';
+$uri = $_SERVER['REQUEST_URI'] ?? '/';
+$queryString = isset($_SERVER['QUERY_STRING']) && $_SERVER['QUERY_STRING'] !== '' ? ('?' . $_SERVER['QUERY_STRING']) : '';
+
+// Detect HTTPS behind proxies as well
+$isHttps = (
+    (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
+    || (isset($_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT'] == 443)
+    || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && strtolower($_SERVER['HTTP_X_FORWARDED_PROTO']) === 'https')
+);
+
+$canonicalHost = 'vienhancestudio.com';
+
+// Strip leading /index.php from the path
+if (strpos($uri, '/index.php') === 0) {
+    $uri = substr($uri, strlen('/index.php'));
+    if ($uri === '') {
+        $uri = '/';
+    }
+}
+
+$needsHostFix = ($host !== $canonicalHost);
+$needsSchemeFix = !$isHttps;
+$needsPathFix = false; // already normalized above
+
+if ($needsHostFix || $needsSchemeFix || $needsPathFix) {
+    $location = 'https://' . $canonicalHost . $uri . $queryString;
+    header('Location: ' . $location, true, 301);
+    exit();
+}
+
 use Illuminate\Http\Request;
 
 define('LARAVEL_START', microtime(true));
