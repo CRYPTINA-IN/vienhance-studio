@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Portfolio;
 use App\Models\Service;
+use App\Models\Blog;
+use App\Models\SeoPage;
 use Spatie\Sitemap\Sitemap;
 use Spatie\Sitemap\Tags\Url;
 
@@ -60,6 +62,30 @@ class SitemapController extends Controller
                 ->setPriority(0.7));
         }
 
+        // Add blog listing page
+        $sitemap->add(Url::create(route('blog'))
+            ->setLastModificationDate(now())
+            ->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY)
+            ->setPriority(0.7));
+
+        // Add individual blog posts
+        $blogs = Blog::published()->get();
+        foreach ($blogs as $blog) {
+            $sitemap->add(Url::create(route('blog.detail', $blog->slug))
+                ->setLastModificationDate($blog->updated_at ?? $blog->published_at ?? now())
+                ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY)
+                ->setPriority(0.6));
+        }
+
+        // Add published SEO pages
+        $seoPages = SeoPage::published()->get();
+        foreach ($seoPages as $seoPage) {
+            $sitemap->add(Url::create(route('pages.show', $seoPage->slug))
+                ->setLastModificationDate($seoPage->updated_at ?? $seoPage->published_at ?? now())
+                ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
+                ->setPriority(0.5));
+        }
+
         return $sitemap->toResponse(request());
     }
 
@@ -69,6 +95,17 @@ class SitemapController extends Controller
     public function robots()
     {
         $content = "User-agent: *\n";
+        $content .= "Disallow: /admin/\n";
+        $content .= "Disallow: /login/\n";
+        $content .= "Disallow: /register/\n";
+        $content .= "Disallow: /cart/\n";
+        $content .= "Disallow: /checkout/\n";
+        $content .= "Disallow: /user/\n";
+        $content .= "Disallow: /dashboard/\n";
+        $content .= "Disallow: /config/\n";
+        $content .= "Disallow: /storage/\n";
+        $content .= "Disallow: /vendor/\n";
+        $content .= "Disallow: /cgi-bin/\n\n";
         $content .= "Allow: /\n\n";
         $content .= 'Sitemap: '.url('/sitemap.xml')."\n";
 
