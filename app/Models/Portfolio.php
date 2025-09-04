@@ -75,4 +75,12 @@ class Portfolio extends Model
     {
         return static::where('slug', $slug)->with('gallery')->first();
     }
+
+    /**
+     * Get the portfolio's meta tags
+     */
+    public function getMetaTags()
+    {
+        return $this->getMetaTagsArray();
+    }
 }

@@ -14,6 +14,9 @@ $isHttps = (
 
 $canonicalHost = 'vienhancestudio.com';
 
+// Allow local development
+$isLocalDevelopment = in_array($host, ['localhost', '127.0.0.1', '127.0.0.1:8001', 'localhost:8001']);
+
 // Strip leading /index.php from the path
 if (strpos($uri, '/index.php') === 0) {
     $uri = substr($uri, strlen('/index.php'));
@@ -22,8 +25,8 @@ if (strpos($uri, '/index.php') === 0) {
     }
 }
 
-$needsHostFix = ($host !== $canonicalHost);
-$needsSchemeFix = !$isHttps;
+$needsHostFix = ($host !== $canonicalHost && !$isLocalDevelopment);
+$needsSchemeFix = !$isHttps && !$isLocalDevelopment;
 $needsPathFix = false; // already normalized above
 
 if ($needsHostFix || $needsSchemeFix || $needsPathFix) {
