@@ -58,6 +58,16 @@
                 $metaTags = \App\Models\MetaTag::getDefaults();
             }
         }
+        // Check for SEO pages
+        elseif ($routeName === 'pages.show') {
+            $slug = request()->route('slug');
+            $seoPage = \App\Models\SeoPage::findBySlug($slug);
+            if ($seoPage) {
+                $metaTags = $seoPage->getMetaTags();
+            } else {
+                $metaTags = \App\Models\MetaTag::getDefaults();
+            }
+        }
         // Check for static pages
         elseif (in_array($routeName, ['about', 'services', 'portfolio', 'contact'])) {
             $staticPage = \App\Models\StaticPage::where('page_name', $routeName)->first();

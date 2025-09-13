@@ -127,4 +127,43 @@ class SeoPage extends Model
     {
         return $this->is_active && $this->published_at && $this->published_at <= now();
     }
+
+    /**
+     * Get the SEO page's meta tags
+     */
+    public function getMetaTags()
+    {
+        // First try to get custom meta tags
+        $metaTag = $this->metaTag;
+        
+        if ($metaTag && $metaTag->is_active) {
+            return $metaTag->toMetaArray();
+        }
+        
+        // If no custom meta tags, generate page-specific ones
+        return [
+            'title' => $this->title . ' - ' . config('app.name'),
+            'meta_description' => $this->description ?: substr(strip_tags($this->content), 0, 160) . '...',
+            'meta_keywords' => $this->target_keywords ?: strtolower($this->title) . ', web design, development, digital services',
+            'og_title' => $this->title,
+            'og_description' => $this->description ?: substr(strip_tags($this->content), 0, 160) . '...',
+            'og_image' => $this->featured_image ? asset($this->featured_image) : asset('images/logo.svg'),
+            'og_type' => 'website',
+            'og_url' => url()->current(),
+            'og_site_name' => config('app.name'),
+            'twitter_card' => 'summary_large_image',
+            'twitter_title' => $this->title,
+            'twitter_description' => $this->description ?: substr(strip_tags($this->content), 0, 160) . '...',
+            'twitter_image' => $this->featured_image ? asset($this->featured_image) : asset('images/logo.svg'),
+            'twitter_site' => '@vienhancestudio',
+            'twitter_creator' => '@vienhancestudio',
+            'canonical_url' => url()->current(),
+            'schema_markup' => [],
+            'priority' => 0.9,
+            'change_frequency' => 'weekly',
+            'robots' => 'index, follow',
+            'author' => config('app.name'),
+            'language' => 'en',
+        ];
+    }
 }
