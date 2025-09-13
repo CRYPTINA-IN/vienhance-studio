@@ -15,7 +15,7 @@ $isHttps = (
 $canonicalHost = 'vienhancestudio.com';
 
 // Allow local development
-$isLocalDevelopment = in_array($host, ['localhost', '127.0.0.1', '127.0.0.1:8001', 'localhost:8001']);
+$isLocalDevelopment = in_array($host, ['localhost', '127.0.0.1', '127.0.0.1:8001', 'localhost:8001' , 'localhost:8000' , '127.0.0.1:8000']);
 
 // Strip leading /index.php from the path
 if (strpos($uri, '/index.php') === 0) {

@@ -125,7 +125,38 @@ class Blog extends Model
      */
     public function getMetaTags()
     {
-        return $this->getMetaTagsArray();
+        // First try to get custom meta tags
+        $metaTags = $this->getMetaTagsArray();
+        
+        // If we got defaults (no custom meta tags), generate blog-specific ones
+        if ($metaTags['title'] === config('app.name')) {
+            return [
+                'title' => $this->title . ' - ' . config('app.name'),
+                'meta_description' => $this->excerpt ?: substr(strip_tags($this->content), 0, 160) . '...',
+                'meta_keywords' => 'blog, ' . strtolower($this->title) . ', web design, development, ' . config('app.name'),
+                'og_title' => $this->title,
+                'og_description' => $this->excerpt ?: substr(strip_tags($this->content), 0, 160) . '...',
+                'og_image' => $this->featured_image ? asset($this->featured_image) : asset('images/logo.svg'),
+                'og_type' => 'article',
+                'og_url' => url()->current(),
+                'og_site_name' => config('app.name'),
+                'twitter_card' => 'summary_large_image',
+                'twitter_title' => $this->title,
+                'twitter_description' => $this->excerpt ?: substr(strip_tags($this->content), 0, 160) . '...',
+                'twitter_image' => $this->featured_image ? asset($this->featured_image) : asset('images/logo.svg'),
+                'twitter_site' => '@vienhancestudio',
+                'twitter_creator' => '@vienhancestudio',
+                'canonical_url' => url()->current(),
+                'schema_markup' => [],
+                'priority' => 0.7,
+                'change_frequency' => 'weekly',
+                'robots' => 'index, follow',
+                'author' => config('app.name'),
+                'language' => 'en',
+            ];
+        }
+        
+        return $metaTags;
     }
 
     /**

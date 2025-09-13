@@ -81,6 +81,37 @@ class Portfolio extends Model
      */
     public function getMetaTags()
     {
-        return $this->getMetaTagsArray();
+        // First try to get custom meta tags
+        $metaTags = $this->getMetaTagsArray();
+        
+        // If we got defaults (no custom meta tags), generate portfolio-specific ones
+        if ($metaTags['title'] === config('app.name')) {
+            return [
+                'title' => $this->title . ' - ' . config('app.name'),
+                'meta_description' => $this->short_description ?: $this->overview ?: 'Professional portfolio project by ' . config('app.name'),
+                'meta_keywords' => 'portfolio, ' . strtolower($this->industry ?? 'web design') . ', ' . strtolower($this->title),
+                'og_title' => $this->title,
+                'og_description' => $this->short_description ?: $this->overview ?: 'Professional portfolio project by ' . config('app.name'),
+                'og_image' => $this->image ? asset($this->image) : asset('images/logo.svg'),
+                'og_type' => 'article',
+                'og_url' => url()->current(),
+                'og_site_name' => config('app.name'),
+                'twitter_card' => 'summary_large_image',
+                'twitter_title' => $this->title,
+                'twitter_description' => $this->short_description ?: $this->overview ?: 'Professional portfolio project by ' . config('app.name'),
+                'twitter_image' => $this->image ? asset($this->image) : asset('images/logo.svg'),
+                'twitter_site' => '@vienhancestudio',
+                'twitter_creator' => '@vienhancestudio',
+                'canonical_url' => url()->current(),
+                'schema_markup' => [],
+                'priority' => 0.8,
+                'change_frequency' => 'monthly',
+                'robots' => 'index, follow',
+                'author' => config('app.name'),
+                'language' => 'en',
+            ];
+        }
+        
+        return $metaTags;
     }
 }

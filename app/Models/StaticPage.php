@@ -82,6 +82,37 @@ class StaticPage extends Model
      */
     public function getMetaTags()
     {
-        return $this->getMetaTagsArray();
+        // First try to get custom meta tags
+        $metaTags = $this->getMetaTagsArray();
+        
+        // If we got defaults (no custom meta tags), generate page-specific ones
+        if ($metaTags['title'] === config('app.name')) {
+            return [
+                'title' => ucfirst($this->page_name) . ' - ' . config('app.name'),
+                'meta_description' => 'Learn more about ' . $this->page_name . ' services and offerings from ' . config('app.name'),
+                'meta_keywords' => strtolower($this->page_name) . ', web design, development, digital services, ' . config('app.name'),
+                'og_title' => ucfirst($this->page_name) . ' - ' . config('app.name'),
+                'og_description' => 'Learn more about ' . $this->page_name . ' services and offerings from ' . config('app.name'),
+                'og_image' => asset('images/logo.svg'),
+                'og_type' => 'website',
+                'og_url' => url()->current(),
+                'og_site_name' => config('app.name'),
+                'twitter_card' => 'summary_large_image',
+                'twitter_title' => ucfirst($this->page_name) . ' - ' . config('app.name'),
+                'twitter_description' => 'Learn more about ' . $this->page_name . ' services and offerings from ' . config('app.name'),
+                'twitter_image' => asset('images/logo.svg'),
+                'twitter_site' => '@vienhancestudio',
+                'twitter_creator' => '@vienhancestudio',
+                'canonical_url' => url()->current(),
+                'schema_markup' => [],
+                'priority' => 0.6,
+                'change_frequency' => 'monthly',
+                'robots' => 'index, follow',
+                'author' => config('app.name'),
+                'language' => 'en',
+            ];
+        }
+        
+        return $metaTags;
     }
 }
